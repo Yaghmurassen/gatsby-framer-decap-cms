@@ -1,11 +1,11 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Luc-Moussa Bassolé, Avocat Pénaliste
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
+heading: Luc-Moussa Bassolé, Avocat Pénaliste
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
-  title: Why Kaldi
+  title: Mes domaines de compétences
   description: >
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans

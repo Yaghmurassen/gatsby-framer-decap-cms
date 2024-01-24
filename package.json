@@ -47,7 +47,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "autoprefixer": "^10.4.17",
+    "gatsby-plugin-postcss": "^5.25.0",
+    "postcss": "^8.4.33",
+    "prettier": "^2.0.5",
+    "tailwindcss": "^3.4.1"
   },
   "engines": {
     "node": ">= 14.15.0"
