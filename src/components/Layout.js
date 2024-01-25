@@ -5,10 +5,13 @@ import { motion } from "framer-motion";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import "../style/bulma-style.sass";
-import "../style/custom-style.sass";
+
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+
+// import "../style/bulma-style.sass";
+// import "../style/custom-style.sass";
+// import "../style/tw.css";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -54,9 +57,9 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <motion.div
-        initial={{ opacity: 0, x: -200 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 200 }}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -200 }}
         transition={{
           type: "spring",
           mass: 0.35,

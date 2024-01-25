@@ -8,6 +8,8 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 
+// import "../style/tw.css"; // Ne fais rien non plus ici
+
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
@@ -25,6 +27,7 @@ export const IndexPageTemplate = ({
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
 
       <section className="section section--gradient">
+        {/* <h1>ESH alors c comment ?</h1> */}
         <div className="container">
           <div className="section">
             <div className="columns">
