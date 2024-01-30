@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { Link, Script, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
@@ -39,6 +39,9 @@ export const IndexPageTemplate = ({
                     <div className="tile">
                       <h3 className="subtitle">{mainpitch.description}</h3>
                     </div>
+                    <div class="litle-word">
+                      <p>{mainpitch.petitMot}</p>
+                    </div>
                   </div>
                   <div className="columns">
                     <div className="column is-12">
@@ -73,6 +76,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </section>
+      <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>
   );
 };
@@ -91,14 +95,6 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
-  // console.log("data, data.markdownRemark ::::", data.markdownRemark);
-
-  // console.log(
-  //   "frontmatter.image, frontmatter.mainpitch   ::::: ",
-  //   frontmatter.image,
-  //   frontmatter.mainpitch
-  // );
 
   return (
     <Layout>
@@ -140,6 +136,7 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+          petitMot
         }
         description
         intro {
