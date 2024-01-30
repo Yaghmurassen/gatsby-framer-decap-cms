@@ -20,8 +20,6 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImage = getImage(image) || image;
 
-  console.log("mainpitch,  image :::: ", mainpitch, image);
-
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
@@ -39,7 +37,7 @@ export const IndexPageTemplate = ({
                     <div className="tile">
                       <h3 className="subtitle">{mainpitch.description}</h3>
                     </div>
-                    <div class="litle-word">
+                    <div className="litle-word">
                       <p>{mainpitch.petitMot}</p>
                     </div>
                   </div>
@@ -136,7 +134,6 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
-          petitMot
         }
         description
         intro {

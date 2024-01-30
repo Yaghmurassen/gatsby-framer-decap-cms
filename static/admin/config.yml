@@ -58,7 +58,6 @@ collections:
                 [
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
-                  { label: PetitMot, name: petitMot, widget: text },
                 ],
             }
           - { label: Description, name: description, widget: string }

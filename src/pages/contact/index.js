@@ -1,5 +1,6 @@
 import * as React from "react";
 import { navigate } from "gatsby-link";
+
 import Layout from "../../components/Layout";
 
 function encode(data) {
@@ -16,18 +17,29 @@ export default class Index extends React.Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state);
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    fetch("/", {
+
+    const formData = new FormData();
+
+    formData.append("user_name", this.state.name);
+    formData.append("user_email", this.state.email);
+    formData.append("message", this.state.message);
+    formData.append("contact_number", (Math.random() * 100000) | 0);
+    formData.append("lib_version", "3.12.1");
+    formData.append("service_id", "service_2sinc1q");
+    formData.append("template_id", "template_a0cl3sq");
+    formData.append("user_id", "WnnE6r6d_JR7R1evt");
+
+    fetch("https://api.emailjs.com/api/v1.0/email/send-form", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state,
-      }),
+      mode: "cors",
+      // headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData,
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch((error) => alert(error));
@@ -39,7 +51,6 @@ export default class Index extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Contact</h1>
               <form
                 name="contact"
                 method="post"
@@ -56,6 +67,7 @@ export default class Index extends React.Component {
                     <input name="bot-field" onChange={this.handleChange} />
                   </label>
                 </div>
+
                 <div className="field">
                   <label className="label" htmlFor={"name"}>
                     Your name
