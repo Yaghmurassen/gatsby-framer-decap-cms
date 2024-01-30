@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
+// import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
@@ -57,7 +58,10 @@ BlogPostTemplate.propTypes = {
 };
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { markdownRemark: post } = data; // post = data.blogPost
+
+  // const image = getImage(post.avatar);
+  // console.log("image  :::", image);
 
   return (
     <Layout>
@@ -77,6 +81,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
+      {/* <GatsbyImage image={image} alt={post.frontmatter.description} /> */}
     </Layout>
   );
 };
@@ -100,6 +105,15 @@ export const pageQuery = graphql`
         description
         tags
       }
+      # avatar {
+      #   childImageSharp {
+      #     gatsbyImageData(
+      #       width: 200
+      #       placeholder: BLURRED
+      #       formats: [AUTO, WEBP, AVIF]
+      #     )
+      #   }
+      # }
     }
   }
 `;

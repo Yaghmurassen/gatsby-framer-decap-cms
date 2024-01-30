@@ -12,7 +12,7 @@ const Navbar = () => {
       role="navigation"
       aria-label="main-navigation"
     >
-      <div className="container">
+      <div className="container-fluid flex justify-between">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
             <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
@@ -28,16 +28,7 @@ const Navbar = () => {
             <span />
           </button>
         </div>
-        <ul
-          id="navMenu"
-          className={` navbar-start has-text-centered navbar-menu ${
-            isActive && "is-active"
-          }`}
-        >
-          {/* TODO: inline override of padding is a result of refactoring
-                to a ul for accessibilty purposes, would like to see a css
-                re-write that makes this unneccesary.
-             */}
+        <ul id="navMenu" className={`nav-menu ${isActive && "is-active"}`}>
           <li className="navbar-item" style={{ padding: "0px" }}>
             <Link className="navbar-item" to="/about">
               About
@@ -63,7 +54,7 @@ const Navbar = () => {
               Form Examples
             </Link>
           </li>
-          <li className="navbar-end has-text-centered">
+          <li>
             <a
               className="navbar-item"
               href="https://github.com/decaporg/gatsby-plugin-decap-cms"
@@ -71,7 +62,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
             >
               <span className="icon">
-                <img src={github} alt="Github" />
+                <img src={github} alt="Github" className="w-8" />
               </span>
             </a>
           </li>

@@ -8,8 +8,6 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 
-// import "../style/tw.css"; // Ne fais rien non plus ici
-
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
@@ -22,12 +20,13 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImage = getImage(image) || image;
 
+  console.log("mainpitch,  image :::: ", mainpitch, image);
+
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
 
       <section className="section section--gradient">
-        {/* <h1>ESH alors c comment ?</h1> */}
         <div className="container">
           <div className="section">
             <div className="columns">
@@ -92,6 +91,14 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+
+  // console.log("data, data.markdownRemark ::::", data.markdownRemark);
+
+  // console.log(
+  //   "frontmatter.image, frontmatter.mainpitch   ::::: ",
+  //   frontmatter.image,
+  //   frontmatter.mainpitch
+  // );
 
   return (
     <Layout>

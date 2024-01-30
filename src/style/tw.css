@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-.container-fluid {
+/* .container-fluid {
   margin: 0 auto;
   max-width: 1440px;
   padding-left: 0.875rem;
   padding-right: 0.875rem;
   width: 96%;
+} */
+
+/* @layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+} */
+
+@layer components {
+  .container-fluid {
+    @apply my-0 mx-auto max-w-[1440px] px-3 w-[96%];
+  }
+  .navbar-brand {
+    @apply relative flex items-center justify-between h-[4.375rem] mx-1;
+  }
+  .nav-menu {
+    @apply grid gap-4 items-center grid-flow-col;
+  }
 }

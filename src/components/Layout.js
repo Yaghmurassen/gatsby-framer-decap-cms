@@ -9,10 +9,6 @@ import Navbar from "../components/Navbar";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
-// import "../style/bulma-style.sass";
-// import "../style/custom-style.sass";
-// import "../style/tw.css";
-
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
