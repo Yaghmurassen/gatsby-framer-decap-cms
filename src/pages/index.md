@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Luc-Moussa Bassolé, Avocat Pénaliste
-image: /img/home-jumbotron.jpg
+image: /img/lmb-profil.jpg
 heading: Luc-Moussa Bassolé, Avocat Pénaliste
 subheading: J'edite depuis l'admin du decap CMS
 mainpitch:

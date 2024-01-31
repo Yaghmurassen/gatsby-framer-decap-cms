@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, Script, graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
+// import FullWidthImage2 from "../components/FullWidthImage2";
+
+import "../style/tw-custom.scss";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -20,10 +22,38 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImage = getImage(image) || image;
 
+  console.log("heroImage  ", heroImage);
+
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      {/* <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+       */}
 
+      <div className="hero">
+        <div className="hero__bg">
+          <picture>
+            <img src="https://images.unsplash.com/photo-1491982883790-ead7c97a047e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2594&q=80" />
+          </picture>
+        </div>
+
+        <div className="hero__cnt">
+          {/* <picture><img src={heroImage} /></picture> */}
+          <GatsbyImage
+            image={heroImage}
+            // objectFit={"cover"}
+            // objectPosition={imgPosition}
+            // style={{
+            //   gridArea: "1/1",
+            //   maxHeight: height,
+            // }}
+            // layout="fullWidth"
+            // aspectratio={3 / 1}
+            // alt=""
+            // formats={["auto", "webp", "avif"]}
+          />
+          <h1>LMB</h1>
+        </div>
+      </div>
       <section className="section section--gradient">
         <div className="container">
           <div className="section">

@@ -12,15 +12,16 @@ module.exports = {
         postCssPlugins: [require("tailwindcss")],
       },
     },
+    "gatsby-plugin-sass",
     // "gatsby-plugin-postcss",
-    {
-      resolve: "gatsby-plugin-sass",
-      options: {
-        sassOptions: {
-          indentedSyntax: true,
-        },
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-sass",
+    //   options: {
+    //     sassOptions: {
+    //       indentedSyntax: true,
+    //     },
+    //   },
+    // },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
