@@ -6,14 +6,18 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
 
   if (data) {
-    console.log(
-      "data.image, getAsset(data.image)   ::::::::",
-      data.image,
-      getAsset(data.image)
-    );
+    // console.log(
+    //   "data.image, getAsset(data.image)   ::::::::",
+    //   data.image,
+    //   getAsset(data.image)
+    // );
+    console.log("dataaaaaa ::::: ", data);
+
     return (
       <IndexPageTemplate
         image={getAsset(data.image)}
+        title2={data.title2}
+        heroImg={getAsset(data.heroImg)}
         title={data.title}
         heading={data.heading}
         subheading={data.subheading}

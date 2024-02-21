@@ -13,44 +13,59 @@ import "../style/tw-custom.scss";
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
+  heroImg,
   title,
+  title2,
   heading,
   subheading,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImage = getImage(image) || image;
+  const profilImage = getImage(image) || image;
+  const heroImage = getImage(heroImg) || heroImg;
 
-  console.log("heroImage  ", heroImage);
+  console.log("heroImage  ::::", heroImage);
 
   return (
     <div>
-      {/* <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-       */}
-
       <div className="hero">
         <div className="hero__bg">
-          <picture>
+          <GatsbyImage
+            image={heroImage}
+            alt="hero Img"
+            heigh={"100%"}
+            width={"100%"}
+          />
+          <h1>{title2}</h1>
+          {/* <picture>
             <img src="https://images.unsplash.com/photo-1491982883790-ead7c97a047e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2594&q=80" />
-          </picture>
+          </picture> */}
+          {/* <FullWidthImage img={profilImage} title={title} subheading={subheading} />
+           */}
         </div>
 
         <div className="hero__cnt">
-          {/* <picture><img src={heroImage} /></picture> */}
+          {/* <picture><img src={profilImage} /></picture> */}
           <GatsbyImage
-            image={heroImage}
-            // objectFit={"cover"}
-            // objectPosition={imgPosition}
-            // style={{
-            //   gridArea: "1/1",
-            //   maxHeight: height,
-            // }}
-            // layout="fullWidth"
-            // aspectratio={3 / 1}
-            // alt=""
-            // formats={["auto", "webp", "avif"]}
+            image={profilImage}
+            alt="profil Img"
+            heigh={"100%"}
+            width={"100%"}
           />
+          {/* <GatsbyImage
+            image={profilImage}
+            objectFit={"cover"}
+            objectPosition={imgPosition}
+            style={{
+              gridArea: "1/1",
+              maxHeight: height,
+            }}
+            layout="fullWidth"
+            aspectratio={3 / 1}
+            alt=""
+            formats={["auto", "webp", "avif"]}
+          /> */}
           <h1>LMB</h1>
         </div>
       </div>
@@ -111,7 +126,9 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  // heroImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  title2: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -124,11 +141,15 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
+  console.log("frontmatter :::: ", frontmatter);
+
   return (
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
+        heroImg={frontmatter.heroImg}
         title={frontmatter.title}
+        title2={frontmatter.title2}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
@@ -154,7 +175,13 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        title2
         image {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+        heroImg {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
@@ -162,6 +189,11 @@ export const pageQuery = graphql`
         heading
         subheading
         mainpitch {
+          # heroImg {
+          #   childImageSharp {
+          #     gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          #   }
+          # }
           title
           description
         }
