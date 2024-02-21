@@ -13,7 +13,7 @@ import "../style/tw-custom.scss";
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
-  heroImg,
+  // heroImg,
   title,
   title2,
   heading,
@@ -23,20 +23,20 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   const profilImage = getImage(image) || image;
-  const heroImage = getImage(heroImg) || heroImg;
+  // const heroImage = getImage(heroImg) || heroImg;
 
-  console.log("heroImage  ::::", heroImage);
+  // console.log("heroImage  ::::", heroImage);
 
   return (
     <div>
       <div className="hero">
         <div className="hero__bg">
-          <GatsbyImage
+          {/* <GatsbyImage
             image={heroImage}
             alt="hero Img"
             heigh={"100%"}
             width={"100%"}
-          />
+          /> */}
           <h1>{title2}</h1>
           {/* <picture>
             <img src="https://images.unsplash.com/photo-1491982883790-ead7c97a047e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2594&q=80" />
@@ -147,7 +147,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
-        heroImg={frontmatter.heroImg}
+        // heroImg={frontmatter.heroImg}
         title={frontmatter.title}
         title2={frontmatter.title2}
         heading={frontmatter.heading}
@@ -181,11 +181,11 @@ export const pageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
-        heroImg {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
+        # heroImg {
+        #   childImageSharp {
+        #     gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        #   }
+        # }
         heading
         subheading
         mainpitch {
