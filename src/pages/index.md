@@ -2,19 +2,18 @@
 templateKey: index-page
 title: Luc-Moussa Bassolé, Avocat Pénaliste
 title2: Bug de CMS | bug de CMS | bug de CMS
-image: /img/lmb-profil.png
+image: /img/products-grid2.jpg
 heroImg: https://images.unsplash.com/photo-1491982883790-ead7c97a047e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2594&q=80
 heading: Luc-Moussa Bassolé, Avocat Pénaliste
 subheading: J'edite depuis l'admin du decap CMS
 mainpitch:
-  # heroImg: https://images.unsplash.com/photo-1491982883790-ead7c97a047e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2594&q=80
   title: Mes domaines de compétences
-  # profilImg: /img/lmb-profil.png
   description: >
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
+  heroImg: /img/1706367449757.jpg
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that
