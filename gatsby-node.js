@@ -83,3 +83,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions;
+
+  const typeDefs = [
+    `type MarkdownRemark implements Node {
+          frontmatter: Frontmatter
+      }`,
+    `type Frontmatter @infer {
+          about_hero_slides: [File!]! @fileByRelativePath,
+          about_title: String,
+          about_text: String,
+          about_images: [File!]! @fileByRelativePath,
+      }`,
+  ];
+
+  createTypes(typeDefs);
+};

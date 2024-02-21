@@ -58,7 +58,7 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: HeroImg, name: heroImg, widget: image },
+                  { label: HeroImg2, name: heroImg2, widget: image },
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
                 ],

@@ -6,14 +6,14 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
-// import FullWidthImage2 from "../components/FullWidthImage2";
 
 import "../style/tw-custom.scss";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
-  // heroImg,
+  heroImg,
+  heroImg2,
   title,
   title2,
   heading,
@@ -23,36 +23,22 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   const profilImage = getImage(image) || image;
-  // const heroImage = getImage(heroImg) || heroImg;
+  const heroImage = getImage(heroImg) || heroImg;
+  const heroImage2 = getImage(heroImg2) || heroImg2;
 
-  // console.log("heroImage  ::::", heroImage);
+  console.log("heroImage2  ::::", heroImage2);
 
   return (
     <div>
       <div className="hero">
         <div className="hero__bg">
-          {/* <GatsbyImage
-            image={heroImage}
-            alt="hero Img"
-            heigh={"100%"}
-            width={"100%"}
-          /> */}
-          <h1>{title2}</h1>
-          {/* <picture>
-            <img src="https://images.unsplash.com/photo-1491982883790-ead7c97a047e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2594&q=80" />
-          </picture> */}
-          {/* <FullWidthImage img={profilImage} title={title} subheading={subheading} />
-           */}
+          <picture>
+            <img src={heroImage} />
+          </picture>
+          {/* <h1>{title2}</h1> */}
         </div>
 
         <div className="hero__cnt">
-          {/* <picture><img src={profilImage} /></picture> */}
-          <GatsbyImage
-            image={profilImage}
-            alt="profil Img"
-            heigh={"100%"}
-            width={"100%"}
-          />
           {/* <GatsbyImage
             image={profilImage}
             objectFit={"cover"}
@@ -69,52 +55,44 @@ export const IndexPageTemplate = ({
           <h1>LMB</h1>
         </div>
       </div>
-      <section className="section section--gradient">
+      <section className="section">
         <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                    <div className="litle-word">
-                      <p>{mainpitch.petitMot}</p>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
-                  <Features gridItems={intro.blurbs} />
-                  <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="content">
+            <GatsbyImage
+              image={heroImage2}
+              alt="profil Img"
+              heigh={"100%"}
+              width={"100%"}
+            />
+            <h1 className="title">{mainpitch.title}</h1>
+            <h3 className="subtitle">{mainpitch.description}</h3>
+            <p>{mainpitch.petitMot}</p>
+          </div>
+
+          <div>
+            <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
+            <p>{description}</p>
+          </div>
+
+          <Features gridItems={intro.blurbs} />
+
+          <div>
+            <Link className="btn" to="/products">
+              See all products
+            </Link>
+          </div>
+
+          <div>
+            <h3 className="has-text-weight-semibold is-size-2">
+              Latest stories
+            </h3>
+
+            <BlogRoll />
+
+            <div className="column is-12 has-text-centered">
+              <Link className="btn" to="/blog">
+                Read more
+              </Link>
             </div>
           </div>
         </div>
@@ -126,7 +104,8 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  // heroImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heroImg: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heroImg2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   title2: PropTypes.string,
   heading: PropTypes.string,
@@ -147,7 +126,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
-        // heroImg={frontmatter.heroImg}
+        heroImg={frontmatter.heroImg}
+        heroImg2={frontmatter.mainpitch.heroImg2}
         title={frontmatter.title}
         title2={frontmatter.title2}
         heading={frontmatter.heading}
@@ -181,19 +161,15 @@ export const pageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
-        # heroImg {
-        #   childImageSharp {
-        #     gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-        #   }
-        # }
+        heroImg
         heading
         subheading
         mainpitch {
-          # heroImg {
-          #   childImageSharp {
-          #     gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          #   }
-          # }
+          heroImg2 {
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            }
+          }
           title
           description
         }
