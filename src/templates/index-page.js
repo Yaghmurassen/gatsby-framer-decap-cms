@@ -26,11 +26,13 @@ export const IndexPageTemplate = ({
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
 
-  console.log("heroImage2  ::::", heroImage2);
+  console.log("profilImage  ::::", profilImage);
+  console.log("heroImage  ::::", heroImage);
+  console.log("heroImage2  ::::", heroImage2.images);
 
   return (
     <div>
-      <div className="hero">
+      <section className="hero">
         <div className="hero__bg">
           <picture>
             <img src={heroImage} />
@@ -39,38 +41,37 @@ export const IndexPageTemplate = ({
         </div>
 
         <div className="hero__cnt">
-          {/* <GatsbyImage
-            image={profilImage}
-            objectFit={"cover"}
-            objectPosition={imgPosition}
-            style={{
-              gridArea: "1/1",
-              maxHeight: height,
-            }}
-            layout="fullWidth"
-            aspectratio={3 / 1}
-            alt=""
-            formats={["auto", "webp", "avif"]}
-          /> */}
           <h1>LMB</h1>
         </div>
-      </div>
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <GatsbyImage
-              image={heroImage2}
-              alt="profil Img"
-              heigh={"100%"}
-              width={"100%"}
-            />
+      </section>
+
+      <section className="presentation">
+        <div className="grid grid-cols-4/1 gap-4">
+          <GatsbyImage
+            image={heroImage2}
+            alt="profil Img"
+            heigh={"100%"}
+            width={"100%"}
+          />
+
+          {/* <picture>
+              <source srcSet={heroImage2.images.sources[0].srcSet} />
+              <img
+                src={heroImage2}
+                alt={mainpitch.title}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture> */}
+
+          <div className="mainpitch">
             <h1 className="title">{mainpitch.title}</h1>
             <h3 className="subtitle">{mainpitch.description}</h3>
-            <p>{mainpitch.petitMot}</p>
           </div>
+        </div>
 
-          <div>
-            <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
+        {/* <div>
+            <h3 className="">{heading}</h3>
             <p>{description}</p>
           </div>
 
@@ -83,19 +84,18 @@ export const IndexPageTemplate = ({
           </div>
 
           <div>
-            <h3 className="has-text-weight-semibold is-size-2">
+            <h3 className="">
               Latest stories
             </h3>
 
             <BlogRoll />
 
-            <div className="column is-12 has-text-centered">
+            <div className=">
               <Link className="btn" to="/blog">
                 Read more
               </Link>
             </div>
-          </div>
-        </div>
+          </div> */}
       </section>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>

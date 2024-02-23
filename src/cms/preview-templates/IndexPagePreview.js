@@ -11,7 +11,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
     //   data.image,
     //   getAsset(data.image)
     // );
-    console.log("dataaaaaa ::::: ", data);
 
     return (
       <IndexPageTemplate

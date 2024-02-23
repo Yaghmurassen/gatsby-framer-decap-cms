@@ -5,7 +5,7 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,jsx,ts,tsx}",
+    "./src/templates/**/*.{js,jsx,ts,tsx}",
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
@@ -151,28 +151,24 @@ module.exports = {
         center: "-50%",
       },
       gridTemplateColumns: {
-        "document-card": "156px 156px",
+        "3/1": "0.3fr 1fr",
+        "1/3": "1fr 0.3fr",
+        "4/1": "0.4fr 1fr",
+        "1/4": "1fr 0.4fr",
+        fifty: "0.5fr 0.5fr",
+        "6/1": "0.6fr 1fr",
+        "1/6": "1fr 0.6fr",
+        "confirm-recap": "0.7fr 0.3fr",
+        "2/1/1": "2fr 1fr 1fr",
+        "1/1/2": "1fr 1fr 2fr",
         footer: "200px minmax(900px, 1fr) 100px",
         "footer-section": "1.25fr 0.75fr 1.25fr 1fr 1fr",
         "footer-section-responsive":
           "1fr minmax(100px, 1fr) minmax(180px, 1fr) minmax(120px, 1fr) minmax(160px, 1fr)",
-        "footer-section-lg": "1.5fr 1fr 1.25fr 1fr minmax(225px, 1fr)",
-        "footer-section-lg2": "1.25fr 0.75fr 1.25fr 1fr 1.1fr",
         "vehicle-list-item": "1fr 2fr 0.6fr",
         "vehicle-list-item-md": "1fr minmax(200px, 2fr) 175px",
         "vehicle-list-item-sidebar": "1fr minmax(275px, 2fr) 190px",
-        "vehicle-list-item-sidebar-lg": "1.4fr 275px 175px",
-        "search-module-sidebar": "0.4fr 1fr",
-        "search-module-sidebar-lg": "0.3fr 1fr",
-        "search-module": "1fr",
-        "search-unavailable": "0.5fr 1fr",
-        "search-unavailable-mobile": "1fr",
         "characteristics-modal": "repeat(4, minmax(0,auto))",
-        "login-section": "1fr minmax(200px, 1fr) 1fr",
-        "confirm-recap": "0.7fr 0.3fr",
-        "recap-time-geo": "0.3fr 1fr",
-        "see-resa": "1fr 0.6fr",
-        "insurance-card": "2fr 1fr 1fr",
       },
       maxWidth: {
         "1/6": "16.6666666667%",

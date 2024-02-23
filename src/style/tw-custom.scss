@@ -40,7 +40,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
         right: -10%;
         bottom: -10%;
         left: -10%;
-        background: $hero-bg-mix;
+        /* background: $hero-bg-mix; */
         background-blend-mode: screen;
       }
     }
@@ -95,6 +95,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
     opacity: 1;
   }
 }
+
 @keyframes scaling-hero-anim {
   from {
     transform: scale(1.25);
@@ -103,6 +104,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
     transform: scale(1.1);
   }
 }
+
 @keyframes clip-hero-anim {
   from {
     clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
@@ -110,4 +112,8 @@ $hero-bg-mix: rgba(#29042f, 0.4);
   to {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
+}
+
+.gatsby-image-wrapper {
+  max-width: 20rem !important;
 }

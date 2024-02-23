@@ -30,3 +30,7 @@
     @apply grid gap-4 items-center grid-flow-col;
   }
 }
+
+.gatsby-image-wrapper {
+  max-width: 20rem !important;
+}
