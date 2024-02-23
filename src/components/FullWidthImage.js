@@ -63,7 +63,7 @@ export default function FullWidthImage(props) {
             {/* Any content here will be centered in the component */}
             {title && (
               <h1
-                className="underline text-[#af5050] font-bold text-6xl text-3xl"
+                className="underline text-[#af5050] font-bold text-6xl"
                 // style={{
                 //   color: "white",
                 //   lineHeight: "1",

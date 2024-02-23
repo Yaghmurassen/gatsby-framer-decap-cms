@@ -79,16 +79,11 @@ module.exports = {
       },
       colors: {
         gray: "#fafafa",
-        "neutral-80": "#333",
         "light-200": "#e5e9f2",
         lighter: "#f5f6fa",
-        "pop-blue": "#74bed2",
-        "green-primary": "#196047",
         green: "#018657",
         orange: "#ff5812",
         primary: "#018657",
-        // A duplicate of primary, as the 'primary' nameclashes with bootstrap
-        "primary-green": "#018657",
         secondary: "#ff5812",
         field: "#f7f7f7",
         grey: "#999",

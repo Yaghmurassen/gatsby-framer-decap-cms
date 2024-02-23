@@ -22,13 +22,12 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => {
-  const profilImage = getImage(image) || image;
+  // const profilImage = getImage(image) || image;
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
 
-  console.log("profilImage  ::::", profilImage);
-  console.log("heroImage  ::::", heroImage);
-  console.log("heroImage2  ::::", heroImage2.images);
+  // console.log("heroImage  ::::", heroImage);
+  // console.log("heroImage2  ::::", heroImage2.images);
 
   return (
     <div>
@@ -45,13 +44,15 @@ export const IndexPageTemplate = ({
         </div>
       </section>
 
-      <section className="presentation">
-        <div className="grid grid-cols-4/1 gap-4">
+      <section className="presentation mx-8 my-20 max-md:mx-4 max-md:my-8 xl:mx-auto xl:max-w-[1200px]">
+        <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center">
           <GatsbyImage
             image={heroImage2}
             alt="profil Img"
-            heigh={"100%"}
-            width={"100%"}
+            imgStyle={{
+              objectFit: "contain",
+              maxWidth: "max-width: clamp(100px, 20rem, 600px)",
+            }}
           />
 
           {/* <picture>
@@ -65,8 +66,12 @@ export const IndexPageTemplate = ({
             </picture> */}
 
           <div className="mainpitch">
-            <h1 className="title">{mainpitch.title}</h1>
-            <h3 className="subtitle">{mainpitch.description}</h3>
+            <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-8 max-xs:mb-6">
+              {mainpitch.title}
+            </h1>
+            <h3 className="subtitle text-pretty text-justify max-md:text-sm">
+              {mainpitch.description}
+            </h3>
           </div>
         </div>
 
@@ -167,7 +172,8 @@ export const pageQuery = graphql`
         mainpitch {
           heroImg2 {
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              # gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
             }
           }
           title

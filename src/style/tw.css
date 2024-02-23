@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .container-fluid {
-  margin: 0 auto;
-  max-width: 1440px;
-  padding-left: 0.875rem;
-  padding-right: 0.875rem;
-  width: 96%;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  @apply font-montserrat;
+}
 
 /* @layer base {
   h1 {
