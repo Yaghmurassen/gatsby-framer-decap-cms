@@ -1,0 +1,22 @@
+.nav {
+  position: fixed;
+  background: white;
+  height: 3.5rem;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 1rem;
+  transition: all 400ms ease-in-out;
+
+  .mainDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.isScrollingDown {
+  transform: translateY(-100%);
+}
