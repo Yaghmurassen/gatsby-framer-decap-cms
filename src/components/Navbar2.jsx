@@ -9,10 +9,12 @@ const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState("");
   const [navOpen, setNavOpen] = useState(false);
 
-  if (navOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
+  if (typeof window !== "undefined") {
+    if (navOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   }
 
   useEffect(() => {
