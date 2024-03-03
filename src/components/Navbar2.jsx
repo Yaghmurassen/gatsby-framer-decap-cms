@@ -9,6 +9,12 @@ const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState("");
   const [navOpen, setNavOpen] = useState(false);
 
+  if (navOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
   useEffect(() => {
     const threshold = 0;
     let lastScrollY = window.scrollY;
@@ -62,10 +68,18 @@ const Navbar = () => {
   }, [scrollDirection]);
 
   return (
-    <nav role="navigation" aria-label="main-navigation">
+    <nav
+      role="navigation"
+      aria-label="main-navigation"
+      style={{
+        overflow: navOpen ? "hidden" : "auto",
+      }}
+    >
       <div
         className={`nav ${
-          scrollDirection === "down" ? "mainDiv  isScrollingDown" : "mainDiv"
+          scrollDirection === "down" && navOpen === false
+            ? "mainDiv  isScrollingDown"
+            : "mainDiv"
         }`}
       >
         <Link to="/" className="navbar-item" title="Logo">
@@ -104,7 +118,119 @@ const Navbar = () => {
           top: navOpen ? "0" : "-100%",
           transitionDelay: navOpen ? "0s" : "0s",
         }}
-      ></div>
+      >
+        <ul className="nav-links flex gap-4">
+          <li className="nav-item">
+            <Link
+              className="navbar-item"
+              to="/about"
+              onClick={() => setNavOpen(!navOpen)}
+              style={{
+                top: navOpen ? "0" : "120px",
+                transitionDelay: navOpen ? "0.8s" : "0s",
+              }}
+            >
+              About
+            </Link>
+            <div className="nav-item-wrapper"></div>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="navbar-item"
+              to="/products"
+              onClick={() => setNavOpen(!navOpen)}
+              style={{
+                top: navOpen ? "0" : "120px",
+                transitionDelay: navOpen ? "0.9s" : "0s",
+              }}
+            >
+              Products
+            </Link>
+            <div className="nav-item-wrapper"></div>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="navbar-item"
+              to="/blog"
+              onClick={() => setNavOpen(!navOpen)}
+              style={{
+                top: navOpen ? "0" : "120px",
+                transitionDelay: navOpen ? "1s" : "0s",
+              }}
+            >
+              Blog
+            </Link>
+            <div className="nav-item-wrapper"></div>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="navbar-item"
+              to="/contact"
+              onClick={() => setNavOpen(!navOpen)}
+              style={{
+                top: navOpen ? "0" : "120px",
+                transitionDelay: navOpen ? "1.1s" : "0s",
+              }}
+            >
+              Contact
+            </Link>
+            <div className="nav-item-wrapper"></div>
+          </li>
+        </ul>
+
+        <div className="nav-footer">
+          <div
+            className="location"
+            style={{
+              bottom: navOpen ? "0" : "-20px",
+              opacity: navOpen ? "1" : "0",
+              transitionDelay: navOpen ? "1.2s" : "0s",
+            }}
+          >
+            Paris
+          </div>
+          <div className="nav-social-media">
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  style={{
+                    bottom: navOpen ? "0" : "-20px",
+                    opacity: navOpen ? "1" : "0",
+                    transitionDelay: navOpen ? "1.3s" : "0s",
+                  }}
+                >
+                  Youtube
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  style={{
+                    bottom: navOpen ? "0" : "-20px",
+                    opacity: navOpen ? "1" : "0",
+                    transitionDelay: navOpen ? "1.4s" : "0s",
+                  }}
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  style={{
+                    bottom: navOpen ? "0" : "-20px",
+                    opacity: navOpen ? "1" : "0",
+                    transitionDelay: navOpen ? "1.5s" : "0s",
+                  }}
+                >
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };
