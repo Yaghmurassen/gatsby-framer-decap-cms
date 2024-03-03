@@ -7,6 +7,7 @@ import "../style/navbar.scss";
 const Navbar = () => {
   const [atTop, setAtTop] = useState(true);
   const [scrollDirection, setScrollDirection] = useState("");
+  const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
     const threshold = 0;
@@ -61,17 +62,17 @@ const Navbar = () => {
   }, [scrollDirection]);
 
   return (
-    <nav
-      className={`nav ${scrollDirection === "down" ? "isScrollingDown" : ""}`}
-      role="navigation"
-      aria-label="main-navigation"
-    >
-      <div className="mainDiv">
+    <nav role="navigation" aria-label="main-navigation">
+      <div
+        className={`nav ${
+          scrollDirection === "down" ? "mainDiv  isScrollingDown" : "mainDiv"
+        }`}
+      >
         <Link to="/" className="navbar-item" title="Logo">
           <img src={logo} alt="Logo" style={{ width: "88px" }} />
         </Link>
 
-        <ul className="flex gap-4">
+        <ul className="flex gap-4 max-md2:hidden">
           <Link className="navbar-item" to="/about">
             About
           </Link>
@@ -85,7 +86,25 @@ const Navbar = () => {
             Contact
           </Link>
         </ul>
+        {/* Button Burger Menu */}
+        <div
+          className="menu-toggle flex md2:hidden"
+          onClick={() => setNavOpen(!navOpen)}
+        >
+          <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
+            <span className={navOpen ? "lineTop spin" : "lineTop"}></span>
+            <span className={navOpen ? "lineBottom spin" : "lineBottom"}></span>
+          </div>
+        </div>
+        {/* <div className="flex md2:hidden">|||</div> */}
       </div>
+      <div
+        className="nav-overlay"
+        style={{
+          top: navOpen ? "0" : "-100%",
+          transitionDelay: navOpen ? "0s" : "0s",
+        }}
+      ></div>
     </nav>
   );
 };
