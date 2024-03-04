@@ -24,11 +24,11 @@ const Navbar = () => {
     let ticking = false;
     let throttleWait;
 
-    if (navOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    // if (navOpen) {
+    //   document.body.style.overflow = "hidden";
+    // } else {
+    //   document.body.style.overflow = "auto";
+    // }
 
     const throttle = (callback, time) => {
       if (throttleWait) return;
@@ -132,7 +132,7 @@ const Navbar = () => {
       <div
         className="nav-overlay"
         style={{
-          top: navOpen ? "0" : "-100%",
+          top: navOpen ? "0%" : "-100%",
           transitionDelay: navOpen ? "0s" : "0s",
         }}
       >
