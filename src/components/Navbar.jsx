@@ -24,11 +24,11 @@ const Navbar = () => {
     let ticking = false;
     let throttleWait;
 
-    // if (navOpen) {
-    //   document.body.style.overflow = "hidden";
-    // } else {
-    //   document.body.style.overflow = "auto";
-    // }
+    if (navOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
     const throttle = (callback, time) => {
       if (throttleWait) return;
@@ -74,7 +74,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("scroll", throttle);
     };
-  }, [scrollDirection]);
+  }, [scrollDirection, navOpen]);
 
   return (
     <nav
