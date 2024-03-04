@@ -132,7 +132,7 @@ const Navbar = () => {
       <div
         className="nav-overlay"
         style={{
-          top: navOpen ? "0%" : "-100%",
+          top: navOpen ? "-6%" : "-100%",
           transitionDelay: navOpen ? "0s" : "0s",
         }}
       >
