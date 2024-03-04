@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 
+import logoJustice from "../img/logo-justice.png";
+
 import "../style/navbar.scss";
 
 const Navbar = () => {
@@ -82,46 +84,50 @@ const Navbar = () => {
         overflow: navOpen ? "hidden" : "auto",
       }}
     >
-      <div>
-        <div
-          className={`nav ${
-            scrollDirection === "down" && navOpen === false
-              ? "mainDiv  isScrollingDown"
-              : "mainDiv"
-          }`}
-        >
+      <div
+        className={`nav ${
+          scrollDirection === "down" && navOpen === false
+            ? "mainDiv  isScrollingDown"
+            : "mainDiv"
+        }`}
+      >
+        <div className="flex items-center gap-2">
+          <img
+            src={logoJustice}
+            alt="logo Justice"
+            className="m-auto max-w-12"
+          />
+
           <Link to="/" className="navbar-item" title="Logo">
             LMB
           </Link>
-
-          <ul className="flex gap-4 max-md2:hidden">
-            <Link className="navbar-item" to="/about">
-              About
-            </Link>
-            <Link className="navbar-item" to="/products">
-              Products
-            </Link>
-            <Link className="navbar-item" to="/blog">
-              Blog
-            </Link>
-            <Link className="navbar-item" to="/contact">
-              Contact
-            </Link>
-          </ul>
-          {/* Button Burger Menu */}
-          <div
-            className="menu-toggle flex md2:hidden"
-            onClick={() => setNavOpen(!navOpen)}
-          >
-            <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
-              <span className={navOpen ? "lineTop spin" : "lineTop"}></span>
-              <span
-                className={navOpen ? "lineBottom spin" : "lineBottom"}
-              ></span>
-            </div>
-          </div>
-          {/* <div className="flex md2:hidden">|||</div> */}
         </div>
+
+        <ul className="flex gap-4 max-md2:hidden">
+          <Link className="navbar-item" to="/about">
+            About
+          </Link>
+          <Link className="navbar-item" to="/products">
+            Products
+          </Link>
+          <Link className="navbar-item" to="/blog">
+            Blog
+          </Link>
+          <Link className="navbar-item" to="/contact">
+            Contact
+          </Link>
+        </ul>
+        {/* Button Burger Menu */}
+        <div
+          className="menu-toggle flex md2:hidden"
+          onClick={() => setNavOpen(!navOpen)}
+        >
+          <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
+            <span className={navOpen ? "lineTop spin" : "lineTop"}></span>
+            <span className={navOpen ? "lineBottom spin" : "lineBottom"}></span>
+          </div>
+        </div>
+        {/* <div className="flex md2:hidden">|||</div> */}
       </div>
       <div
         className="nav-overlay"

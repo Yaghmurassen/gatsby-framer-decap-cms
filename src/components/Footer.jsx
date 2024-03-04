@@ -3,7 +3,8 @@ import { Link } from "gatsby";
 
 import facebook from "../img/social/facebook.svg";
 import instagram from "../img/social/instagram.svg";
-import logoBarreau from "../../public/img/logo-barreau-de-paris.jpg";
+import logoBarreau from "../img/logo-barreau-de-paris.jpg";
+// import logoBarreau from "../../public/img/logo-barreau-de-paris.jpg";
 
 const Footer = () => {
   return (
