@@ -116,4 +116,12 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 
 .gatsby-image-wrapper {
   max-width: 20rem !important;
+  background: none !important;
+  & div:nth-child(2) {
+    background: none !important;
+  }
+}
+
+.gatsby-image-wrapper > div:nth-child(2) {
+  background: none !important;
 }

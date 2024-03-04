@@ -4,6 +4,7 @@ import { Link, Script, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
+import Adresse from "../components/Adresse";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 
@@ -44,7 +45,9 @@ export const IndexPageTemplate = ({
         </div>
       </section>
 
-      <section className="presentation mx-8 my-20 max-md:mx-4 max-md:my-8 xl:mx-auto xl:max-w-[1200px]">
+      {/* refacto component presentation */}
+
+      <section className="container-fluid presentation">
         <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center">
           <GatsbyImage
             image={heroImage2}
@@ -52,6 +55,7 @@ export const IndexPageTemplate = ({
             imgStyle={{
               objectFit: "contain",
               maxWidth: "max-width: clamp(100px, 20rem, 600px)",
+              backgroundColor: "none",
             }}
           />
 
@@ -69,7 +73,7 @@ export const IndexPageTemplate = ({
             <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-8 max-xs:mb-6">
               {mainpitch.title}
             </h1>
-            <h3 className="subtitle text-pretty text-justify max-md:text-sm">
+            <h3 className="subtitle text-pretty text-justify max-md:text-xs text-sm">
               {mainpitch.description}
             </h3>
           </div>
@@ -102,6 +106,7 @@ export const IndexPageTemplate = ({
             </div>
           </div> */}
       </section>
+      <Adresse />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>
   );
@@ -125,7 +130,7 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
-  console.log("frontmatter :::: ", frontmatter);
+  // console.log("frontmatter :::: ", frontmatter);
 
   return (
     <Layout>

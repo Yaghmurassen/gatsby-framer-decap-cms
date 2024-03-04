@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar2";
+import Navbar from "../components/Navbar";
 
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
@@ -53,9 +53,9 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -200 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{
           type: "spring",
           mass: 0.35,

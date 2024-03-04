@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import logo from "../img/logo.svg";
 
 import "../style/navbar.scss";
 
@@ -9,19 +8,25 @@ const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState("");
   const [navOpen, setNavOpen] = useState(false);
 
-  if (typeof window !== "undefined") {
-    if (navOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }
+  // if (typeof window !== "undefined") {
+  //   if (navOpen) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //   }
+  // }
 
   useEffect(() => {
     const threshold = 0;
     let lastScrollY = window.scrollY;
     let ticking = false;
     let throttleWait;
+
+    if (navOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
     const throttle = (callback, time) => {
       if (throttleWait) return;
@@ -77,42 +82,46 @@ const Navbar = () => {
         overflow: navOpen ? "hidden" : "auto",
       }}
     >
-      <div
-        className={`nav ${
-          scrollDirection === "down" && navOpen === false
-            ? "mainDiv  isScrollingDown"
-            : "mainDiv"
-        }`}
-      >
-        <Link to="/" className="navbar-item" title="Logo">
-          <img src={logo} alt="Logo" style={{ width: "88px" }} />
-        </Link>
-
-        <ul className="flex gap-4 max-md2:hidden">
-          <Link className="navbar-item" to="/about">
-            About
-          </Link>
-          <Link className="navbar-item" to="/products">
-            Products
-          </Link>
-          <Link className="navbar-item" to="/blog">
-            Blog
-          </Link>
-          <Link className="navbar-item" to="/contact">
-            Contact
-          </Link>
-        </ul>
-        {/* Button Burger Menu */}
+      <div>
         <div
-          className="menu-toggle flex md2:hidden"
-          onClick={() => setNavOpen(!navOpen)}
+          className={`nav ${
+            scrollDirection === "down" && navOpen === false
+              ? "mainDiv  isScrollingDown"
+              : "mainDiv"
+          }`}
         >
-          <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
-            <span className={navOpen ? "lineTop spin" : "lineTop"}></span>
-            <span className={navOpen ? "lineBottom spin" : "lineBottom"}></span>
+          <Link to="/" className="navbar-item" title="Logo">
+            LMB
+          </Link>
+
+          <ul className="flex gap-4 max-md2:hidden">
+            <Link className="navbar-item" to="/about">
+              About
+            </Link>
+            <Link className="navbar-item" to="/products">
+              Products
+            </Link>
+            <Link className="navbar-item" to="/blog">
+              Blog
+            </Link>
+            <Link className="navbar-item" to="/contact">
+              Contact
+            </Link>
+          </ul>
+          {/* Button Burger Menu */}
+          <div
+            className="menu-toggle flex md2:hidden"
+            onClick={() => setNavOpen(!navOpen)}
+          >
+            <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
+              <span className={navOpen ? "lineTop spin" : "lineTop"}></span>
+              <span
+                className={navOpen ? "lineBottom spin" : "lineBottom"}
+              ></span>
+            </div>
           </div>
+          {/* <div className="flex md2:hidden">|||</div> */}
         </div>
-        {/* <div className="flex md2:hidden">|||</div> */}
       </div>
       <div
         className="nav-overlay"
