@@ -31,7 +31,7 @@ body {
   }
 
   .footer-section-1 {
-    @apply items-center border-b border-white pt-16 pb-10 grid grid-cols-4 max-md:grid-cols-2 max-xs:grid-cols-1 max-xs:gap-8 text-center text-sm max-md:text-xs max-w-[1200px] mx-auto max-xl:mx-4;
+    @apply items-center border-b border-white pt-16 pb-10 grid grid-cols-4 max-md:grid-cols-1 max-xs:gap-8 text-center text-sm max-md:text-xs max-w-[1200px] mx-auto max-xl:mx-4;
   }
 
   .footer-section-2 {

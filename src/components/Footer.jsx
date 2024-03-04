@@ -14,7 +14,7 @@ const Footer = () => {
           <img
             src={logoBarreau}
             alt="logo Barreau de paris"
-            className="m-auto max-w-40"
+            className="m-auto max-w-40 rounded-md"
           />
         </div>
         <ul>
