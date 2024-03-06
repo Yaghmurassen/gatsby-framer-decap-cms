@@ -1,14 +1,47 @@
 import * as React from "react";
-import { Link } from "gatsby";
-
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import logoBarreau from "../img/logo-barreau-de-paris.jpg";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import logoBarreau from "../img/logo-barreau-de-paris.jpg"; //Bug build si import depuis dossier public
 // import logoBarreau from "../../public/img/logo-barreau-de-paris.jpg";
 
 const Footer = () => {
+  const data = useStaticQuery(
+    graphql`
+      query FOOTER {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+        markdownRemark {
+          frontmatter {
+            footer {
+              title
+              text
+              blocks {
+                text
+                title
+              }
+              images {
+                alt
+                image {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+
+  console.log("data :::: ", data);
+
   return (
     <footer className="container-footer">
+      {/* <h1>{data.markdownRemark.frontmatter.footer.title}</h1> */}
       <section className="footer-section-1 ">
         <div>
           <img
@@ -39,8 +72,32 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-        <div>Hell world</div>
-        <div>Hell world</div>
+        <div>
+          <p className="mb-2 font-bold">Cabinet de Paris</p>
+          <ul>
+            <li className="my-2">
+              <span className="italic font-bold"> Adresse :</span> 212 rue La
+              Fayette 75010 Paris <br /> Louis Blanc (ligne 7 et 7B) Jean Jaurès
+              (ligne 2, 5 et 7B)
+            </li>
+            <li className="my-2">
+              <a href="tel:0144321394">
+                <span className="italic font-bold">Téléphone : </span>01 44 32
+                13 94
+              </a>
+            </li>
+            <li className="my-2">
+              <span className="italic font-bold">Fax : </span>01 44 32 13 94
+            </li>
+            <li className="my-2">
+              <a href="mailto:cabinet@dgtavocats.fr">
+                <span className="italic font-bold">E-mail :</span>
+                cabinet@dgtavocats.fr
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>Luc-Moussa Bassole pour vous servir</div>
       </section>
       <section className="footer-section-2">
         <div className="mentions">
@@ -60,5 +117,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

@@ -3,6 +3,7 @@ module.exports = {
     title: "LMB avocat",
     description: "Website for the activite of LMB",
   },
+
   plugins: [
     "gatsby-plugin-react-helmet",
     // "gatsby-plugin-postcss",

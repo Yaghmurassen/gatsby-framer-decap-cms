@@ -101,3 +101,34 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 
   createTypes(typeDefs);
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  const typeDefs = `
+
+    type FooterImages {
+      image: File
+      alt: String
+    }
+    
+    type InfoList {
+      title: String
+      text: String
+    }
+
+    type Footer {
+      title: String
+      text: String
+      images: [FooterImages]
+      blocks: [InfoList]
+    }
+
+    type MarkdownRemarkFrontmatter {
+      footer: [Footer]
+      cover: File @fileByRelativePath
+    }
+
+  `;
+  createTypes(typeDefs);
+};

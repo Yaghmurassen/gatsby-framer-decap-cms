@@ -13,6 +13,36 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "footer"
+    label: "Footer"
+    files:
+      - file: "src/site/content/footer.yml"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Text, name: text, widget: text }
+          - {
+              label: Blocks,
+              name: blocks,
+              widget: object,
+              fields:
+                [
+                  { label: Text, name: text, widget: text },
+                  { label: Title, name: title, widget: string },
+                ],
+            }
+          - {
+              label: Image,
+              name: image,
+              widget: object,
+              fields:
+                [
+                  { label: Alt, name: alt, widget: text },
+                  { label: Image, name: image, widget: image },
+                ],
+            }
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"

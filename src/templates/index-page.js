@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, Script, graphql } from "gatsby";
+import { Script, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
@@ -10,7 +10,6 @@ import BlogRoll from "../components/BlogRoll";
 
 import "../style/tw-custom.scss";
 
-// eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
   heroImg,
@@ -27,15 +26,12 @@ export const IndexPageTemplate = ({
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
 
-  // console.log("heroImage  ::::", heroImage);
-  // console.log("heroImage2  ::::", heroImage2.images);
-
   return (
     <div>
       <section className="hero">
         <div className="hero__bg">
           <picture>
-            <img src={heroImage} />
+            <img src={heroImage} alt="hero background" />
           </picture>
           {/* <h1>{title2}</h1> */}
         </div>
