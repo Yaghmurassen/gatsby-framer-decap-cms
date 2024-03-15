@@ -13,35 +13,34 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "footer"
-    label: "Footer"
+  # - name: "footer"
+  #   label: "Footer"
+  #   files:
+  #     - file: "src/site/content/footer.yml"
+  #       name: "footer"
+  #       label: "Footer"
+  #       fields:
+  #         - { label: Title, name: title, widget: string }
+  #         - { label: Text, name: text, widget: string }
+  #         - {
+  #             label: Images,
+  #             name: images,
+  #             widget: object,
+  #             fields:
+  #               [
+  #                 { label: Alt, name: alt, widget: string },
+  #                 { label: Image, name: image, widget: image },
+  #               ],
+  #           }
+
+  - name: "maBite"
+    label: "MaBite"
     files:
-      - file: "src/site/content/footer.yml"
-        label: "Footer"
-        name: "footer"
+      - file: "src/site/content/mabite.yml"
+        name: "maBite"
+        label: "Mabite"
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Text, name: text, widget: text }
-          - {
-              label: Blocks,
-              name: blocks,
-              widget: object,
-              fields:
-                [
-                  { label: Text, name: text, widget: text },
-                  { label: Title, name: title, widget: string },
-                ],
-            }
-          - {
-              label: Image,
-              name: image,
-              widget: object,
-              fields:
-                [
-                  { label: Alt, name: alt, widget: text },
-                  { label: Image, name: image, widget: image },
-                ],
-            }
 
   - name: "blog"
     label: "Blog"
@@ -90,6 +89,10 @@ collections:
                 [
                   { label: HeroImg2, name: heroImg2, widget: image },
                   { label: Title, name: title, widget: string },
+                  { label: Q1, name: q1, widget: text },
+                  { label: Q2, name: q2, widget: text },
+                  { label: Q3, name: q3, widget: text },
+                  { label: Q4, name: q4, widget: text },
                   { label: Description, name: description, widget: text },
                 ],
             }
@@ -109,11 +112,17 @@ collections:
                     fields:
                       [
                         { label: Image, name: image, widget: image },
+                        { label: Title, name: title, widget: string },
                         { label: Text, name: text, widget: text },
                       ],
                   },
+                  { label: D1, name: d1, widget: text },
+                  { label: D2, name: d2, widget: text },
+                  { label: D3, name: d3, widget: text },
+                  { label: D4, name: d4, widget: text },
                 ],
             }
+
           - {
               label: Main,
               name: main,

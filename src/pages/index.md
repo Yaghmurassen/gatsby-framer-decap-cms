@@ -7,12 +7,14 @@ heroImg: https://images.unsplash.com/photo-1491982883790-ead7c97a047e?ixlib=rb-1
 heading: Luc-Moussa Bassolé, Avocat Pénaliste
 subheading: J'edite depuis l'admin du decap CMS
 mainpitch:
-  title: Mes domaines de compétences
+  title: Domaines de compétences
+  p1: Vous avez reçu une convocation au commissariat, en gendarmerie ou en justice ?
+  p2: L’un de vos proches a été interpellé ou est incarcéré ?
+  p3: Vous souhaitez obtenir la restitution de l’un de vos biens sous main de justice ?
+  p4: Vous avez été victime d’un crime ou d’un délit ?
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    Maître BASSOLÉ vous accompagne avec compétence et dévouement à chacun des stades de la procédure pénale, devant toutes les juridictions et sur l’ensemble du territoire national (métropole et Outre-Mer).
+
   heroImg2: /img/lmb-profil.png
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
@@ -21,38 +23,43 @@ description: Kaldi is the ultimate spot for coffee lovers who want to learn
 intro:
   blurbs:
     - image: /img/coffee.png
+      title: DÉFENSE PÉNALE
       text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
+        + Enquête : garde à vue, audition libre
+        + Instruction : mise en examen, interrogatoire, détention provisoire, contrôle judiciaire
+        + Jugement : comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises
+        + Alternative aux poursuites : CRPC
+        + Mineurs
     - image: /img/coffee-gear.png
+      title: AMÉNAGEMENT DE PEINE ET REQUÊTES
       text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
+        Aménagement de peine
+        Confusion de peines
+        Casier judiciaire
+        Anonymisation sur Internet
     - image: /img/tutorials.png
+      title: SAISIES PÉNALES ET DOUANIÈRES
       text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
+        Saisie pénale, confiscation et restitution
     - image: /img/meeting-space.png
+      title: DROIT DES VICTIMES
       text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
-  heading: What we offer
+        Dépôt de plainte
+        Constitution de partie civile
+        Assistance lors de l’audience de jugement
+        Indemnisation
+  heading: Présentation
+  d1: L’activité de Maître BASSOLÉ est exclusivement consacrée au contentieux pénal.
+  d2: Fort de sa formation académique (Université PARIS I PANTHÉON-SORBONNE, EFB), de ses expériences en juridiction (section     JIRS/criminalité organisée du Parquet de PARIS) et en cabinet (formé auprès de Lee TAKHEDMIT), Luc-Moussa BASSOLÉ met à votre service ses compétences pour défendre vos droits et vos intérêts.
+  d3: >
+    Maître BASSOLÉ intervient à vos côtés quelles que soient vos difficultés : il s’engage à analyser de manière approfondie votre situation, à définir avec vous une stratégie efficace et à vous assister avec rigueur et ténacité jusqu’à la fin de la procédure.
+  d4: Tout sera mis en œuvre pour porter votre vérité au rang de vérité judiciaire.
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+
 main:
   heading: Great coffee with no compromises
   description: >

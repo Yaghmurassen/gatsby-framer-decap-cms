@@ -64,14 +64,36 @@ export const IndexPageTemplate = ({
                 decoding="async"
               />
             </picture> */}
+          <div className="presentation">
+            <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-8 max-xs:mb-6">
+              {intro.heading}
+            </h1>
+            <p>{intro.d1}</p>
+            <p>{intro.d2}</p>
+            <p>{intro.d3}</p>
+            <p>{intro.d4}</p>
+          </div>
 
           <div className="mainpitch">
             <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-8 max-xs:mb-6">
               {mainpitch.title}
             </h1>
+            <p>{mainpitch.p1}</p>
+            <p>{mainpitch.p2}</p>
+            <p>{mainpitch.p3}</p>
+            <p>{mainpitch.p4}</p>
             <h3 className="subtitle text-pretty text-justify max-md:text-xs text-sm">
               {mainpitch.description}
             </h3>
+          </div>
+
+          <div className="category">
+            {intro.blurbs.map((category) => (
+              <div key={category.title}>
+                <h3>{category.title}</h3>
+                <p>{category.text}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -126,7 +148,7 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
-  // console.log("frontmatter :::: ", frontmatter);
+  console.log("intro :::: ", frontmatter.intro.blurbs);
 
   return (
     <Layout>
@@ -179,6 +201,10 @@ export const pageQuery = graphql`
           }
           title
           description
+          p1
+          p2
+          p3
+          p4
         }
         description
         intro {
@@ -188,9 +214,14 @@ export const pageQuery = graphql`
                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
               }
             }
+            title
             text
           }
           heading
+          d1
+          d2
+          d3
+          d4
           description
         }
       }
