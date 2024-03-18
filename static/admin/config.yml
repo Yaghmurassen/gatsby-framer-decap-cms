@@ -204,7 +204,12 @@ collections:
                     fields:
                       [
                         { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
+                        {
+                          label: Category,
+                          name: category,
+                          widget: list,
+                          fields: [{ label: Text, name: text, widget: text }],
+                        },
                       ],
                   },
                 ],

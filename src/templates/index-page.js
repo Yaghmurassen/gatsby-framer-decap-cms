@@ -26,13 +26,24 @@ export const IndexPageTemplate = ({
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
 
+  console.log("heroImage ::: ", heroImage);
+
   return (
     <div>
       <section className="hero">
         <div className="hero__bg">
-          <picture>
+          {/* <picture>
             <img src={heroImage} alt="hero background" />
-          </picture>
+          </picture> */}
+          <GatsbyImage
+            image={heroImage}
+            alt="hero Img"
+            imgStyle={{
+              objectFit: "contain",
+              maxWidth: "max-width: clamp(100px, 20rem, 600px)",
+              backgroundColor: "none",
+            }}
+          />
           {/* <h1>{title2}</h1> */}
         </div>
 
@@ -44,7 +55,7 @@ export const IndexPageTemplate = ({
       {/* refacto component presentation */}
 
       <section className="container-fluid presentation">
-        <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center">
+        <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
           <GatsbyImage
             image={heroImage2}
             alt="profil Img"
@@ -189,13 +200,21 @@ export const pageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
-        heroImg
+        heroImg {
+          childImageSharp {
+            # gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(
+              quality: 100
+              layout: FULL_WIDTH
+              backgroundColor: "transparent"
+            )
+          }
+        }
         heading
         subheading
         mainpitch {
           heroImg2 {
             childImageSharp {
-              # gatsbyImageData(quality: 100, layout: FULL_WIDTH)
               gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
             }
           }

@@ -3,7 +3,7 @@ templateKey: index-page
 title: Luc-Moussa Bassolé, Avocat Pénaliste
 title2: Bug de CMS | bug de CMS | bug de CMS
 image: /img/products-grid2.jpg
-heroImg: https://images.unsplash.com/photo-1491982883790-ead7c97a047e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2594&q=80
+heroImg: /img/palais-justice.jpg
 heading: Luc-Moussa Bassolé, Avocat Pénaliste
 subheading: J'edite depuis l'admin du decap CMS
 mainpitch:
@@ -24,12 +24,11 @@ intro:
   blurbs:
     - image: /img/coffee.png
       title: DÉFENSE PÉNALE
-      text: >
-        + Enquête : garde à vue, audition libre
-        + Instruction : mise en examen, interrogatoire, détention provisoire, contrôle judiciaire
-        + Jugement : comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises
-        + Alternative aux poursuites : CRPC
-        + Mineurs
+      text: 1. Enquête ':' garde à vue, audition libre
+        2. Instruction ':' mise en examen, interrogatoire, détention provisoire, contrôle judiciaire
+        3. Jugement ':' comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises
+        4. Alternative aux poursuites ':' CRPC
+        5. Mineurs
     - image: /img/coffee-gear.png
       title: AMÉNAGEMENT DE PEINE ET REQUÊTES
       text: >
