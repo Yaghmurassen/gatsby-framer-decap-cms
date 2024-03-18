@@ -95,15 +95,15 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="container-fluid text-center">
-        <div className="category grid grid-cols-2">
+        <div className="category grid grid-cols-2 max-md:grid-cols-1">
           {intro.blurbs.map((category) => (
             <div key={category.title}>
               <GatsbyImage
                 image={getImage(category.image)}
-                alt="profil Img"
+                alt="category Img"
                 imgStyle={{
                   objectFit: "contain",
-                  maxWidth: "max-width: clamp(100px, 200px, 10rem)",
+                  maxWidth: "10rem",
                   backgroundColor: "none",
                 }}
               />
