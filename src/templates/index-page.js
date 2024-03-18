@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Script, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
@@ -22,11 +22,14 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => {
-  // const profilImage = getImage(image) || image;
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
 
-  console.log("heroImage ::: ", heroImage);
+  // console.log("heroImage ::: ", heroImage);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
@@ -41,7 +44,7 @@ export const IndexPageTemplate = ({
             imgStyle={{
               objectFit: "contain",
               maxWidth: "max-width: clamp(100px, 20rem, 600px)",
-              backgroundColor: "none",
+              backgroundColor: "transparent",
             }}
           />
           {/* <h1>{title2}</h1> */}
@@ -51,8 +54,6 @@ export const IndexPageTemplate = ({
           <h1>LMB</h1>
         </div>
       </section>
-
-      {/* refacto component presentation */}
 
       <section className="container-fluid presentation">
         <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
@@ -66,17 +67,8 @@ export const IndexPageTemplate = ({
             }}
           />
 
-          {/* <picture>
-              <source srcSet={heroImage2.images.sources[0].srcSet} />
-              <img
-                src={heroImage2}
-                alt={mainpitch.title}
-                loading="lazy"
-                decoding="async"
-              />
-            </picture> */}
           <div className="presentation">
-            <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-8 max-xs:mb-6">
+            <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
               {intro.heading}
             </h1>
             <p>{intro.d1}</p>
@@ -84,31 +76,49 @@ export const IndexPageTemplate = ({
             <p>{intro.d3}</p>
             <p>{intro.d4}</p>
           </div>
-
-          <div className="mainpitch">
-            <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-8 max-xs:mb-6">
-              {mainpitch.title}
-            </h1>
-            <p>{mainpitch.p1}</p>
-            <p>{mainpitch.p2}</p>
-            <p>{mainpitch.p3}</p>
-            <p>{mainpitch.p4}</p>
-            <h3 className="subtitle text-pretty text-justify max-md:text-xs text-sm">
-              {mainpitch.description}
-            </h3>
-          </div>
-
-          <div className="category">
-            {intro.blurbs.map((category) => (
-              <div key={category.title}>
-                <h3>{category.title}</h3>
-                <p>{category.text}</p>
-              </div>
-            ))}
-          </div>
         </div>
+      </section>
 
-        {/* <div>
+      <section className="container-fluid text-center card-glass items-center p-12">
+        <div className="mainpitch">
+          <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
+            {mainpitch.title}
+          </h1>
+          <p>{mainpitch.p1}</p>
+          <p>{mainpitch.p2}</p>
+          <p>{mainpitch.p3}</p>
+          <p>{mainpitch.p4}</p>
+          <h3 className="subtitle max-md:text-xs text-sm">
+            {mainpitch.description}
+          </h3>
+        </div>
+      </section>
+
+      <section className="container-fluid text-center">
+        <div className="category grid grid-cols-2">
+          {intro.blurbs.map((category) => (
+            <div key={category.title}>
+              <GatsbyImage
+                image={getImage(category.image)}
+                alt="profil Img"
+                imgStyle={{
+                  objectFit: "contain",
+                  maxWidth: "max-width: clamp(100px, 200px, 10rem)",
+                  backgroundColor: "none",
+                }}
+              />
+              <h3 className="font-bold">{category.title}</h3>
+              <ul>
+                {category.competences.cp.map((competence) => (
+                  <li>{competence}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* <div>
             <h3 className="">{heading}</h3>
             <p>{description}</p>
           </div>
@@ -134,7 +144,6 @@ export const IndexPageTemplate = ({
               </Link>
             </div>
           </div> */}
-      </section>
       <Adresse />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>
@@ -158,8 +167,6 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
-  console.log("intro :::: ", frontmatter.intro.blurbs);
 
   return (
     <Layout>
@@ -202,7 +209,6 @@ export const pageQuery = graphql`
         }
         heroImg {
           childImageSharp {
-            # gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             gatsbyImageData(
               quality: 100
               layout: FULL_WIDTH
@@ -230,11 +236,13 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(quality: 100, layout: CONSTRAINED)
               }
             }
             title
-            text
+            competences {
+              cp
+            }
           }
           heading
           d1

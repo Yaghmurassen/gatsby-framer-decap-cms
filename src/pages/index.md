@@ -22,31 +22,36 @@ description: Kaldi is the ultimate spot for coffee lovers who want to learn
   knowledge to anyone.
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/justice.jpg
       title: DÉFENSE PÉNALE
-      text: 1. Enquête ':' garde à vue, audition libre
-        2. Instruction ':' mise en examen, interrogatoire, détention provisoire, contrôle judiciaire
-        3. Jugement ':' comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises
-        4. Alternative aux poursuites ':' CRPC
-        5. Mineurs
-    - image: /img/coffee-gear.png
+      competences:
+        cp:
+          - Enquête ':' garde à vue, audition libre
+          - Instruction ':' mise en examen, interrogatoire, détention provisoire, contrôle judiciaire
+          - Jugement ':' comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises
+          - Alternative aux poursuites ':' CRPC
+          - Mineurs
+    - image: /img/law.jpg
       title: AMÉNAGEMENT DE PEINE ET REQUÊTES
-      text: >
-        Aménagement de peine
-        Confusion de peines
-        Casier judiciaire
-        Anonymisation sur Internet
-    - image: /img/tutorials.png
+      competences:
+        cp:
+          - Aménagement de peine
+          - Confusion de peines
+          - Casier judiciaire
+          - Anonymisation sur Internet
+    - image: /img/marteau.jpg
       title: SAISIES PÉNALES ET DOUANIÈRES
-      text: >
-        Saisie pénale, confiscation et restitution
-    - image: /img/meeting-space.png
+      competences:
+        cp:
+          - Saisie pénale, confiscation et restitution
+    - image: /img/plj.jpg
       title: DROIT DES VICTIMES
-      text: >
-        Dépôt de plainte
-        Constitution de partie civile
-        Assistance lors de l’audience de jugement
-        Indemnisation
+      competences:
+        cp:
+          - Dépôt de plainte
+          - Constitution de partie civile
+          - Assistance lors de l’audience de jugement
+          - Indemnisation
   heading: Présentation
   d1: L’activité de Maître BASSOLÉ est exclusivement consacrée au contentieux pénal.
   d2: Fort de sa formation académique (Université PARIS I PANTHÉON-SORBONNE, EFB), de ses expériences en juridiction (section     JIRS/criminalité organisée du Parquet de PARIS) et en cabinet (formé auprès de Lee TAKHEDMIT), Luc-Moussa BASSOLÉ met à votre service ses compétences pour défendre vos droits et vos intérêts.
