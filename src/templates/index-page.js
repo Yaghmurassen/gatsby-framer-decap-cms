@@ -103,14 +103,14 @@ export const IndexPageTemplate = ({
                 alt="category Img"
                 imgStyle={{
                   objectFit: "contain",
-                  maxWidth: "10rem",
+                  maxWidth: "13rem",
                   backgroundColor: "none",
                 }}
               />
               <h3 className="font-bold">{category.title}</h3>
               <ul>
                 {category.competences.cp.map((competence) => (
-                  <li>{competence}</li>
+                  <li key={competence}>{competence}</li>
                 ))}
               </ul>
             </div>
@@ -236,7 +236,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(width: 240, quality: 100, layout: CONSTRAINED)
               }
             }
             title
