@@ -8,10 +8,10 @@ heading: Luc-Moussa Bassolé, Avocat Pénaliste
 subheading: J'edite depuis l'admin du decap CMS
 mainpitch:
   title: Domaines de compétences
-  p1: Vous avez reçu une convocation au commissariat, en gendarmerie ou en justice ?
-  p2: L’un de vos proches a été interpellé ou est incarcéré ?
-  p3: Vous souhaitez obtenir la restitution de l’un de vos biens sous main de justice ?
-  p4: Vous avez été victime d’un crime ou d’un délit ?
+  c1: Vous avez reçu une convocation au commissariat, en gendarmerie ou en justice ?
+  c2: L’un de vos proches a été interpellé ou est incarcéré ?
+  c3: Vous souhaitez obtenir la restitution de l’un de vos biens sous main de justice ?
+  c4: Vous avez été victime d’un crime ou d’un délit ?
   description: >
     Maître BASSOLÉ vous accompagne avec compétence et dévouement à chacun des stades de la procédure pénale, devant toutes les juridictions et sur l’ensemble du territoire national (métropole et Outre-Mer).
 
@@ -25,33 +25,29 @@ intro:
     - image: /img/justice.jpg
       title: DÉFENSE PÉNALE
       competences:
-        cp:
-          - "Enquête : garde à vue, audition libre"
-          - "Instruction : mise en examen, interrogatoire, détention provisoire, contrôle judiciaire"
-          - "Jugement : comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises"
-          - "Alternative aux poursuites : CRPC"
-          - Mineurs
+        - "Enquête : garde à vue, audition libre"
+        - "Instruction : mise en examen, interrogatoire, détention provisoire, contrôle judiciaire"
+        - "Jugement : comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises"
+        - "Alternative aux poursuites : CRPC"
+        - Mineurs
     - image: /img/law.jpg
       title: AMÉNAGEMENT DE PEINE ET REQUÊTES
       competences:
-        cp:
-          - Aménagement de peine
-          - Confusion de peines
-          - Casier judiciaire
-          - Anonymisation sur Internet
+        - Aménagement de peine
+        - Confusion de peines
+        - Casier judiciaire
+        - Anonymisation sur Internet
     - image: /img/marteau.jpg
       title: SAISIES PÉNALES ET DOUANIÈRES
       competences:
-        cp:
-          - Saisie pénale, confiscation et restitution
+        - Saisie pénale, confiscation et restitution
     - image: /img/plj.jpg
       title: DROIT DES VICTIMES
       competences:
-        cp:
-          - Dépôt de plainte
-          - Constitution de partie civile
-          - Assistance lors de l’audience de jugement
-          - Indemnisation
+        - Dépôt de plainte
+        - Constitution de partie civile
+        - Assistance lors de l’audience de jugement
+        - Indemnisation
   heading: Présentation
   d1: L’activité de Maître BASSOLÉ est exclusivement consacrée au contentieux pénal.
   d2: Fort de sa formation académique (Université PARIS I PANTHÉON-SORBONNE, EFB), de ses expériences en juridiction (section     JIRS/criminalité organisée du Parquet de PARIS) et en cabinet (formé auprès de Lee TAKHEDMIT), Luc-Moussa BASSOLÉ met à votre service ses compétences pour défendre vos droits et vos intérêts.

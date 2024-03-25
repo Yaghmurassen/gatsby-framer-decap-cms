@@ -5,8 +5,8 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Adresse from "../components/Adresse";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
+// import Features from "../components/Features";
+// import BlogRoll from "../components/BlogRoll";
 
 import "../style/tw-custom.scss";
 
@@ -24,6 +24,20 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
+
+  let categorixX = intro.blurbs.map((category) => category.competences);
+
+  let competenxes;
+  if (categorixX) {
+    competenxes = categorixX.map((cptx) => cptx.cp);
+  }
+
+  // console.log(
+  //   "categorixcategorixcategorixcategorix ",
+  //   categorix,
+  //   categorix[0].competences.cp
+  // );
+  console.log("competenxescompetenxescompetenxescompetenxes ", competenxes);
 
   // console.log("heroImage ::: ", heroImage);
 
@@ -84,10 +98,10 @@ export const IndexPageTemplate = ({
           <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
             {mainpitch.title}
           </h1>
-          <p>{mainpitch.p1}</p>
-          <p>{mainpitch.p2}</p>
-          <p>{mainpitch.p3}</p>
-          <p>{mainpitch.p4}</p>
+          <p>{mainpitch.c1}</p>
+          <p>{mainpitch.c2}</p>
+          <p>{mainpitch.c3}</p>
+          <p>{mainpitch.c4}</p>
           <h3 className="subtitle max-md:text-xs text-sm">
             {mainpitch.description}
           </h3>
@@ -109,7 +123,7 @@ export const IndexPageTemplate = ({
               />
               <h3 className="font-bold">{category.title}</h3>
               <ul>
-                {category.competences.cp.map((competence) => (
+                {category.competences.map((competence) => (
                   <li key={competence}>{competence}</li>
                 ))}
               </ul>
@@ -226,10 +240,10 @@ export const pageQuery = graphql`
           }
           title
           description
-          p1
-          p2
-          p3
-          p4
+          c1
+          c2
+          c3
+          c4
         }
         description
         intro {
@@ -240,9 +254,7 @@ export const pageQuery = graphql`
               }
             }
             title
-            competences {
-              cp
-            }
+            competences
           }
           heading
           d1

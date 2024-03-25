@@ -89,10 +89,10 @@ collections:
                 [
                   { label: HeroImg2, name: heroImg2, widget: image },
                   { label: Title, name: title, widget: string },
-                  { label: Q1, name: q1, widget: text },
-                  { label: Q2, name: q2, widget: text },
-                  { label: Q3, name: q3, widget: text },
-                  { label: Q4, name: q4, widget: text },
+                  { label: C1, name: c1, widget: text },
+                  { label: C2, name: c2, widget: text },
+                  { label: C3, name: c3, widget: text },
+                  { label: C4, name: c4, widget: text },
                   { label: Description, name: description, widget: text },
                 ],
             }
@@ -116,7 +116,7 @@ collections:
                         {
                           label: Competences,
                           name: competences,
-                          widget: list,
+                          widget: text,
                           fields: [{ label: Cp, name: cp, widget: text }],
                         },
                       ],
