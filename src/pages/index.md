@@ -26,10 +26,10 @@ intro:
       title: DÉFENSE PÉNALE
       competences:
         cp:
-          - Enquête ':' garde à vue, audition libre
-          - Instruction ':' mise en examen, interrogatoire, détention provisoire, contrôle judiciaire
-          - Jugement ':' comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises
-          - Alternative aux poursuites ':' CRPC
+          - "Enquête : garde à vue, audition libre"
+          - "Instruction : mise en examen, interrogatoire, détention provisoire, contrôle judiciaire"
+          - "Jugement : comparution immédiate, convocation devant le tribunal correctionnel, cour d’assises"
+          - "Alternative aux poursuites : CRPC"
           - Mineurs
     - image: /img/law.jpg
       title: AMÉNAGEMENT DE PEINE ET REQUÊTES
