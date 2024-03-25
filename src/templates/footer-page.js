@@ -1,43 +1,11 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import logoBarreau from "../img/logo-barreau-de-paris.jpg"; //Bug build si import depuis dossier public
-// import logoBarreau from "../../public/img/logo-barreau-de-paris.jpg";
+import logoBarreau from "../img/logo-barreau-de-paris.jpg";
+// import logoBarreau from "../../public/img/logo-barreau-de-paris.jpg"; ====> Bug build si import depuis dossier public
 
-export const Footer = ({ title }) => {
-  // const data = useStaticQuery(
-  //   graphql`
-  //     query MABITE {
-  //       site {
-  //         siteMetadata {
-  //           title
-  //           description
-  //         }
-  //       }
-  //       maBite {
-  //         title
-  //       }
-  //       markdownRemark {
-  //         frontmatter {
-  //           footer {
-  //             title
-  //             text
-  //             images {
-  //               alt
-  //               image {
-  //                 childImageSharp {
-  //                   gatsbyImageData
-  //                 }
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
-  // );
-
-  console.log("title from Footer :::: ", title);
+export const FooterTemplate = ({ title, alt }) => {
+  console.log("title from FooterTemplate :::: ", title, alt);
 
   return (
     <footer className="container-footer">
@@ -118,7 +86,45 @@ export const Footer = ({ title }) => {
   );
 };
 
-Footer.propTypes = {
+FooterTemplate.propTypes = {
   title: PropTypes.string,
   // image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
+
+const FooterPage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+
+  console.log("frontmatter from FooterPage :::: ", frontmatter);
+
+  return (
+    <Layout>
+      <FooterTemplate
+        title={frontmatter.footer.title}
+        alt={frontmatter.footer.alt}
+      />
+    </Layout>
+  );
+};
+
+FooterPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
+};
+
+export default FooterPage;
+
+export const pageQuery = graphql`
+  query FooterTemplate {
+    markdownRemark {
+      frontmatter {
+        footer {
+          title
+          alt
+        }
+      }
+    }
+  }
+`;

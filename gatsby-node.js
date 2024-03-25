@@ -102,33 +102,66 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   createTypes(typeDefs);
 };
 
+// exports.createSchemaCustomization = ({ actions, schema }) => {
+//   const { createTypes } = actions;
+
+//   const typeDefs = [
+//     `type MarkdownRemarkFrontmatter implements Node {
+//           footer: Footer
+//       }`,
+//     `type Footer @infer {
+//           title: String,
+//           text: String,
+//           alt: String,
+//           image: [File!]! @fileByRelativePath,
+//       }`,
+//   ];
+
+//   createTypes(typeDefs);
+// };
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions;
+
+//   const typeDefs = `
+
+//     type FooterImages {
+//       alt: String
+//       image: [File!]! @fileByRelativePath,
+//     }
+
+//     type Frontmatter implements Node {
+//       title: String
+//       text: String
+//       images: FooterImages
+//     }
+
+//   `;
+//   createTypes(typeDefs);
+// };
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
-
   const typeDefs = `
-
-    type FooterImages {
-      image: File
-      alt: String
+    type MaBite implements Node @dontInfer {
+      title: String!
     }
-    
-    type InfoList {
-      title: String
-      text: String
-    }
-
-    type Footer {
-      title: String
-      text: String
-      images: [FooterImages]
-      blocks: [InfoList]
-    }
-
-    type MarkdownRemarkFrontmatter {
-      footer: [Footer]
-      cover: File @fileByRelativePath
-    }
-
   `;
   createTypes(typeDefs);
 };
+
+// type MarkdownRemarkFrontmatter implements Node {
+//   footer: Footer
+// }
+
+// exports.onCreateNode = ({ node, actions }) => {
+//   const { createNodeField } = actions;
+
+//   if (node.frontmatter) {
+//     createNodeField({
+//       node,
+//       name: "maGrosseBite",
+//       value: node.frontmatter.maGrosseBite || false,
+//     });
+//   }
+// };

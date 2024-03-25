@@ -5,8 +5,8 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Adresse from "../components/Adresse";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
+// import Features from "../components/Features";
+// import BlogRoll from "../components/BlogRoll";
 
 import "../style/tw-custom.scss";
 

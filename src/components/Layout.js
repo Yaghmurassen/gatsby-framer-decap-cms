@@ -3,8 +3,9 @@ import { Helmet } from "react-helmet";
 
 import { motion } from "framer-motion";
 
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { FooterPage } from "../templates/footer-page";
 
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
@@ -65,7 +66,7 @@ const TemplateWrapper = ({ children }) => {
       >
         {children}
       </motion.div>
-      <Footer />
+      <FooterPage />
     </div>
   );
 };
