@@ -23,13 +23,23 @@ collections:
   #         - { label: Title, name: title, widget: string }
   #         - { label: Text, name: text, widget: string }
   #         - {
+  #             label: Blocks,
+  #             name: blocks,
+  #             widget: object,
+  #             fields:
+  #               [
+  #                 { label: Title, name: title, widget: string },
+  #                 { label: Text, name: text, widget: string },
+  #               ],
+  #           }
+  #         - {
   #             label: Images,
   #             name: images,
   #             widget: object,
   #             fields:
   #               [
-  #                 { label: Alt, name: alt, widget: string },
   #                 { label: Image, name: image, widget: image },
+  #                 { label: Alt, name: alt, widget: string },
   #               ],
   #           }
 
@@ -116,8 +126,8 @@ collections:
                         {
                           label: Competences,
                           name: competences,
-                          widget: text,
-                          fields: [{ label: Cp, name: cp, widget: text }],
+                          widget: list,
+                          field: { label: Cp, name: cp, widget: text },
                         },
                       ],
                   },
