@@ -70,7 +70,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
     place-items: center;
     z-index: 10;
     color: $hero-color;
-    font-size: 8.5vw;
+    font-size: clamp(1rem, 7vw, 4.5rem);
     text-transform: uppercase;
     opacity: 0;
     animation: fade-in 0.75s 1.5s linear forwards;
@@ -149,9 +149,9 @@ $hero-bg-mix: rgba(#29042f, 0.4);
   display: none !important;
 }
 
-.category > img {
+/* .category > img {
   max-width: 13rem !important;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .category > div:nth-child(1) > div:nth-child(1) > div:nth-child(1),

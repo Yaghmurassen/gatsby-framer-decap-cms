@@ -25,22 +25,6 @@ export const IndexPageTemplate = ({
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
 
-  let categorixX = intro.blurbs.map((category) => category.competences);
-
-  let competenxes;
-  if (categorixX) {
-    competenxes = categorixX.map((cptx) => cptx.cp);
-  }
-
-  // console.log(
-  //   "categorixcategorixcategorixcategorix ",
-  //   categorix,
-  //   categorix[0].competences.cp
-  // );
-  console.log("competenxescompetenxescompetenxescompetenxes ", competenxes);
-
-  // console.log("heroImage ::: ", heroImage);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -49,9 +33,6 @@ export const IndexPageTemplate = ({
     <div>
       <section className="hero">
         <div className="hero__bg">
-          {/* <picture>
-            <img src={heroImage} alt="hero background" />
-          </picture> */}
           <GatsbyImage
             image={heroImage}
             alt="hero Img"
@@ -61,11 +42,10 @@ export const IndexPageTemplate = ({
               backgroundColor: "transparent",
             }}
           />
-          {/* <h1>{title2}</h1> */}
         </div>
 
         <div className="hero__cnt">
-          <h1>LMB</h1>
+          <h1>{title}</h1>
         </div>
       </section>
 
@@ -117,13 +97,23 @@ export const IndexPageTemplate = ({
                 alt="category Img"
                 imgStyle={{
                   objectFit: "contain",
-                  maxWidth: "13rem",
+                  // maxWidth: "13rem",
                   backgroundColor: "none",
                 }}
               />
               <h3 className="font-bold">{category.title}</h3>
               <ul>
-                {category.competences.map((competence) => (
+                {/* {cd && cp.map((e) => <li key={e}>{e}</li>)} */}
+                {/* {Object.keys(category.competences).forEach((key, index) => (
+                  <li key={index}>{category.competences[key]}</li>
+                ))} */}
+                {/* {Object.values(categorix).forEach((e, i) => (
+                  <li key={i}>{e}</li>
+                ))} */}
+                {/* {Object.values(category.competences).forEach((e, i) => {
+                  <li key={i}>{e}</li>;
+                })} */}
+                {category?.competences.map((competence) => (
                   <li key={competence}>{competence}</li>
                 ))}
               </ul>
@@ -132,32 +122,16 @@ export const IndexPageTemplate = ({
         </div>
       </section>
 
-      {/* <div>
-            <h3 className="">{heading}</h3>
-            <p>{description}</p>
-          </div>
-
-          <Features gridItems={intro.blurbs} />
-
-          <div>
-            <Link className="btn" to="/products">
-              See all products
-            </Link>
-          </div>
-
-          <div>
-            <h3 className="">
-              Latest stories
-            </h3>
-
-            <BlogRoll />
-
-            <div className=">
-              <Link className="btn" to="/blog">
-                Read more
-              </Link>
-            </div>
-          </div> */}
+      {/* 
+        <Features gridItems={intro.blurbs} />
+        <Link className="btn" to="/products">
+          See all products
+        </Link>
+        <BlogRoll />
+        <Link className="btn" to="/blog">
+          Read more
+        </Link>
+      */}
       <Adresse />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>

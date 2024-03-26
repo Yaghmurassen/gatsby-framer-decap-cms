@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Luc-Moussa Bassolé, Avocat Pénaliste
+title: LMB - Avocat Pénaliste
 title2: Bug de CMS | bug de CMS | bug de CMS
 image: /img/products-grid2.jpg
 heroImg: /img/palais-justice.jpg
@@ -40,7 +40,9 @@ intro:
     - image: /img/marteau.jpg
       title: SAISIES PÉNALES ET DOUANIÈRES
       competences:
-        - Saisie pénale, confiscation et restitution
+        - Saisie pénale
+        - Confiscation
+        - Restitution
     - image: /img/plj.jpg
       title: DROIT DES VICTIMES
       competences:
