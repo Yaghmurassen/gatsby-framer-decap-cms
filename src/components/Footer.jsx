@@ -1,47 +1,27 @@
 import * as React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import logoBarreau from "../img/logo-barreau-de-paris.jpg"; //Bug build si import depuis dossier public
-// import logoBarreau from "../../public/img/logo-barreau-de-paris.jpg";
+import { Link } from "gatsby";
+import logoBarreau from "../img/logo-barreau-de-paris.jpg";
+// import logoBarreau from "../../public/img/logo-barreau-de-paris.jpg";   //// Bug build si import depuis dossier public
 
 const Footer = () => {
-  const data = useStaticQuery(
-    graphql`
-      query FOOTER {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-        markdownRemark {
-          frontmatter {
-            footer {
-              title
-              text
-              blocks {
-                text
-                title
-              }
-              images {
-                alt
-                image {
-                  childImageSharp {
-                    gatsbyImageData
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-
-  console.log("data :::: ", data);
+  const footerData = {
+    adresse: {
+      title: "Cabinet de Paris",
+      value: "212 rue La Fayette 75010 Paris",
+      transport: "Louis Blanc (ligne 7 et 7B) Jean Jaurès (ligne 2, 5 et 7B)",
+    },
+    contact: {
+      phone: "01 44 32 13 94",
+      fax: "01 44 32 13 94",
+      mail: "cabinet@dgtavocats.fr",
+      mailto: "mailto:cabinet@dgtavocats.fr",
+    },
+    description: "Luc-Moussa Bassole pour vous servir",
+    mentions: "© Mentions légales zebi airlines, All Right Reserved",
+  };
 
   return (
     <footer className="container-footer">
-      {/* <h1>{data.markdownRemark.frontmatter.footer.title}</h1> */}
       <section className="footer-section-1 ">
         <div>
           <img
@@ -73,36 +53,34 @@ const Footer = () => {
           </li>
         </ul>
         <div>
-          <p className="mb-2 font-bold">Cabinet de Paris</p>
+          <p className="mb-2 font-bold">{footerData.adresse.title}</p>
           <ul>
             <li className="my-2">
-              <span className="italic font-bold"> Adresse :</span> 212 rue La
-              Fayette 75010 Paris <br /> Louis Blanc (ligne 7 et 7B) Jean Jaurès
-              (ligne 2, 5 et 7B)
+              <span className="italic font-bold"> Adresse : </span>
+              {footerData.adresse.value} <br /> {footerData.adresse.transport}
             </li>
             <li className="my-2">
               <a href="tel:0144321394">
-                <span className="italic font-bold">Téléphone : </span>01 44 32
-                13 94
+                <span className="italic font-bold">Téléphone : </span>
+                {footerData.contact.phone}
               </a>
             </li>
             <li className="my-2">
-              <span className="italic font-bold">Fax : </span>01 44 32 13 94
+              <span className="italic font-bold">Fax : </span>
+              {footerData.contact.fax}
             </li>
             <li className="my-2">
-              <a href="mailto:cabinet@dgtavocats.fr">
-                <span className="italic font-bold">E-mail :</span>
-                cabinet@dgtavocats.fr
+              <a href={footerData.contact.mailto}>
+                <span className="italic font-bold">E-mail : </span>
+                {footerData.contact.mail}
               </a>
             </li>
           </ul>
         </div>
-        <div>Luc-Moussa Bassole pour vous servir</div>
+        <div>{footerData.description}</div>
       </section>
       <section className="footer-section-2">
-        <div className="mentions">
-          © Mentions légales zebi airlines, All Right Reserved
-        </div>
+        <div className="mentions">{footerData.mentions}</div>
         <div>
           <a
             className="navbar-item"

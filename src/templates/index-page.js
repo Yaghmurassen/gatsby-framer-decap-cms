@@ -82,9 +82,7 @@ export const IndexPageTemplate = ({
           <p>{mainpitch.c2}</p>
           <p>{mainpitch.c3}</p>
           <p>{mainpitch.c4}</p>
-          <h3 className="subtitle max-md:text-xs text-sm">
-            {mainpitch.description}
-          </h3>
+          <h3 className="subtitle max-md:text-xs">{mainpitch.description}</h3>
         </div>
       </section>
 
@@ -103,16 +101,6 @@ export const IndexPageTemplate = ({
               />
               <h3 className="font-bold">{category.title}</h3>
               <ul>
-                {/* {cd && cp.map((e) => <li key={e}>{e}</li>)} */}
-                {/* {Object.keys(category.competences).forEach((key, index) => (
-                  <li key={index}>{category.competences[key]}</li>
-                ))} */}
-                {/* {Object.values(categorix).forEach((e, i) => (
-                  <li key={i}>{e}</li>
-                ))} */}
-                {/* {Object.values(category.competences).forEach((e, i) => {
-                  <li key={i}>{e}</li>;
-                })} */}
                 {category?.competences.map((competence) => (
                   <li key={competence}>{competence}</li>
                 ))}

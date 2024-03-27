@@ -185,23 +185,31 @@ $hero-bg-mix: rgba(#29042f, 0.4);
   margin: auto;
 }
 
+.presentation {
+  text-align: justify;
+}
+
 .presentation,
 .mainpitch {
   p {
-    font-size: 14px;
+    font-size: 16px;
     margin: 1rem 0;
   }
 }
 
 .category {
+  h3 {
+    font-size: larger;
+  }
   ul {
     display: grid;
     flex-direction: column;
-    min-height: 275px;
+    min-height: 220px;
     align-items: center;
+    margin-top: 1em;
   }
   li {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     font-style: italic;
     color: rgb(122, 122, 122);
