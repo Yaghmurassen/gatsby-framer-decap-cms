@@ -12,6 +12,7 @@ const Footer = () => {
     },
     contact: {
       phone: "01 44 32 13 94",
+      phoneTo: "tel:0144321394",
       fax: "01 44 32 13 94",
       mail: "cabinet@dgtavocats.fr",
       mailto: "mailto:cabinet@dgtavocats.fr",
@@ -60,7 +61,7 @@ const Footer = () => {
               {footerData.adresse.value} <br /> {footerData.adresse.transport}
             </li>
             <li className="my-2">
-              <a href="tel:0144321394">
+              <a href={footerData.contact.phoneTo}>
                 <span className="italic font-bold">Téléphone : </span>
                 {footerData.contact.phone}
               </a>

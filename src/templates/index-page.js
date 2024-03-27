@@ -37,8 +37,7 @@ export const IndexPageTemplate = ({
             image={heroImage}
             alt="hero Img"
             imgStyle={{
-              objectFit: "contain",
-              maxWidth: "max-width: clamp(100px, 20rem, 600px)",
+              maxWidth: "100%",
               backgroundColor: "transparent",
             }}
           />
@@ -56,13 +55,12 @@ export const IndexPageTemplate = ({
             alt="profil Img"
             imgStyle={{
               objectFit: "contain",
-              maxWidth: "max-width: clamp(100px, 20rem, 600px)",
               backgroundColor: "none",
             }}
           />
 
           <div className="presentation">
-            <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
+            <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6 max-xs:mt-8">
               {intro.heading}
             </h1>
             <p>{intro.d1}</p>
@@ -187,7 +185,7 @@ export const pageQuery = graphql`
           childImageSharp {
             gatsbyImageData(
               quality: 100
-              layout: FULL_WIDTH
+              # layout: FULL_WIDTH
               backgroundColor: "transparent"
             )
           }

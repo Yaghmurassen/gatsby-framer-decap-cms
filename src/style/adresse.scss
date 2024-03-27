@@ -1,20 +1,24 @@
 .map-fluid {
   overflow: hidden;
   height: 0;
-  padding-bottom: 15%;
+  padding-bottom: 30%;
   position: relative;
   @media screen and (min-width: 600px) and (max-width: 992px) {
-    padding-bottom: 30%;
+    padding-bottom: 40%;
   }
   @media screen and (max-width: 599px) {
-    padding-bottom: 40%;
+    padding-bottom: 50%;
   }
   & iframe {
     border: 0;
     height: 100%;
-    width: 100%;
-    left: 0;
+    width: 90%;
+    left: 5%;
     top: 0;
     position: absolute;
+    @media screen and (min-width: 1299px) {
+      width: 64%;
+      left: 18%;
+    }
   }
 }
