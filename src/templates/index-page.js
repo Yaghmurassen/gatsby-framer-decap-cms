@@ -1,7 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { Script, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import {
+  motion,
+  useViewportScroll,
+  useElementScroll,
+  useTransform,
+  useMotionValue,
+} from "framer-motion";
 
 import Layout from "../components/Layout";
 import Adresse from "../components/Adresse";
@@ -24,15 +31,57 @@ export const IndexPageTemplate = ({
 }) => {
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
+  const bckgRef = useRef();
+  // let scrollYProgress = 0;
+
+  console.log("bckgRef 0 ", bckgRef);
+
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 2]);
+  const opacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
+
+  // const { scrollYProgress } = useViewportScroll();
+  // const { scrollYProgress } = useElementScroll(bckgRef);
+
+  // const { scrollYProgress } = useElementScroll({
+  //   target: bckgRef.current,
+  //   offset: ["0 1", "1.33 1"],
+  // });
+
+  // const x = useMotionValue(scrollYProgress);
+
+  // const scale = useTransform(scrollYProgress, [0, 0.3], [1, 2]);
+  // const opacity = useTransform(scrollYProgress, [1, 0], [0.3, 0]);
 
   useEffect(() => {
+    console.log("bckgRef useEffect ", bckgRef.current);
+
+    // console.log("opacityopacity ::: ", opacity);
+    // console.log("scrollYProgressscrollYProgress ::: ", scrollYProgress);
+
+    // const animBckg = () => {
+    //   const { scrollYProgress } = useElementScroll({
+    //     target: bckgRef.current,
+    //     offset: ["0 1", "1.33 1"],
+    //   });
+    // };
+
+    // return bckgRef.current;
+
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div>
       <section className="hero">
-        <div className="hero__bg">
+        <motion.div
+          className="hero__bg"
+          ref={bckgRef}
+          style={{
+            scale,
+            opacity,
+          }}
+        >
           <GatsbyImage
             image={heroImage}
             alt="hero Img"
@@ -41,7 +90,7 @@ export const IndexPageTemplate = ({
               backgroundColor: "transparent",
             }}
           />
-        </div>
+        </motion.div>
 
         <div className="hero__cnt">
           <h1>{title}</h1>
