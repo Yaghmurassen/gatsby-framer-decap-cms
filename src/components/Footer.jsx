@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import logoBarreau from "../img/logo-barreau-de-paris.jpg";
-// import logoBarreau from "../../public/img/logo-barreau-de-paris.jpg";   //// Bug build si import depuis dossier public
 
 const Footer = () => {
   const footerData = {

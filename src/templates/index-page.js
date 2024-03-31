@@ -9,9 +9,11 @@ import {
   useTransform,
   useMotionValue,
 } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 
 import Layout from "../components/Layout";
 import Adresse from "../components/Adresse";
+import ZoomParallax from "../components/ZoomParallax";
 // import Features from "../components/Features";
 // import BlogRoll from "../components/BlogRoll";
 
@@ -48,13 +50,22 @@ export const IndexPageTemplate = ({
   //   offset: ["0 1", "1.33 1"],
   // });
 
-  // const x = useMotionValue(scrollYProgress);
+  const x = useMotionValue(scrollYProgress);
 
   // const scale = useTransform(scrollYProgress, [0, 0.3], [1, 2]);
   // const opacity = useTransform(scrollYProgress, [1, 0], [0.3, 0]);
 
   useEffect(() => {
     console.log("bckgRef useEffect ", bckgRef.current);
+
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
 
     // console.log("opacityopacity ::: ", opacity);
     // console.log("scrollYProgressscrollYProgress ::: ", scrollYProgress);
@@ -156,6 +167,8 @@ export const IndexPageTemplate = ({
           ))}
         </div>
       </section>
+
+      {/* <ZoomParallax /> */}
 
       {/* 
         <Features gridItems={intro.blurbs} />
