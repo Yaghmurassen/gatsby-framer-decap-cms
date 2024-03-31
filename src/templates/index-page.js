@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { Script, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
@@ -13,7 +13,7 @@ import Lenis from "@studio-freight/lenis";
 
 import Layout from "../components/Layout";
 import Adresse from "../components/Adresse";
-import ZoomParallax from "../components/ZoomParallax";
+// import ZoomParallax from "../components/ZoomParallax";
 // import Features from "../components/Features";
 // import BlogRoll from "../components/BlogRoll";
 
