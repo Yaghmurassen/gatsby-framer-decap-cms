@@ -1,16 +1,28 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-
 import { motion } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
+import { withPrefix } from "gatsby";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 import useSiteMetadata from "./SiteMetadata";
-import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+    window.scrollTo(0, 0);
+  });
   return (
     <div>
       <Helmet>

@@ -9,7 +9,6 @@ import {
   useTransform,
   useMotionValue,
 } from "framer-motion";
-import Lenis from "@studio-freight/lenis";
 
 import Layout from "../components/Layout";
 import Adresse from "../components/Adresse";
@@ -50,36 +49,13 @@ export const IndexPageTemplate = ({
   //   offset: ["0 1", "1.33 1"],
   // });
 
-  const x = useMotionValue(scrollYProgress);
+  // const x = useMotionValue(scrollYProgress);
 
   // const scale = useTransform(scrollYProgress, [0, 0.3], [1, 2]);
   // const opacity = useTransform(scrollYProgress, [1, 0], [0.3, 0]);
 
   useEffect(() => {
     console.log("bckgRef useEffect ", bckgRef.current);
-
-    const lenis = new Lenis();
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // console.log("opacityopacity ::: ", opacity);
-    // console.log("scrollYProgressscrollYProgress ::: ", scrollYProgress);
-
-    // const animBckg = () => {
-    //   const { scrollYProgress } = useElementScroll({
-    //     target: bckgRef.current,
-    //     offset: ["0 1", "1.33 1"],
-    //   });
-    // };
-
-    // return bckgRef.current;
-
-    window.scrollTo(0, 0);
   }, []);
 
   return (

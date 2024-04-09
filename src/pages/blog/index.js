@@ -10,7 +10,9 @@ export default class BlogIndexPage extends React.Component {
     return (
       <Layout>
         <section className="container-fluid">
-          <h1 className="text-4xl font-bold mx-12 mt-28 mb-16">Articles</h1>
+          <h1 className="blog-title text-4xl font-bold mx-12 mt-28 mb-16">
+            Articles
+          </h1>
           <BlogRoll />
         </section>
       </Layout>

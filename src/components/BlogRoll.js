@@ -44,8 +44,9 @@ const BlogRollTemplate = (props) => {
                 >
                   {post.frontmatter.title}
                 </Link>
-                <span> &bull; </span>
-                <span className="text-xs">{post.frontmatter.date}</span>
+                {/* <span> &bull; </span> */}
+                {/* &#x2022; */}
+                <span className="text-xs block">{post.frontmatter.date}</span>
               </p>
               <p className="text-sm text-justify">
                 {post.excerpt}
