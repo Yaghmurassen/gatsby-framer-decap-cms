@@ -245,11 +245,7 @@ export const pageQuery = graphql`
         }
         heroImg {
           childImageSharp {
-            gatsbyImageData(
-              quality: 100
-              # layout: FULL_WIDTH
-              backgroundColor: "transparent"
-            )
+            gatsbyImageData(quality: 100, backgroundColor: "transparent")
           }
         }
         heading

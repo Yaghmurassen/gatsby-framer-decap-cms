@@ -91,15 +91,18 @@ const Navbar = () => {
             : "mainDiv"
         }`}
       >
-        <div className="flex items-center gap-2">
-          <img
-            src={logoJustice}
-            alt="logo Justice"
-            className="m-auto max-w-12"
-          />
-
-          <Link to="/" className="navbar-item" title="Logo">
-            LMB
+        <div>
+          <Link
+            to="/"
+            className="navbar-item flex items-center gap-2"
+            title="Logo"
+          >
+            <img
+              src={logoJustice}
+              alt="logo Justice"
+              className="m-auto max-w-12"
+            />
+            <span>LMB</span>
           </Link>
         </div>
 

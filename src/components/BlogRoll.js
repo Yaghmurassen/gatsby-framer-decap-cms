@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
+import "../style/tw-blog.scss";
+
 const BlogRollTemplate = (props) => {
   const { edges: posts } = props.data.allMarkdownRemark;
 
   return (
-    <div className="columns is-multiline">
+    <div>
       {posts &&
         posts.map(({ node: post }) => (
           <div className="is-parent column is-6" key={post.id}>
@@ -51,7 +53,7 @@ const BlogRollTemplate = (props) => {
                 <br />
                 <br />
                 <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
+                  Lire la suite →
                 </Link>
               </p>
             </article>
