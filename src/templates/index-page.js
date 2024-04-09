@@ -229,7 +229,7 @@ export const pageQuery = graphql`
         mainpitch {
           heroImg2 {
             childImageSharp {
-              gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+              gatsbyImageData(width: 240, quality: 100, layout: CONSTRAINED)
             }
           }
           title

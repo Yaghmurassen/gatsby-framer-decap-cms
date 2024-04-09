@@ -14,7 +14,7 @@ const BlogRollTemplate = (props) => {
         posts.map(({ node: post }) => (
           <article
             key={post.id}
-            className={`blog-list-item max-xs:p-4 p-12 grid max-md2:grid-cols-1 grid-cols-3/1 gap-8 ${
+            className={`blog-list-item max-xs:p-4 p-12 grid max-lg:grid-cols-1 grid-cols-4/1 gap-8 ${
               post.frontmatter.featuredpost ? "is-featured" : ""
             }`}
           >
@@ -25,12 +25,12 @@ const BlogRollTemplate = (props) => {
                     imageInfo={{
                       image: post.frontmatter.featuredimage,
                       alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                      width:
-                        post.frontmatter.featuredimage.childImageSharp
-                          .gatsbyImageData.width,
-                      height:
-                        post.frontmatter.featuredimage.childImageSharp
-                          .gatsbyImageData.height,
+                      // width:
+                      //   post.frontmatter.featuredimage.childImageSharp
+                      //     .gatsbyImageData.width,
+                      // height:
+                      //   post.frontmatter.featuredimage.childImageSharp
+                      //     .gatsbyImageData.height,
                     }}
                   />
                 </div>
@@ -44,8 +44,6 @@ const BlogRollTemplate = (props) => {
                 >
                   {post.frontmatter.title}
                 </Link>
-                {/* <span> &bull; </span> */}
-                {/* &#x2022; */}
                 <span className="text-xs block">{post.frontmatter.date}</span>
               </p>
               <p className="text-sm text-justify">
@@ -95,7 +93,7 @@ export default function BlogRoll() {
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 500
+                        width: 600
                         quality: 100
                         # layout: FULL_WIDTH
                       )
