@@ -10,14 +10,15 @@ import {
   useMotionValue,
 } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Layout from "../components/Layout";
 import Adresse from "../components/Adresse";
 // import ZoomParallax from "../components/ZoomParallax";
-// import Features from "../components/Features";
-// import BlogRoll from "../components/BlogRoll";
 
 import "../style/tw-custom.scss";
+import "../style/locomotivescroll.scss";
 
 export const IndexPageTemplate = ({
   image,
@@ -34,29 +35,31 @@ export const IndexPageTemplate = ({
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
   const bckgRef = useRef();
-  // let scrollYProgress = 0;
 
-  console.log("bckgRef 0 ", bckgRef);
+  // console.log("bckgRef 0 ", bckgRef);
 
   const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 2]);
-  const opacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
-
-  // const { scrollYProgress } = useViewportScroll();
   // const { scrollYProgress } = useElementScroll(bckgRef);
 
-  // const { scrollYProgress } = useElementScroll({
-  //   target: bckgRef.current,
-  //   offset: ["0 1", "1.33 1"],
-  // });
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 2]);
+  const opacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
+  const opc = useTransform(scrollYProgress, [0.25, 0.34], [0, 1]);
+  const cpX = useTransform(scrollYProgress, [0.25, 0.4], [-530, 0]);
+  // const cpScale = useTransform(scrollYProgress, [0.25, 0.4], [1.5, 1]);
 
-  const x = useMotionValue(scrollYProgress);
+  // const x = useMotionValue(scrollYProgress);
 
   // const scale = useTransform(scrollYProgress, [0, 0.3], [1, 2]);
   // const opacity = useTransform(scrollYProgress, [1, 0], [0.3, 0]);
 
   useEffect(() => {
-    console.log("bckgRef useEffect ", bckgRef.current);
+    // console.log("bckgRef useEffect ", bckgRef.current);
+
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+      console.log("locomotiveScroll ::::: ", locomotiveScroll);
+    })();
 
     const lenis = new Lenis();
 
@@ -67,18 +70,6 @@ export const IndexPageTemplate = ({
 
     requestAnimationFrame(raf);
 
-    // console.log("opacityopacity ::: ", opacity);
-    // console.log("scrollYProgressscrollYProgress ::: ", scrollYProgress);
-
-    // const animBckg = () => {
-    //   const { scrollYProgress } = useElementScroll({
-    //     target: bckgRef.current,
-    //     offset: ["0 1", "1.33 1"],
-    //   });
-    // };
-
-    // return bckgRef.current;
-
     window.scrollTo(0, 0);
   }, []);
 
@@ -87,7 +78,7 @@ export const IndexPageTemplate = ({
       <section className="hero">
         <motion.div
           className="hero__bg"
-          ref={bckgRef}
+          // ref={bckgRef}
           style={{
             scale,
             opacity,
@@ -123,15 +114,26 @@ export const IndexPageTemplate = ({
             <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6 max-xs:mt-8">
               {intro.heading}
             </h1>
-            <p>{intro.d1}</p>
-            <p>{intro.d2}</p>
-            <p>{intro.d3}</p>
-            <p>{intro.d4}</p>
+            <p data-scroll data-scroll-speed="0.2">
+              {intro.d1}
+            </p>
+            <p data-scroll data-scroll-speed="0.4">
+              {intro.d2}
+            </p>
+            <p data-scroll data-scroll-speed="0.6">
+              {intro.d3}
+            </p>
+            <p data-scroll data-scroll-speed="0.8">
+              {intro.d4}
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="container-fluid text-center card-glass items-center p-12">
+      <motion.section
+        className="container-fluid text-center card-glass items-center p-12"
+        style={{ opacity: opc, x: cpX }}
+      >
         <div className="mainpitch">
           <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
             {mainpitch.title}
@@ -142,7 +144,7 @@ export const IndexPageTemplate = ({
           <p>{mainpitch.c4}</p>
           <h3 className="subtitle max-md:text-xs">{mainpitch.description}</h3>
         </div>
-      </section>
+      </motion.section>
 
       <section className="container-fluid text-center">
         <div className="category grid grid-cols-2 max-md:grid-cols-1">
