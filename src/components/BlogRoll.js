@@ -21,29 +21,24 @@ const BlogRollTemplate = (props) => {
             <header className="m-auto">
               {post?.frontmatter?.featuredimage && (
                 <div className="featured-thumbnail">
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      image: post.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                      // width:
-                      //   post.frontmatter.featuredimage.childImageSharp
-                      //     .gatsbyImageData.width,
-                      // height:
-                      //   post.frontmatter.featuredimage.childImageSharp
-                      //     .gatsbyImageData.height,
-                    }}
-                  />
+                  <Link
+                    to={post.fields.slug}
+                    className="block overflow-hidden post-link"
+                  >
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                        className: "featured-image",
+                      }}
+                    />
+                  </Link>
                 </div>
               )}
             </header>
             <div>
               <p className="post-meta italic text-xl mb-8 max-xs:text-lg max-xs:mb-6">
-                <Link
-                  className="title has-text-primary is-size-4"
-                  to={post.fields.slug}
-                >
-                  {post.frontmatter.title}
-                </Link>
+                {post.frontmatter.title}
                 <span className="text-xs block">{post.frontmatter.date}</span>
               </p>
               <p className="text-sm text-justify">
