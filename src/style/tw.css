@@ -19,7 +19,7 @@ body {
 
 @layer components {
   .container-fluid {
-    @apply mx-8 my-20 max-md:mx-4 max-md:my-12 xl:mx-auto xl:max-w-[1200px] flex content-center min-h-[50vh];
+    @apply mx-8 my-20 max-md:mx-4 max-md:my-12 xl:mx-auto xl:max-w-[1200px] flex justify-center min-h-[50vh] flex-col;
   }
 
   .container-fluid-2 {
