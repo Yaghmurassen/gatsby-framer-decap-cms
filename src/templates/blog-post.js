@@ -20,28 +20,24 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section-blog">
+    <section className="section-blog blog-post">
       {helmet || ""}
-      <div className="container content">
-        <div className="column is-10 is-offset-1">
-          <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-            {title}
-          </h1>
-          <p>{description}</p>
-          <PostContent content={content} />
-          {tags && tags.length ? (
-            <div style={{ marginTop: `4rem` }}>
-              <h4>Tags</h4>
-              <ul className="taglist">
-                {tags.map((tag) => (
-                  <li key={tag + `tag`}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-        </div>
+      <div className="container-fluid">
+        <h1 className="text-3xl mb-4 font-bold italic">{title}</h1>
+        <p className="text-sm mb-8">{description}</p>
+        <PostContent content={content} />
+        {tags && tags.length ? (
+          <div style={{ marginTop: `4rem` }}>
+            <h4>Tags</h4>
+            <ul className="taglist">
+              {tags.map((tag) => (
+                <li key={tag + `tag`}>
+                  <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
     </section>
   );
@@ -60,6 +56,8 @@ const BlogPost = ({ data }) => {
 
   // const image = getImage(post.avatar);
   // console.log("image  :::", image);
+
+  console.log("postpostpost ::: ", post);
 
   return (
     <Layout>

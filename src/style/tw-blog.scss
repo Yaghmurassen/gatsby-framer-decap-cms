@@ -45,3 +45,26 @@
     border-radius: 5px;
   }
 }
+
+.blog-post {
+  p,
+  li {
+    font-size: 14px;
+    // & > span.gatsby-resp-image-wrapper {
+    //   max-width: 75% !important;
+    // }
+  }
+  p:nth-child(1) {
+    max-width: 75%;
+    margin: 1rem auto 4rem auto;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 2rem 0;
+  }
+}
+
+// span.gatsby-resp-image-wrapper {
+//   max-width: 75% !important;
+// }
