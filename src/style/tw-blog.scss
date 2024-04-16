@@ -57,6 +57,10 @@
   p:nth-child(1) {
     max-width: 75%;
     margin: 1rem auto 4rem auto;
+    @media screen and (max-width: 992px) {
+      max-width: 100%;
+      margin: 0.5rem auto 2rem auto;
+    }
   }
   h2 {
     font-size: 18px;

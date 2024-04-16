@@ -24,7 +24,7 @@ export const BlogPostTemplate = ({
       {helmet || ""}
       <div className="container-fluid">
         <h1 className="text-3xl mb-4 font-bold italic">{title}</h1>
-        <p className="text-sm mb-8">{description}</p>
+        <p className="text-sm mb-8 max-lg:mb-4">{description}</p>
         <PostContent content={content} />
         {tags && tags.length ? (
           <div style={{ marginTop: `4rem` }}>
