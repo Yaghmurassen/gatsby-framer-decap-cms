@@ -37,7 +37,7 @@ const BlogRollTemplate = (props) => {
               )}
             </header>
             <div>
-              <p className="post-meta italic text-xl mb-8 max-xs:text-lg max-xs:mb-6">
+              <p className="post-meta italic font-semibold text-xl mb-8 max-xs:text-lg max-xs:mb-6">
                 {post.frontmatter.title}
                 <span className="text-xs block">{post.frontmatter.date}</span>
               </p>
