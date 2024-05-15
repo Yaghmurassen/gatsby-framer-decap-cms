@@ -2,21 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 
 import logoJustice from "../img/logo-justice.png";
-
 import "../style/navbar.scss";
 
 const Navbar = () => {
   const [atTop, setAtTop] = useState(true);
   const [scrollDirection, setScrollDirection] = useState("");
   const [navOpen, setNavOpen] = useState(false);
-
-  // if (typeof window !== "undefined") {
-  //   if (navOpen) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "auto";
-  //   }
-  // }
 
   useEffect(() => {
     const threshold = 0;
@@ -107,14 +98,14 @@ const Navbar = () => {
         </div>
 
         <ul className="flex gap-4 max-md2:hidden">
-          <Link className="navbar-item" to="/about">
-            About
-          </Link>
-          <Link className="navbar-item" to="/products">
-            Products
+          <Link className="navbar-item" to="/news">
+            Actualités
           </Link>
           <Link className="navbar-item" to="/blog">
             Blog
+          </Link>
+          <Link className="navbar-item" to="/about">
+            À Propos
           </Link>
           <Link className="navbar-item" to="/contact">
             Contact
@@ -157,14 +148,14 @@ const Navbar = () => {
           <li className="nav-item">
             <Link
               className="navbar-item"
-              to="/products"
+              to="/news"
               onClick={() => setNavOpen(!navOpen)}
               style={{
                 top: navOpen ? "0" : "120px",
                 transitionDelay: navOpen ? "0.9s" : "0s",
               }}
             >
-              Products
+              Actualités
             </Link>
             <div className="nav-item-wrapper"></div>
           </li>

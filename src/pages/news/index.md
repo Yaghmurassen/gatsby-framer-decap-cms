@@ -1,6 +1,6 @@
 ---
-templateKey: "product-page"
-path: /products
+templateKey: "news-page"
+path: /news
 title: Our Coffee
 image: /img/jumbotron.jpg
 heading: Great coffee with a conscience
