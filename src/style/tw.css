@@ -44,6 +44,18 @@ body {
   .nav-menu {
     @apply grid gap-4 items-center grid-flow-col;
   }
+
+  .section-page {
+    @apply min-h-[100svh] mt-[5.5rem];
+  }
+
+  .section-title {
+    @apply text-[2.5rem] font-bold text-center mb-16 mt-36 mx-12;
+  }
+
+  .form-contact {
+    @apply m-auto max-w-[60%] bg-[#4a8268] p-12 rounded-md text-center;
+  }
 }
 
 .gatsby-image-wrapper {

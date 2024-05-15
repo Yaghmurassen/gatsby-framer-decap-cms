@@ -1,7 +1,7 @@
 ---
 templateKey: "news-page"
 path: /news
-title: Our Coffee
+title: Mes actualités
 image: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 description: >-

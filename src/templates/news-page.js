@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import Testimonials from "../components/Testimonials";
-import Pricing from "../components/Pricing";
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
-import FullWidthImage from "../components/FullWidthImage";
+// import Features from "../components/Features";
+// import Testimonials from "../components/Testimonials";
+// import Pricing from "../components/Pricing";
+// import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+// import FullWidthImage from "../components/FullWidthImage";
 
 // eslint-disable-next-line
 export const NewsPageTemplate = ({
@@ -25,9 +25,9 @@ export const NewsPageTemplate = ({
   const fullWidthImage = getImage(fullImage) || fullImage;
 
   return (
-    <section className="section-about">
+    <section className="section-page">
       <div className="container">
-        <h2 className="title">{title}</h2>
+        <h1 className="section-title">{title}</h1>
       </div>
     </section>
   );

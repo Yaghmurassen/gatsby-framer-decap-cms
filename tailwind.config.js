@@ -96,18 +96,15 @@ module.exports = {
         error: "#e85347",
       },
       minHeight: {
-        "72px": "4.5rem",
         18: "4.5rem",
       },
       maxHeight: {
         "70px": "4.375rem",
-        "72px": "4.5rem",
+        18: "4.5rem",
       },
       height: {
         17: "4.375rem",
         35: "8.75rem",
-        "97vh": "97vh",
-        "100vh": "100vh",
       },
       zIndex: {
         9: "9",
