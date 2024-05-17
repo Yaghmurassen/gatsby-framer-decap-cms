@@ -99,7 +99,7 @@ const Navbar = () => {
 
         <ul className="flex gap-4 max-md2:hidden">
           <Link className="navbar-item" to="/news">
-            Actualités
+            Actualités / Presse
           </Link>
           <Link className="navbar-item" to="/blog">
             Blog

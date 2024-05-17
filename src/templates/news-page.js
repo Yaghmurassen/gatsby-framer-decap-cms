@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
@@ -7,7 +7,6 @@ import Layout from "../components/Layout";
 // import Testimonials from "../components/Testimonials";
 // import Pricing from "../components/Pricing";
 // import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
-// import FullWidthImage from "../components/FullWidthImage";
 
 // eslint-disable-next-line
 export const NewsPageTemplate = ({
@@ -24,11 +23,59 @@ export const NewsPageTemplate = ({
   const heroImage = getImage(image) || image;
   const fullWidthImage = getImage(fullImage) || fullImage;
 
+  const [showDecision, setShowDecision] = useState(false);
+
+  const openDecision = () =>
+    setShowDecision((showDecision) => {
+      console.log("showDecisionshowDecision ", showDecision);
+      return !showDecision;
+    });
+
   return (
-    <section className="section-page">
-      <div className="container">
-        <h1 className="section-title">{title}</h1>
-      </div>
+    <section className="section-page mx-6">
+      <h1 className="section-title">Décisions</h1>
+      <h2 className="text-xl mb-4">La presse en parle</h2>
+
+      <section>
+        <div className="card">
+          <h3 className="mb-4">
+            Poitiers : accusé de viol sur personne vulnérable, un chauffeur de
+            taxi remis en liberté
+          </h3>
+          <img
+            src="https://images.lanouvellerepublique.fr/image/upload/t_1020w/f_auto/64ca891c00852afb4c8b45c6.jpg"
+            alt="article 1"
+            className="mb-4"
+          />
+          <p>
+            Âgé de 57 ans, un chauffeur de taxi est mis en examen pour viol sur
+            personne vulnérable depuis juillet 2022. Il était en détention
+            provisoire depuis un an. Il a été remis en liberté, ce mardi 1er
+            août 2023.
+          </p>
+
+          <button onClick={openDecision} className="my-4">
+            {showDecision ? <span>Cacher</span> : <span>Voir</span>} la décision
+          </button>
+          {showDecision && (
+            <div className="h-[100vh]">
+              <object
+                data="/img/cv24.pdf"
+                type="application/pdf"
+                width="100%"
+                height="100%"
+                className="button"
+              >
+                <p>
+                  Unable to display PDF file.{" "}
+                  <a href="/img/cv24.pdf">Download</a>
+                  instead.
+                </p>
+              </object>
+            </div>
+          )}
+        </div>
+      </section>
     </section>
   );
 };
