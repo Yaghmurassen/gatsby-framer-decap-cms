@@ -13,8 +13,6 @@ import {
 import Layout from "../components/Layout";
 import Adresse from "../components/Adresse";
 // import ZoomParallax from "../components/ZoomParallax";
-// import Features from "../components/Features";
-// import BlogRoll from "../components/BlogRoll";
 
 import "../style/tw-custom.scss";
 
@@ -33,13 +31,16 @@ export const IndexPageTemplate = ({
   const heroImage = getImage(heroImg) || heroImg;
   const heroImage2 = getImage(heroImg2) || heroImg2;
   const bckgRef = useRef();
+  const categoryRef = useRef();
+
   // let scrollYProgress = 0;
 
-  console.log("bckgRef 0 ", bckgRef);
+  console.log("categoryRef ", categoryRef);
 
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 2]);
   const opacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
+  const translateY = useTransform(scrollYProgress, [10, 0.6], ["100%", 100]);
 
   // const { scrollYProgress } = useViewportScroll();
   // const { scrollYProgress } = useElementScroll(bckgRef);
@@ -55,7 +56,7 @@ export const IndexPageTemplate = ({
   // const opacity = useTransform(scrollYProgress, [1, 0], [0.3, 0]);
 
   useEffect(() => {
-    console.log("bckgRef useEffect ", bckgRef.current);
+    console.log("categoryRef useEffect ", categoryRef.current);
   }, []);
 
   return (
@@ -121,7 +122,11 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="container-fluid text-center">
-        <div className="category grid grid-cols-2 max-md:grid-cols-1">
+        <motion.div
+          ref={categoryRef}
+          style={{ translateY }}
+          className="category grid grid-cols-2 max-md:grid-cols-1"
+        >
           {intro.blurbs.map((category) => (
             <div key={category.title}>
               <GatsbyImage
@@ -141,7 +146,7 @@ export const IndexPageTemplate = ({
               </ul>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* <ZoomParallax /> */}
@@ -152,9 +157,6 @@ export const IndexPageTemplate = ({
           See all products
         </Link>
         <BlogRoll />
-        <Link className="btn" to="/blog">
-          Read more
-        </Link>
       */}
       <Adresse />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />

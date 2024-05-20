@@ -134,25 +134,11 @@ const Navbar = () => {
           <li className="nav-item">
             <Link
               className="navbar-item"
-              to="/about"
-              onClick={() => setNavOpen(!navOpen)}
-              style={{
-                top: navOpen ? "0" : "120px",
-                transitionDelay: navOpen ? "0.8s" : "0s",
-              }}
-            >
-              About
-            </Link>
-            <div className="nav-item-wrapper"></div>
-          </li>
-          <li className="nav-item">
-            <Link
-              className="navbar-item"
               to="/news"
               onClick={() => setNavOpen(!navOpen)}
               style={{
                 top: navOpen ? "0" : "120px",
-                transitionDelay: navOpen ? "0.9s" : "0s",
+                transitionDelay: navOpen ? "0.8s" : "0s",
               }}
             >
               Actualités
@@ -166,10 +152,24 @@ const Navbar = () => {
               onClick={() => setNavOpen(!navOpen)}
               style={{
                 top: navOpen ? "0" : "120px",
-                transitionDelay: navOpen ? "1s" : "0s",
+                transitionDelay: navOpen ? "0.9s" : "0s",
               }}
             >
               Blog
+            </Link>
+            <div className="nav-item-wrapper"></div>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="navbar-item"
+              to="/about"
+              onClick={() => setNavOpen(!navOpen)}
+              style={{
+                top: navOpen ? "0" : "120px",
+                transitionDelay: navOpen ? "1s" : "0s",
+              }}
+            >
+              About
             </Link>
             <div className="nav-item-wrapper"></div>
           </li>

@@ -32,18 +32,18 @@ const Footer = () => {
         </div>
         <ul>
           <li>
-            <Link className="navbar-item" to="/about">
-              About
-            </Link>
-          </li>
-          <li>
             <Link className="navbar-item" to="/news">
-              Actualités
+              Actualités / Presse
             </Link>
           </li>
           <li>
             <Link className="navbar-item" to="/blog">
               Blog
+            </Link>
+          </li>
+          <li>
+            <Link className="navbar-item" to="/about">
+              About
             </Link>
           </li>
           <li>
