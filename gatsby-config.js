@@ -100,6 +100,10 @@ module.exports = {
         // purgeOnly: ["/bulma-style.sass"], // applies purging only on the bulma css file
         printRejected: true,
         tailwind: true,
+        ignore: [
+          "/node_modules/slick-carousel/slick/slick.css",
+          "/node_modules/slick-carousel/slick/slick-theme.css",
+        ],
       },
     }, // must be after other CSS plugins
     "gatsby-plugin-netlify", // make sure to keep it last in the array

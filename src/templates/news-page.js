@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import DecisionCard from "../components/DecisionCard";
+// import { useMobile } from "../composables/helpers";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // import Testimonials from "../components/Testimonials";
 // import Pricing from "../components/Pricing";
 // import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
@@ -22,6 +26,7 @@ export const NewsPageTemplate = ({
   pricing,
 }) => {
   // const [showDecision, setShowDecision] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const decisions = [
     {
@@ -59,7 +64,19 @@ export const NewsPageTemplate = ({
     },
   ];
 
-  console.log("decisions ", decisions);
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  useEffect(() => {
+    if (window.screen.width < 800) {
+      setIsMobile(true);
+    }
+  }, []);
 
   return (
     <section className="container-fluid !flex-col">
@@ -68,9 +85,17 @@ export const NewsPageTemplate = ({
         La presse en parle
       </h2>
       <section>
-        {decisions.map(function (decisionItem, index) {
-          return <DecisionCard decision={decisionItem} />;
-        })}
+        {isMobile ? (
+          <Slider {...settings}>
+            {decisions.map(function (decisionItem, index) {
+              return <DecisionCard key={index} decision={decisionItem} />;
+            })}
+          </Slider>
+        ) : (
+          decisions.map(function (decisionItem, index) {
+            return <DecisionCard key={index} decision={decisionItem} />;
+          })
+        )}
       </section>
     </section>
   );

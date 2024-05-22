@@ -223,3 +223,13 @@ $hero-bg-mix: rgba(#29042f, 0.4);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+/* .pdf {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+} */
+
+.slick-prev::before,
+.slick-next::before {
+  color: black !important;
+}

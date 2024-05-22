@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+// import "/slick-carousel/slick/slick.css";
+// import "/slick-carousel/slick/slick-theme.css";
 
 const DecisionCard = ({ decision }) => {
   const [showDecision, setShowDecision] = useState(false);
 
-  console.log("decisiondecisiondecisiondecision ", decision);
+  // console.log("decisiondecisiondecisiondecision ", decision);
 
   const openDecision = () =>
     setShowDecision((showDecision) => {
@@ -17,13 +19,15 @@ const DecisionCard = ({ decision }) => {
       <img
         src={decision.img}
         alt={decision.alt}
-        className="mb-8 mx-auto rounded-md max-w-60"
+        className="mb-8 mx-auto rounded-md max-w-60 max-md2:max-w-full"
       />
       <p className="text-sm">{decision.description}</p>
 
       <a
         className="underline text-blue-600 my-4 text-sm italic font-semibold"
         href={decision.url}
+        target="_blank"
+        rel="noreferrer noopener"
       >
         {decision.link}
       </a>
@@ -41,11 +45,17 @@ const DecisionCard = ({ decision }) => {
             type="application/pdf"
             width="100%"
             height="100%"
-            className="button"
           >
             <p>
               Unable to display PDF file.
-              <a href={decision.pdf}>Download</a>
+              <a
+                className="font-bold italic"
+                href={decision.pdf}
+                download
+                rel="noreferrer noopener"
+              >
+                Download
+              </a>
               instead.
             </p>
           </object>
