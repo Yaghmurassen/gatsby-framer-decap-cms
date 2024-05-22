@@ -19,7 +19,7 @@ const DecisionCard = ({ decision }) => {
       <img
         src={decision.img}
         alt={decision.alt}
-        className="mb-8 mx-auto rounded-md max-w-60 max-md2:max-w-full"
+        className="mb-8 mx-auto rounded-md max-w-60 max-md2:max-w-full "
       />
       <p className="text-sm">{decision.description}</p>
 
