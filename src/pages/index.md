@@ -8,7 +8,8 @@ heading: Luc-Moussa Bassolé, Avocat Pénaliste
 subheading: J'edite depuis l'admin du decap CMS
 mainpitch:
   title: Domaines de compétences
-  c1: Vous avez reçu une convocation au commissariat, en gendarmerie ou en justice
+  c1:
+    Vous avez reçu une convocation au commissariat, en gendarmerie ou en justice
     ?
   c2: L’un de vos proches a été interpellé ou est incarcéré ?
   c3: Vous souhaitez obtenir la restitution de l’un de vos biens sous main de
@@ -58,7 +59,8 @@ intro:
   heading: Présentation
   d1: L’activité de Maître BASSOLÉ est exclusivement consacrée au contentieux
     pénal.
-  d2: Fort de sa formation académique (Université PARIS I PANTHÉON-SORBONNE, EFB),
+  d2:
+    Fort de sa formation académique (Université PARIS I PANTHÉON-SORBONNE, EFB),
     de ses expériences en juridiction (section     JIRS/criminalité organisée du
     Parquet de PARIS) et en cabinet (formé auprès de Lee TAKHEDMIT), Luc-Moussa
     BASSOLÉ met à votre service ses compétences pour défendre vos droits et vos

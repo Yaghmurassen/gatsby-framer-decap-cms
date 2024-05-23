@@ -17,6 +17,7 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               tags
               templateKey
+              blurbs
             }
           }
         }
@@ -96,6 +97,27 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
           about_title: String,
           about_text: String,
           about_images: [File!]! @fileByRelativePath,
+      }`,
+  ];
+
+  createTypes(typeDefs);
+};
+
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions;
+
+  const typeDefs = [
+    `type MarkdownRemark implements Node {
+        frontmatter: Blurbs
+      }`,
+    `type Blurbs @infer {
+        title: String,
+        image: [File!]! @fileByRelativePath,
+        alt: String,
+        description: String,
+        url: String,
+        link: String,
+        pdf: String,
       }`,
   ];
 
