@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 
 const DecisionCard = ({ decision }) => {
   const [showDecision, setShowDecision] = useState(false);

@@ -28,15 +28,6 @@ export const NewsPageTemplate = (blurbs) => {
 
   console.log("decisionList ", decisionList);
 
-  // console.log(
-  //   "title, alt, description, url, link",
-  //   title,
-  //   alt,
-  //   description,
-  //   url,
-  //   link
-  // );
-
   // const decisions = [
   //   {
   //     title:
@@ -106,14 +97,16 @@ export const NewsPageTemplate = (blurbs) => {
       <section>
         {isMobile ? (
           <Slider {...settings}>
-            {decisionList.map(function (decisionItem, index) {
-              return decisionItem.map((dI, i) => {
-                return <DecisionCard key={i} decision={dI} />;
-              });
-            })}
+            {decisionList &&
+              decisionList.map(function (decisionItem) {
+                return decisionItem.map((dI, i) => {
+                  return <DecisionCard key={i} decision={dI} />;
+                });
+              })}
           </Slider>
         ) : (
-          decisionList.map(function (decisionItem, index) {
+          decisionList &&
+          decisionList.map(function (decisionItem) {
             return decisionItem.map((dI, i) => {
               return <DecisionCard key={i} decision={dI} />;
             });
