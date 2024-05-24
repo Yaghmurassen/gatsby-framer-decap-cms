@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const DecisionCard = ({ decision }) => {
   const [showDecision, setShowDecision] = useState(false);
 
-  // console.log("decisiondecisiondecisiondecision ", decision);
+  console.log("decisiondecisiondecisiondecision ", decision);
 
   const openDecision = () =>
     setShowDecision((showDecision) => {

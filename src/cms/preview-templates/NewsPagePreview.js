@@ -7,17 +7,7 @@ const NewsPagePreview = ({ entry, getAsset }) => {
 
   console.log("entryentryentryentry ", entry);
 
-  return (
-    <NewsPageTemplate
-      title={data.title}
-      image={getAsset(data.image)}
-      alt={data.alt}
-      description={data.description}
-      url={data.url}
-      link={data.link}
-      pdf={data.pdf}
-    />
-  );
+  return <NewsPageTemplate blurbs={data} />;
 };
 
 NewsPagePreview.propTypes = {

@@ -57,8 +57,6 @@ const BlogPost = ({ data }) => {
   // const image = getImage(post.avatar);
   // console.log("image  :::", image);
 
-  console.log("postpostpost ::: ", post);
-
   return (
     <Layout>
       <BlogPostTemplate

@@ -17,7 +17,6 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               tags
               templateKey
-              blurbs
             }
           }
         }
@@ -112,12 +111,10 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       }`,
     `type Blurbs @infer {
         title: String,
-        image: [File!]! @fileByRelativePath,
         alt: String,
         description: String,
         url: String,
         link: String,
-        pdf: String,
       }`,
   ];
 

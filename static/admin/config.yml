@@ -161,20 +161,16 @@ collections:
               widget: "hidden",
               default: "news-page",
             }
-            {
+          - {
               label: Blurbs,
               name: blurbs,
               widget: list,
               fields:
                 [
                   { label: Title, name: title, widget: string },
-                  { label: Image, name: image, widget: image },
                   { label: Alt, name: alt, widget: string },
                   { label: Description, name: description, widget: string },
                   { label: Url, name: url, widget: string },
                   { label: Link, name: link, widget: string },
-                  { label: Pdf, name: pdf, widget: image },
                 ],
             }
-            
-        
