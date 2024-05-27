@@ -30,9 +30,4 @@ blurbs:
       surprise de certains.
     url: https://www.lanouvellerepublique.fr/poitiers/trafic-de-drogue-a-poitiers-la-justice-eteint-le-four-de-la-rue-de-sloveniepoitiers-accuse-de-viol-sur-personne-vulnerable-un-chauffeur-de-taxi-remis-en-liberte
     link: https://www.lanouvellerepublique.fr
-  - title: Ma grosse bite dans ton wola
-    alt: wola bite
-    description: Une belle giclé dans ses bougnoules de merde
-    url: https://cdn.nawaat.org/wp-content/uploads/2015/04/islam-alcool-porc.jpg
-    link: https://www.fdesouche.com/2024/05/27/metro-de-lyon-69-station-place-jean-jaures-plusieurs-passagers-blesses-dans-une-attaque-au-couteau-un-individus-de-type-nord-africain-interpelle/
 ---
