@@ -105,32 +105,51 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 // exports.createSchemaCustomization = ({ actions, schema }) => {
 //   const { createTypes } = actions;
 
-//   const typeDefs = [
+//   const typeDefs =
 //     `type MarkdownRemark implements Node {
-//         frontmatter: blurbs
-//       }`,
-//     `type blurbs @infer {
+//         frontmatter: Blurbs
+//       }
+//     type Blurbs {
 //         title: String,
 //         alt: String,
 //         description: String,
 //         url: String,
 //         link: String,
-//       }`,
-//   ];
+//       }`
 
 //   createTypes(typeDefs);
 // };
 
-exports.createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
-  const typeDefs = `
-    type blurbs implements Node {
-      title: String,
-      alt: String,
-      description: String,
-      url: String,
-      link: String,
-    }
-  `;
+
+  const typeDefs = [
+    `type MarkdownRemark implements Node {
+        frontmatter: blurbs
+      }`,
+
+    `type blurbs {
+        title: String,
+        alt: String,
+        description: String,
+        url: String,
+        link: String,
+      }`,
+  ];
+
   createTypes(typeDefs);
 };
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions;
+//   const typeDefs = `
+//     type blurbs implements Node {
+//       title: String,
+//       alt: String,
+//       description: String,
+//       url: String,
+//       link: String,
+//     }
+//   `;
+//   createTypes(typeDefs);
+// };
