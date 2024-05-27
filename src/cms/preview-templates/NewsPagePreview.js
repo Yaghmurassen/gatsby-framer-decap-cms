@@ -4,8 +4,7 @@ import { NewsPageTemplate } from "../../templates/news-page";
 
 const NewsPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
-
-  console.log("entryentryentryentry ", entry);
+  // const entryBlurbs = entry.getIn(["data", "blurbs"]).toJS();
 
   return <NewsPageTemplate blurbs={data} />;
 };
