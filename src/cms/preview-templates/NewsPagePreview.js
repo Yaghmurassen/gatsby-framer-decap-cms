@@ -7,7 +7,7 @@ const NewsPagePreview = ({ entry, getAsset }) => {
   // const entryBlurbs = entry.getIn(["data", "blurbs"]).toJS();
   console.log("entry from NewPagePreview ", data);
 
-  return <NewsPageTemplate blurbs={data} />;
+  return <NewsPageTemplate blurbs={data.blurbs} />;
 };
 
 NewsPagePreview.propTypes = {
