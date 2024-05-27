@@ -128,7 +128,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
         frontmatter: blurbs
       }`,
 
-    `type blurbs {
+    `type blurbs @infer {
         title: String,
         alt: String,
         description: String,

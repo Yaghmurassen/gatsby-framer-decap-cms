@@ -11,12 +11,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 // eslint-disable-next-line
 
-export const NewsPageTemplate = (blurbs) => {
+export const NewsPageTemplate = ({ blurbs }) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  const decisionList = Object.values(blurbs).map(function (blbs) {
-    return blbs;
-  });
+  console.log("blurbs ", blurbs);
 
   var settings = {
     dots: true,
@@ -51,19 +49,15 @@ export const NewsPageTemplate = (blurbs) => {
       <section>
         {isMobile ? (
           <Slider {...settings}>
-            {decisionList &&
-              decisionList.map(function (decisionItem) {
-                return decisionItem.map((dI, i) => {
-                  return <DecisionCard key={i} decision={dI} />;
-                });
+            {blurbs &&
+              blurbs.map(function (decisionItem, index) {
+                return <DecisionCard key={index} decision={decisionItem} />;
               })}
           </Slider>
         ) : (
-          decisionList &&
-          decisionList.map(function (decisionItem) {
-            return decisionItem.map((dI, i) => {
-              return <DecisionCard key={i} decision={dI} />;
-            });
+          blurbs &&
+          blurbs.map(function (decisionItem, index) {
+            return <DecisionCard key={index} decision={decisionItem} />;
           })
         )}
       </section>
@@ -108,20 +102,10 @@ export const NewsPageQuery = graphql`
       frontmatter {
         blurbs {
           title
-          # image {
-          #   childImageSharp {
-          #     gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          #   }
-          # }
           alt
           description
           url
           link
-          # pdf {
-          #   childImageSharp {
-          #     gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          #   }
-          # }
         }
       }
     }
