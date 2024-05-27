@@ -38,9 +38,9 @@ blurbs:
       surprise de certains.
     url: https://www.lanouvellerepublique.fr/poitiers/trafic-de-drogue-a-poitiers-la-justice-eteint-le-four-de-la-rue-de-sloveniepoitiers-accuse-de-viol-sur-personne-vulnerable-un-chauffeur-de-taxi-remis-en-liberte
     link: https://www.lanouvellerepublique.fr
-  - title: Go mon pote
-    alt: Ah gars
-    description: Seeeshhhh tahouk
+  - title: Object.keys || Object.values
+    alt: Ahahahahdmin
+    description: j'edite depuis l'admin
     url: https://assets.afcdn.com/recipe/20160405/32958_w1024h768c1cx1500cy1002.jpg
     link: https://assets.afcdn.com/recipe/20160405/32958_w1024h768c1cx1500cy1002.jpg
 ---
