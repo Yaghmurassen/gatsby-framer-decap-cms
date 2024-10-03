@@ -2,6 +2,7 @@ import * as React from "react";
 import { navigate } from "gatsby-link";
 
 import Layout from "../../components/Layout";
+import Adresse from "../../components/Adresse";
 
 function encode(data) {
   return Object.keys(data)
@@ -23,7 +24,6 @@ export default class Index extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-
     const formData = new FormData();
 
     formData.append("user_name", this.state.name);
@@ -60,7 +60,7 @@ export default class Index extends React.Component {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
-                className="form-contact"
+                className="form-contact m-auto max-w-[60%] bg-[#4a8268] p-12 rounded-md text-center my-32"
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -123,6 +123,8 @@ export default class Index extends React.Component {
               </form>
             </div>
           </div>
+
+          <Adresse />
         </section>
       </Layout>
     );

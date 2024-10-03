@@ -9,11 +9,12 @@ const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState("");
   const [navOpen, setNavOpen] = useState(false);
 
+  const threshold = 0;
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  let throttleWait;
+
   useEffect(() => {
-    const threshold = 0;
-    let lastScrollY = window.scrollY;
-    let ticking = false;
-    let throttleWait;
 
     if (navOpen) {
       document.body.style.overflow = "hidden";
@@ -98,16 +99,19 @@ const Navbar = () => {
         </div>
 
         <ul className="flex gap-4 max-md2:hidden">
-          <Link className="navbar-item" to="/news">
-            Actualités / Presse
+          <Link className="navbar-itemus" to="/">
+            Présentation
           </Link>
-          <Link className="navbar-item" to="/blog">
-            Blog
+          <Link className="navbar-itemus" to="/competences">
+            Compétences
           </Link>
-          <Link className="navbar-item" to="/about">
-            À Propos
+          <Link className="navbar-itemus" to="/decisions">
+            Décisions
           </Link>
-          <Link className="navbar-item" to="/contact">
+          <Link className="navbar-itemus" to="/articles">
+            Articles
+          </Link>
+          <Link className="navbar-itemus" to="/contact">
             Contact
           </Link>
         </ul>
@@ -133,49 +137,63 @@ const Navbar = () => {
         <ul className="nav-links flex gap-4">
           <li className="nav-item">
             <Link
-              className="navbar-item"
-              to="/news"
+              className="navbar-itemus"
+              to="/"
               onClick={() => setNavOpen(!navOpen)}
               style={{
                 top: navOpen ? "0" : "120px",
                 transitionDelay: navOpen ? "0.8s" : "0s",
               }}
             >
-              Actualités
+              Présentation
             </Link>
             <div className="nav-item-wrapper"></div>
           </li>
           <li className="nav-item">
             <Link
-              className="navbar-item"
-              to="/blog"
+              className="navbar-itemus"
+              to="/competences"
               onClick={() => setNavOpen(!navOpen)}
               style={{
                 top: navOpen ? "0" : "120px",
                 transitionDelay: navOpen ? "0.9s" : "0s",
               }}
             >
-              Blog
+              Compétences
             </Link>
             <div className="nav-item-wrapper"></div>
           </li>
           <li className="nav-item">
             <Link
-              className="navbar-item"
-              to="/about"
+              className="navbar-itemus"
+              to="/decisions"
               onClick={() => setNavOpen(!navOpen)}
               style={{
                 top: navOpen ? "0" : "120px",
                 transitionDelay: navOpen ? "1s" : "0s",
               }}
             >
-              About
+              Décisions
             </Link>
             <div className="nav-item-wrapper"></div>
           </li>
           <li className="nav-item">
             <Link
-              className="navbar-item"
+              className="navbar-itemus"
+              to="/articles"
+              onClick={() => setNavOpen(!navOpen)}
+              style={{
+                top: navOpen ? "0" : "120px",
+                transitionDelay: navOpen ? "1.1s" : "0s",
+              }}
+            >
+              Articles
+            </Link>
+            <div className="nav-item-wrapper"></div>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="navbar-itemus"
               to="/contact"
               onClick={() => setNavOpen(!navOpen)}
               style={{

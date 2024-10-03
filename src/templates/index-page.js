@@ -11,7 +11,7 @@ import {
 } from "framer-motion";
 
 import Layout from "../components/Layout";
-import Adresse from "../components/Adresse";
+// import Adresse from "../components/Adresse";
 // import ZoomParallax from "../components/ZoomParallax";
 
 import "../style/tw-custom.scss";
@@ -108,7 +108,7 @@ export const IndexPageTemplate = ({
         </div>
       </section>
 
-      <section className="container-fluid text-center card-glass items-center p-12">
+      {/* <section className="container-fluid text-center card-glass items-center p-12">
         <div className="mainpitch">
           <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
             {mainpitch.title}
@@ -147,7 +147,7 @@ export const IndexPageTemplate = ({
             </div>
           ))}
         </motion.div>
-      </section>
+      </section> */}
 
       {/* <ZoomParallax /> */}
 
@@ -158,7 +158,7 @@ export const IndexPageTemplate = ({
         </Link>
         <BlogRoll />
       */}
-      <Adresse />
+      {/* <Adresse /> */}
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>
   );

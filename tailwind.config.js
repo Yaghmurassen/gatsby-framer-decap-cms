@@ -135,6 +135,7 @@ module.exports = {
       fontFamily: {
         brice: ["Brice, sans-serif"],
         montserrat: ["Montserrat, sans-serif"],
+        // europa: ["Europa, sans-serif"],
       },
       transitionDuration: {
         400: "0.4s",
