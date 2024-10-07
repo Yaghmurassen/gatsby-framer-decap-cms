@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: LMB
+title: Luc-Moussa Bassolé
 title2: Bug de CMS | bug de CMS | bug de CMS
 image: /img/products-grid2.jpg
 heroImg: /img/palais-justice.jpg
