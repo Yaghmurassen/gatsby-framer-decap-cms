@@ -84,7 +84,7 @@ export const IndexPageTemplate = ({
         </div>
       </section>
       {/* h-[75vh] */}
-      <section className="container-fluid presentation ">
+      <section className="container-fluid presentation">
         <Reveal>
           <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
             <GatsbyImage

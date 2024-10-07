@@ -10,12 +10,17 @@ const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const threshold = 0;
-  let lastScrollY = window.scrollY;
+  // impossible d'acceder a la window en SSR durant le build ..
+  let lastScrollY;
+  if (typeof window !== "undefined") {
+    lastScrollY = window.scrollY;
+  } else {
+    lastScrollY = 0;
+  }
   let ticking = false;
   let throttleWait;
 
   useEffect(() => {
-
     if (navOpen) {
       document.body.style.overflow = "hidden";
     } else {
