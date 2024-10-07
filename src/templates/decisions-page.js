@@ -11,10 +11,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 // eslint-disable-next-line
 
-export const NewsPageTemplate = ({ blurbs }) => {
+export const DecisionsPageTemplate = ({ blurbs }) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  console.log("blurbs ", blurbs);
+  console.log("blurbsblurbsblurbsblurbsblurbsblurbsblurbsblurbs ", blurbs);
 
   var settings = {
     dots: true,
@@ -43,21 +43,21 @@ export const NewsPageTemplate = ({ blurbs }) => {
   return (
     <section className="container-fluid !flex-col">
       <h1 className="section-title">Décisions</h1>
-      <h2 className="text-xl mb-4 font-medium uppercase italic">
+      {/* <h2 className="text-xl mb-4 font-medium uppercase italic">
         La presse en parle
-      </h2>
+      </h2> */}
       <section>
         {isMobile ? (
           <Slider {...settings}>
             {blurbs &&
-              blurbs.map(function (decisionItem, index) {
-                return <DecisionCard key={index} decision={decisionItem} />;
+              blurbs.map(function (decisionsItem, index) {
+                return <DecisionCard key={index} decision={decisionsItem} />;
               })}
           </Slider>
         ) : (
           blurbs &&
-          blurbs.map(function (decisionItem, index) {
-            return <DecisionCard key={index} decision={decisionItem} />;
+          blurbs.map(function (decisionsItem, index) {
+            return <DecisionCard key={index} decision={decisionsItem} />;
           })
         )}
       </section>
@@ -65,7 +65,7 @@ export const NewsPageTemplate = ({ blurbs }) => {
   );
 };
 
-NewsPageTemplate.propTypes = {
+DecisionsPageTemplate.propTypes = {
   title: PropTypes.string,
   // image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   alt: PropTypes.string,
@@ -75,18 +75,18 @@ NewsPageTemplate.propTypes = {
   // pdf: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
-const NewsPage = ({ data }) => {
+const DecisionsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  // console.log("data from NewsPage ", data);
-  // console.log("frontmatter from NewsPage ", frontmatter);
+  console.log("data from DecisionsPage ", data);
+  console.log("frontmatter from DecisionsPage ", frontmatter);
   return (
     <Layout>
-      <NewsPageTemplate blurbs={frontmatter.blurbs} />
+      <DecisionsPageTemplate blurbs={frontmatter.blurbs} />
     </Layout>
   );
 };
 
-NewsPage.propTypes = {
+DecisionsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -94,11 +94,11 @@ NewsPage.propTypes = {
   }),
 };
 
-export default NewsPage;
+export default DecisionsPage;
 
-export const NewsPageQuery = graphql`
-  query NewsPage {
-    markdownRemark(frontmatter: { templateKey: { eq: "news-page" } }) {
+export const DecisionsPageQuery = graphql`
+  query DecisionsPage {
+    markdownRemark(frontmatter: { templateKey: { eq: "decisions-page" } }) {
       frontmatter {
         blurbs {
           title

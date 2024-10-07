@@ -1,6 +1,6 @@
 ---
-templateKey: news-page
-path: /news
+templateKey: decisions-page
+path: /decisions
 blurbs:
   - title: La grande belleza
     alt: La grande belleza image

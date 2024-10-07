@@ -32,7 +32,7 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
         {/* className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6" */}
         <h1 className="section-title">{mainpitch.title}</h1>
 
-        <section className="container-fluid text-center card-glass items-center p-12">
+        <section className="container-fluid text-center card-glass items-center p-12 min-h-[40vh]">
           <div className="mainpitch">
             <p>{mainpitch.c1}</p>
             <p>{mainpitch.c2}</p>
