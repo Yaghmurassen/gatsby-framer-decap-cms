@@ -53,9 +53,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data; // post = data.blogPost
-
   // const image = getImage(post.avatar);
-  // console.log("image  :::", image);
 
   return (
     <Layout>

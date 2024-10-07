@@ -8,13 +8,13 @@ import {
   useElementScroll,
   useTransform,
   useMotionValue,
+  useInView,
+  useAnimation,
 } from "framer-motion";
-
+import { Reveal } from "../components/utils/Reveal";
 import Layout from "../components/Layout";
-// import Adresse from "../components/Adresse";
-// import ZoomParallax from "../components/ZoomParallax";
-
 import "../style/tw-custom.scss";
+// import ZoomParallax from "../components/ZoomParallax";
 
 export const IndexPageTemplate = ({
   image,
@@ -34,12 +34,11 @@ export const IndexPageTemplate = ({
   const categoryRef = useRef();
 
   // let scrollYProgress = 0;
-
-  console.log("categoryRef ", categoryRef);
-
+  // console.log("categoryRef ", categoryRef);
+  // const { scrollYProgress } = useScroll();
   const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 2]);
-  const opacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1.5], [1, 2]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
   const translateY = useTransform(scrollYProgress, [10, 0.6], ["100%", 100]);
 
   // const { scrollYProgress } = useViewportScroll();
@@ -84,28 +83,30 @@ export const IndexPageTemplate = ({
           <h1>{title}</h1>
         </div>
       </section>
+      {/* h-[75vh] */}
+      <section className="container-fluid presentation ">
+        <Reveal>
+          <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
+            <GatsbyImage
+              image={heroImage2}
+              alt="profil Img"
+              imgStyle={{
+                objectFit: "contain",
+                backgroundColor: "none",
+              }}
+            />
 
-      <section className="container-fluid presentation">
-        <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
-          <GatsbyImage
-            image={heroImage2}
-            alt="profil Img"
-            imgStyle={{
-              objectFit: "contain",
-              backgroundColor: "none",
-            }}
-          />
-
-          <div className="presentation">
-            <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6 max-xs:mt-8">
-              {intro.heading}
-            </h1>
-            <p>{intro.d1}</p>
-            <p>{intro.d2}</p>
-            <p>{intro.d3}</p>
-            <p>{intro.d4}</p>
+            <div className="presentation">
+              <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6 max-xs:mt-8">
+                {intro.heading}
+              </h1>
+              <p>{intro.d1}</p>
+              <p>{intro.d2}</p>
+              <p>{intro.d3}</p>
+              <p>{intro.d4}</p>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* <section className="container-fluid text-center card-glass items-center p-12">

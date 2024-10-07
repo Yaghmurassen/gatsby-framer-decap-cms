@@ -3,8 +3,6 @@ import React, { useState } from "react";
 const DecisionCard = ({ decision }) => {
   const [showDecision, setShowDecision] = useState(false);
 
-  console.log("decision from DecisionCard", decision, typeof decision);
-
   const openDecision = () =>
     setShowDecision((showDecision) => {
       return !showDecision;

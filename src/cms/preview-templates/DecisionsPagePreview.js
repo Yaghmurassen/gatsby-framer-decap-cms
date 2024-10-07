@@ -5,10 +5,6 @@ import { DecisionsPageTemplate } from "../../templates/decisions-page";
 const DecisionsPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
   // const entryBlurbs = entry.getIn(["data", "blurbs"]).toJS();
-  console.log(
-    "data from DecisionsPagePreview ::::::::::::::::::::::: ",
-    data.blurbs
-  );
   return <DecisionsPageTemplate blurbs={data.blurbs} />;
 };
 

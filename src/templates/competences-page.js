@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import Layout from "../components/Layout";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-
+import { Reveal } from "../components/utils/Reveal";
 // import Content, { HTMLContent } from "../components/Content";
 
 import "../style/tw-about.scss";
@@ -25,24 +25,60 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
   return (
     <section className="section-page">
       <div className="container">
-        {/* <h2 className="section-title">{title}</h2> */}
+        {/* bg-gradient-to-r from-sky-500 to-indigo-500  */}
+        <div className="bg-competences bg-cover absolute top-[51px] left-0 right-0 z-0 h-[75vh]" />
+        {/* <GatsbyImage
+          image={}
+          alt="category Img"
+          imgStyle={{
+            objectFit: "contain",
+            backgroundColor: "none",
+          }}
+        /> */}
         {/* <PageContent className="content" content={content} /> */}
+        <Reveal>
+          <h1 className="section-title mt-16 text-white text-6xl">
+            {mainpitch.title}
+          </h1>
+          <section className="container-fluid text-center card-glass items-center max-md:p-8 p-12 min-h-[30vh] mt-8 max-md:max-w-full max-w-[75%] m-auto mb-12">
+            <div className="mainpitch font-semibold italic text-white">
+              <p>{mainpitch.c1}</p>
+              <p>{mainpitch.c2}</p>
+              <p>{mainpitch.c3}</p>
+              <p>{mainpitch.c4}</p>
+              <h3 className="subtitle max-md:text-xs">
+                {mainpitch.description}
+              </h3>
+            </div>
+          </section>
+        </Reveal>
 
-        {/* <h2 className="section-title">Compétences</h2> */}
-        {/* className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6" */}
-        <h1 className="section-title">{mainpitch.title}</h1>
-
-        <section className="container-fluid text-center card-glass items-center p-12 min-h-[40vh]">
-          <div className="mainpitch">
-            <p>{mainpitch.c1}</p>
-            <p>{mainpitch.c2}</p>
-            <p>{mainpitch.c3}</p>
-            <p>{mainpitch.c4}</p>
-            <h3 className="subtitle max-md:text-xs">{mainpitch.description}</h3>
+        <section className="container-fluid text-center">
+          <div className="category grid grid-cols-2 max-md:grid-cols-1">
+            {intro.blurbs.map((category) => (
+              <Reveal>
+                <div key={category.title}>
+                  <GatsbyImage
+                    image={getImage(category.image)}
+                    alt="category Img"
+                    imgStyle={{
+                      objectFit: "contain",
+                      backgroundColor: "none",
+                    }}
+                  />
+                  <h3 className="font-bold">{category.title}</h3>
+                  <ul>
+                    {category?.competences.map((competence) => (
+                      <li key={competence}>{competence}</li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </section>
 
-        <section className="container-fluid text-center">
+        {/* <section className="container-fluid text-center">
           <motion.div
             ref={categoryRef}
             style={{ translateY }}
@@ -67,7 +103,7 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
               </div>
             ))}
           </motion.div>
-        </section>
+        </section> */}
       </div>
     </section>
   );

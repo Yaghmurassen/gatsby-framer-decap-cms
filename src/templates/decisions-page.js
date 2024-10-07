@@ -14,8 +14,6 @@ import "slick-carousel/slick/slick-theme.css";
 export const DecisionsPageTemplate = ({ blurbs }) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  console.log("blurbsblurbsblurbsblurbsblurbsblurbsblurbsblurbs ", blurbs);
-
   var settings = {
     dots: true,
     infinite: true,
@@ -77,8 +75,6 @@ DecisionsPageTemplate.propTypes = {
 
 const DecisionsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log("data from DecisionsPage ", data);
-  console.log("frontmatter from DecisionsPage ", frontmatter);
   return (
     <Layout>
       <DecisionsPageTemplate blurbs={frontmatter.blurbs} />
