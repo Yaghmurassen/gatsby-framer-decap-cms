@@ -13,6 +13,7 @@ import {
 } from "framer-motion";
 import { Reveal } from "../components/utils/Reveal";
 import Layout from "../components/Layout";
+import Framers from "../components/Framers";
 import "../style/tw-custom.scss";
 
 export const IndexPageTemplate = ({
@@ -58,8 +59,9 @@ export const IndexPageTemplate = ({
   }, []);
 
   return (
-    <div>
-      <section className="hero">
+    <div className="min-h-[85vh]">
+      <Framers />
+      {/* <section className="hero">
         <motion.div
           className="hero__bg"
           ref={bckgRef}
@@ -81,9 +83,9 @@ export const IndexPageTemplate = ({
         <div className="hero__cnt">
           <h1>{title}</h1>
         </div>
-      </section>
+      </section> */}
       {/* h-[75vh] */}
-      <section className="container-fluid presentation">
+      {/* <section className="container-fluid presentation">
         <Reveal>
           <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
             <GatsbyImage
@@ -106,7 +108,7 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </Reveal>
-      </section>
+      </section> */}
 
       {/* <section className="container-fluid text-center card-glass items-center p-12">
         <div className="mainpitch">
