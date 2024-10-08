@@ -14,6 +14,7 @@ import {
 import { Reveal } from "../components/utils/Reveal";
 import Layout from "../components/Layout";
 import Framers from "../components/Framers";
+import HorizontalScrollCarousel from "../components/HorizontalScrollCarousel";
 import "../style/tw-custom.scss";
 
 export const IndexPageTemplate = ({
@@ -85,7 +86,7 @@ export const IndexPageTemplate = ({
         </div>
       </section> */}
       {/* h-[75vh] */}
-      {/* <section className="container-fluid presentation">
+      <section className="container-fluid presentation">
         <Reveal>
           <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
             <GatsbyImage
@@ -108,7 +109,9 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </Reveal>
-      </section> */}
+      </section>
+
+      <HorizontalScrollCarousel />
 
       {/* <section className="container-fluid text-center card-glass items-center p-12">
         <div className="mainpitch">
