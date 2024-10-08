@@ -37,7 +37,7 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
         /> */}
         {/* <PageContent className="content" content={content} /> */}
         <Reveal>
-          <h1 className="section-title mt-16 text-white text-6xl">
+          <h1 className="section-title mt-16 text-white max-md:text-[2.5rem] text-6xl">
             {mainpitch.title}
           </h1>
           <section className="container-fluid text-center card-glass items-center max-md:p-8 p-12 min-h-[30vh] mt-8 max-md:max-w-full max-w-[75%] m-auto mb-12">
@@ -57,7 +57,7 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
           <div className="category grid grid-cols-2 max-md:grid-cols-1">
             {intro.blurbs.map((category) => (
               <Reveal>
-                <div key={category.title}>
+                <div key={category.title} className="m-auto">
                   <GatsbyImage
                     image={getImage(category.image)}
                     alt="category Img"

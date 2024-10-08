@@ -6,6 +6,7 @@ import { graphql, Link } from "gatsby";
 // import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import { Reveal } from "../components/utils/Reveal";
 import "../style/tw-blog.scss";
 
 // eslint-disable-next-line
@@ -25,7 +26,9 @@ export const BlogPostTemplate = ({
       <div className="container-fluid">
         <h1 className="text-3xl mb-4 font-bold italic">{title}</h1>
         <p className="text-sm mb-8 max-lg:mb-4">{description}</p>
-        <PostContent content={content} />
+        <Reveal>
+          <PostContent content={content} />
+        </Reveal>
         {tags && tags.length ? (
           <div style={{ marginTop: `4rem` }}>
             <h4>Tags</h4>

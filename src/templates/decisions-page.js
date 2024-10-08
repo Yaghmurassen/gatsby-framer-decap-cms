@@ -4,11 +4,11 @@ import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import DecisionCard from "../components/DecisionCard";
-// import { useMobile } from "../composables/helpers";
+import { Reveal } from "../components/utils/Reveal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+// import { useMobile } from "../composables/helpers";
 // eslint-disable-next-line
 
 export const DecisionsPageTemplate = ({ blurbs }) => {
@@ -49,13 +49,21 @@ export const DecisionsPageTemplate = ({ blurbs }) => {
           <Slider {...settings}>
             {blurbs &&
               blurbs.map(function (decisionsItem, index) {
-                return <DecisionCard key={index} decision={decisionsItem} />;
+                return (
+                  <Reveal>
+                    <DecisionCard key={index} decision={decisionsItem} />
+                  </Reveal>
+                );
               })}
           </Slider>
         ) : (
           blurbs &&
           blurbs.map(function (decisionsItem, index) {
-            return <DecisionCard key={index} decision={decisionsItem} />;
+            return (
+              <Reveal>
+                <DecisionCard key={index} decision={decisionsItem} />{" "}
+              </Reveal>
+            );
           })
         )}
       </section>

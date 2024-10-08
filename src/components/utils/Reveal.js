@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, useAnimation, useIsPresent } from "framer-motion";
 
 // interface Props {
@@ -6,11 +6,12 @@ import { motion, useInView, useAnimation, useIsPresent } from "framer-motion";
 //     width?: "fit-content" | "100%";
 // }
 
-export const Reveal = ({ children, width = "fit-content" }) => {
+export const Reveal = ({ children, width = "100%" }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
   const slideControls = useAnimation();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     console.log("useInView ::: ", isInView);
@@ -19,6 +20,11 @@ export const Reveal = ({ children, width = "fit-content" }) => {
       mainControls.start("visible");
       slideControls.start("visible");
     }
+
+    if (window.screen.width < 800) {
+      // Do an useMobile hooks in utils
+      setIsMobile(true);
+    }
   }, [isInView]);
 
   return (
@@ -26,7 +32,7 @@ export const Reveal = ({ children, width = "fit-content" }) => {
       ref={ref}
       style={{
         position: "relative",
-        width,
+        width: isMobile ? "100%" : width,
         overflow: "hidden",
         margin: "auto",
       }}
