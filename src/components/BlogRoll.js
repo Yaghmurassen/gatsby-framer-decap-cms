@@ -10,7 +10,7 @@ const BlogRollTemplate = (props) => {
   const { edges: posts } = props.data.allMarkdownRemark;
 
   return (
-    <div className="blog-container">
+    <div className="blog-container !overflow-visible">
       {posts &&
         posts.map(({ node: post }) => (
           <Reveal>

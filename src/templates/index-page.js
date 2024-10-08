@@ -38,8 +38,8 @@ export const IndexPageTemplate = ({
   // console.log("categoryRef ", categoryRef);
   // const { scrollYProgress } = useScroll();
   const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 1.5], [1, 2]);
-  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1.5], [1, 6]);
+  const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 1.5]);
   const translateY = useTransform(scrollYProgress, [10, 0.6], ["100%", 100]);
 
   // const { scrollYProgress } = useViewportScroll();
@@ -61,8 +61,8 @@ export const IndexPageTemplate = ({
 
   return (
     <div className="min-h-[85vh]">
-      <Framers />
-      {/* <section className="hero">
+      {/* <Framers /> */}
+      <section className="hero">
         <motion.div
           className="hero__bg"
           ref={bckgRef}
@@ -84,7 +84,7 @@ export const IndexPageTemplate = ({
         <div className="hero__cnt">
           <h1>{title}</h1>
         </div>
-      </section> */}
+      </section>
       {/* h-[75vh] */}
       <section className="container-fluid presentation">
         <Reveal>

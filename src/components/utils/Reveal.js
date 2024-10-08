@@ -22,7 +22,6 @@ export const Reveal = ({ children, width = "100%" }) => {
     }
 
     if (window.screen.width < 800) {
-      // Do an useMobile hooks in utils
       setIsMobile(true);
     }
   }, [isInView]);
@@ -33,7 +32,8 @@ export const Reveal = ({ children, width = "100%" }) => {
       style={{
         position: "relative",
         width: isMobile ? "100%" : width,
-        overflow: "hidden",
+        // modulable overflow/path
+        // overflow: "hidden",
         margin: "auto",
       }}
     >

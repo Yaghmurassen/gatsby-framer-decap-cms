@@ -17,16 +17,34 @@ import "../style/tw-about.scss";
 
 // eslint-disable-next-line
 export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
-  const categoryRef = useRef();
+  const categoryRef = useRef(null);
+  const bckgRef = useRef(null);
   const { scrollYProgress } = useViewportScroll();
   const translateY = useTransform(scrollYProgress, [10, 0.6], ["100%", 100]);
   // const PageContent = contentComponent || Content;
 
   return (
-    <section className="section-page">
-      <div className="container">
+    <section className="section-page mt-[51px]">
+      <div className="container relative overflow-hidden h-full">
         {/* bg-gradient-to-r from-sky-500 to-indigo-500  */}
-        <div className="bg-competences bg-cover absolute top-[51px] left-0 right-0 z-0 h-[75vh]" />
+        <motion.div
+          className="mask"
+          initial={{ clipPath: "rect(0% 100% 0% 0%)" }}
+          // transition={{ duration: 0.5 }}
+          animate={{
+            // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            clipPath: "rect(35% 100% 0% 0%)",
+            transformOrigin: "center",
+            transition: {
+              duration: 0.75,
+            },
+          }}
+        >
+          <div
+            ref={bckgRef}
+            className="bg-competences bg-cover z-0 h-[75vh] bg-no-repeat w-full"
+          />
+        </motion.div>
         {/* <GatsbyImage
           image={}
           alt="category Img"
@@ -37,7 +55,7 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
         /> */}
         {/* <PageContent className="content" content={content} /> */}
         <Reveal>
-          <h1 className="section-title mt-16 text-white max-md:text-[2.5rem] text-6xl">
+          <h1 className="section-title mt-36 text-white max-md:text-[2.5rem] text-6xl">
             {mainpitch.title}
           </h1>
           <section className="container-fluid text-center card-glass items-center max-md:p-8 p-12 min-h-[30vh] mt-8 max-md:max-w-full max-w-[75%] m-auto mb-12">
