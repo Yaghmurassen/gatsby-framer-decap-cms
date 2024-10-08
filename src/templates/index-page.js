@@ -61,7 +61,6 @@ export const IndexPageTemplate = ({
 
   return (
     <div className="min-h-[85vh]">
-      {/* <Framers /> */}
       <section className="hero">
         <motion.div
           className="hero__bg"
@@ -110,6 +109,8 @@ export const IndexPageTemplate = ({
           </div>
         </Reveal>
       </section>
+
+      <Framers />
 
       <HorizontalScrollCarousel />
 
