@@ -10,7 +10,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
   grid-template-rows: $hero-height;
   place-items: center;
   overflow: hidden;
-  animation: clip-hero-anim 1.25s cubic-bezier(0.29, 0.8, 0.8, 0.98);
+  animation: clip-hero-anim 1s cubic-bezier(0.29, 0.8, 0.8, 0.98);
   will-change: clip-path;
 
   &__bg,
@@ -48,7 +48,7 @@ $hero-bg-mix: rgba(#29042f, 0.4);
       display: flex;
       height: $hero-height;
       width: $hero-width;
-      animation: scaling-hero-anim 4s 0.25s cubic-bezier(0, 0.71, 0.4, 0.97)
+      animation: scaling-hero-anim 2s 0.25s cubic-bezier(0, 0.71, 0.4, 0.97)
         forwards;
       will-change: transform;
     }
@@ -216,17 +216,17 @@ $hero-bg-mix: rgba(#29042f, 0.4);
 }
 
 .card-glass {
-  background: rgba(255, 255, 255, 0.09);
+  background-color: rgba(124, 61, 10, 0.5);
+  // background: rgba(255, 255, 255, 0.09);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  // backdrop-filter: blur(25px);
   // filter: blur(25px);
   // transform: translate3d(0, 0, 0);
-  // transition: backdrop-filter 0.1ms 0.1ms;
-  @supports not (-moz-appearance: none) {
-    backdrop-filter: blur(25px);
-  }
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  // @supports not (-moz-appearance: none) {
+  //   backdrop-filter: blur(25px);
+  // }
   // inset: 0 || 3%;
 }
 
