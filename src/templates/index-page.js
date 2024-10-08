@@ -14,7 +14,6 @@ import {
 import { Reveal } from "../components/utils/Reveal";
 import Layout from "../components/Layout";
 import "../style/tw-custom.scss";
-// import ZoomParallax from "../components/ZoomParallax";
 
 export const IndexPageTemplate = ({
   image,
@@ -159,7 +158,6 @@ export const IndexPageTemplate = ({
         </Link>
         <BlogRoll />
       */}
-      {/* <Adresse /> */}
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>
   );

@@ -57,7 +57,7 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
           <div className="category grid grid-cols-2 max-md:grid-cols-1">
             {intro.blurbs.map((category) => (
               <Reveal>
-                <div key={category.title} className="m-auto">
+                <div key={category.title} className="m-auto mt-12">
                   <GatsbyImage
                     image={getImage(category.image)}
                     alt="category Img"

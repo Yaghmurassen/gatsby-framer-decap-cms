@@ -50,7 +50,7 @@ body {
   }
 
   .section-title {
-    @apply text-[2.5rem] font-bold text-center mt-32 mb-16 mx-12;
+    @apply text-[2.5rem] font-bold text-center my-16 mx-12;
   }
 
   .form-contact {
