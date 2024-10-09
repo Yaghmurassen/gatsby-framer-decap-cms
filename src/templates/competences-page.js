@@ -29,16 +29,21 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
         {/* bg-gradient-to-r from-sky-500 to-indigo-500  */}
         <motion.div
           className="mask"
-          initial={{ clipPath: "rect(0% 100% 0% 0%)" }}
+          // initial={{ width: "0%" }}
+          // initial={{ clipPath: "rect(0% 100% 0% 0%)" }}
+          initial={{ clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)" }}
           // transition={{ duration: 0.5 }}
           animate={{
+            clipPath: "polygon(0px 100%, 100% 100%, 100% 0%, 0px 0%)",
             // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            clipPath: "rect(35% 100% 0% 0%)",
-            transformOrigin: "center",
-            transition: {
-              duration: 0.75,
-            },
+            // clipPath: "rect(35% 100% 0% 0%)",
+            // transformOrigin: "center",
+            // width: "100%",
+            // transition: {
+            //   duration: 3,
+            // },
           }}
+          transition={{ ease: "easeOut", duration: 1 }}
         >
           <div
             ref={bckgRef}
