@@ -203,4 +203,40 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
 //   );
 // };
 
+// const animateSixthGrid = () => {
+//   const grid = document.querySelector("[data-grid-sixth]");
+//   const gridImages = grid.querySelectorAll(".grid__img");
+
+//   gsap
+//     .timeline({
+//       defaults: {
+//         ease: "none",
+//       },
+//       scrollTrigger: {
+//         trigger: grid,
+//         start: "center center",
+//         end: "+=200%",
+//         pin: grid.parentNode,
+//         scrub: 0.5,
+//       },
+//     })
+//     .from(gridImages, {
+//       stagger: {
+//         amount: 0.03,
+//         from: "edges",
+//         grid: [3, 3],
+//       },
+//       scale: 0.7,
+//       autoAlpha: 0,
+//     })
+//     .from(
+//       grid,
+//       {
+//         scale: 0.7,
+//         skewY: 5,
+//       },
+//       0
+//     );
+// };
+
 export default Hero;

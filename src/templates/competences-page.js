@@ -32,21 +32,17 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
           // initial={{ width: "0%" }}
           // initial={{ clipPath: "rect(0% 100% 0% 0%)" }}
           initial={{ clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)" }}
-          // transition={{ duration: 0.5 }}
           animate={{
             clipPath: "polygon(0px 100%, 100% 100%, 100% 0%, 0px 0%)",
-            // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             // clipPath: "rect(35% 100% 0% 0%)",
-            // transformOrigin: "center",
-            // width: "100%",
-            // transition: {
-            //   duration: 3,
-            // },
           }}
           transition={{ ease: "easeOut", duration: 1 }}
         >
-          <div
+          <motion.div
             ref={bckgRef}
+            initial={{ scale: 3 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: "easeOut", duration: 1 }}
             className="bg-competences bg-cover z-0 h-[75vh] bg-no-repeat w-full"
           />
         </motion.div>
@@ -60,7 +56,7 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
         /> */}
         {/* <PageContent className="content" content={content} /> */}
         <Reveal>
-          <h1 className="section-title mt-36 text-white max-md:text-[2.5rem] text-6xl">
+          <h1 className="section-title mt-28 text-white max-md:text-[2.5rem] text-6xl">
             {mainpitch.title}
           </h1>
           <section className="container-fluid text-center card-glass items-center max-md:p-8 p-12 min-h-[30vh] mt-8 max-md:max-w-full max-w-[75%] m-auto mb-12">

@@ -20,7 +20,7 @@ const DecisionCard = ({ decision }) => {
         <p className="text-sm">{decision.description}</p>
 
         <a
-          className="underline text-blue-600 my-4 text-sm italic font-semibold"
+          className="underline text-blue-600 my-4 text-sm italic font-semibold overflow-hidden"
           href={decision.url}
           target="_blank"
           rel="noreferrer noopener"

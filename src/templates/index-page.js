@@ -81,7 +81,9 @@ export const IndexPageTemplate = ({
         </motion.div>
 
         <div className="hero__cnt">
-          <h1>{title}</h1>
+          <h1 className="max-xs:text-2xl xs-md:text-3xl md:text-5xl max-xs:px-12 max-md:px-4 md:px-16 md:py-4 ">
+            {title}
+          </h1>
         </div>
       </section>
       {/* h-[75vh] */}
