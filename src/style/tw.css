@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
   @apply font-montserrat;
@@ -19,7 +19,7 @@ body {
 
 @layer components {
   .container-fluid {
-    @apply mx-8 my-20 max-md:mx-4 max-md:my-12 xl:mx-auto xl:max-w-[1200px] flex justify-center min-h-[50vh] flex-col;
+    @apply mx-8 my-20 max-md:mx-4 max-md:my-12 xl:mx-auto xl:max-w-[1200px] flex justify-center min-h-[70vh] flex-col;
   }
 
   .container-fluid-2 {

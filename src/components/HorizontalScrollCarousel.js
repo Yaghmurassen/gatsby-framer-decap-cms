@@ -1,31 +1,83 @@
 import React, { useRef } from "react";
-import { motion, useTransform, useScroll } from "framer-motion";
+import {
+  motion,
+  useTransform,
+  useScroll,
+  useSpring,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame,
+} from "framer-motion";
 
-const Example = () => {
+const wrap = (min, max, v) => {
+  const rangeSize = max - min;
+  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
+
+const Hsc = () => {
   return (
-    <div className="bg-neutral-800">
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
-        </span>
-      </div>
-      <HorizontalScrollCarousel />
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll up
-        </span>
-      </div>
-    </div>
+    // <div className="bg-neutral-800">
+    //   <div className="flex h-48 items-center justify-center">
+    //     <span className="font-semibold uppercase text-neutral-500">
+    //       Scroll down
+    //     </span>
+    //   </div>
+    <HorizontalScrollCarousel />
+    // <div className="flex h-48 items-center justify-center">
+    //  <span className="font-semibold uppercase text-neutral-500">
+    //  Scroll up
+    // </span>
+    // </div>
+    // </div>
   );
 };
 
-const HorizontalScrollCarousel = () => {
+const HorizontalScrollCarousel = ({ children, baseVelocity = 100 }) => {
   const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollY } = useScroll({
     target: targetRef,
   });
+  const baseX = useMotionValue(0);
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(baseX, (v) => `${wrap(0, -25, v)}%`);
+  const directionFactor = useRef(1);
+
+  // const x = useTransform(scrollYProgress, [0, 1], ["1%", "-100%"]);
+  // const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1], ["1%", "-100%"]);
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 300,
+  });
+
+  const skewVelocity = useSpring(scrollVelocity, {
+    stiffness: 100,
+    damping: 30,
+  });
+
+  const skewVelocityFactor = useTransform(
+    skewVelocity,
+    [-1000, 1000],
+    [-30, 30]
+  );
+
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+    clamp: false,
+  });
+
+  useAnimationFrame((t, delta) => {
+    let moveBy = directionFactor.current * -5 * (delta / 1000);
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
+    }
+    if (velocityFactor.get() !== 0) {
+      moveBy += directionFactor.current * moveBy * velocityFactor.get();
+      baseX.set(baseX.get() + moveBy);
+    }
+  });
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
@@ -63,7 +115,7 @@ const Card = ({ card }) => {
   );
 };
 
-export default Example;
+export default Hsc;
 
 const cards = [
   {

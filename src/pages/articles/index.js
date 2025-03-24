@@ -1,7 +1,5 @@
 import * as React from "react";
-
 import "../../style/tw-blog.scss";
-
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
 

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-import { Script, graphql } from "gatsby";
-import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import { Script, graphql } from 'gatsby';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import {
   motion,
   useViewportScroll,
@@ -10,12 +10,15 @@ import {
   useMotionValue,
   useInView,
   useAnimation,
-} from "framer-motion";
-import { Reveal } from "../components/utils/Reveal";
-import Layout from "../components/Layout";
-import Framers from "../components/Framers";
-import HorizontalScrollCarousel from "../components/HorizontalScrollCarousel";
-import "../style/tw-custom.scss";
+} from 'framer-motion';
+import { Reveal } from '../components/utils/Reveal';
+import Layout from '../components/Layout';
+import Adresse from '../components/Adresse';
+// import Framers from "../components/Framers";
+// import FramerGpt from "../components/FramerGpt";
+// import ZoomParallax from "../components/ZoomParallax";
+// import HorizontalScrollCarousel from "../components/HorizontalScrollCarousel";
+import '../style/tw-custom.scss';
 
 export const IndexPageTemplate = ({
   image,
@@ -35,28 +38,14 @@ export const IndexPageTemplate = ({
   const categoryRef = useRef();
 
   // let scrollYProgress = 0;
-  // console.log("categoryRef ", categoryRef);
   // const { scrollYProgress } = useScroll();
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1.5], [1, 6]);
   const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 1.5]);
-  const translateY = useTransform(scrollYProgress, [10, 0.6], ["100%", 100]);
-
-  // const { scrollYProgress } = useViewportScroll();
-  // const { scrollYProgress } = useElementScroll(bckgRef);
-
-  // const { scrollYProgress } = useElementScroll({
-  //   target: bckgRef.current,
-  //   offset: ["0 1", "1.33 1"],
-  // });
-
-  // const x = useMotionValue(scrollYProgress);
-
-  // const scale = useTransform(scrollYProgress, [0, 0.3], [1, 2]);
-  // const opacity = useTransform(scrollYProgress, [1, 0], [0.3, 0]);
+  const translateY = useTransform(scrollYProgress, [10, 0.6], ['100%', 100]);
 
   useEffect(() => {
-    console.log("categoryRef useEffect ", categoryRef.current);
+    console.log('categoryRef useEffect ', categoryRef.current);
   }, []);
 
   return (
@@ -74,8 +63,8 @@ export const IndexPageTemplate = ({
             image={heroImage}
             alt="hero Img"
             imgStyle={{
-              maxWidth: "100%",
-              backgroundColor: "transparent",
+              maxWidth: '100%',
+              backgroundColor: 'transparent',
             }}
           />
         </motion.div>
@@ -86,7 +75,6 @@ export const IndexPageTemplate = ({
           </h1>
         </div>
       </section>
-      {/* h-[75vh] */}
       <section className="container-fluid presentation">
         <Reveal>
           <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
@@ -94,8 +82,8 @@ export const IndexPageTemplate = ({
               image={heroImage2}
               alt="profil Img"
               imgStyle={{
-                objectFit: "contain",
-                backgroundColor: "none",
+                objectFit: 'contain',
+                backgroundColor: 'none',
               }}
             />
 
@@ -112,11 +100,13 @@ export const IndexPageTemplate = ({
         </Reveal>
       </section>
 
-      <Framers />
+      {/* <Framers />
 
-      <HorizontalScrollCarousel />
+      <HorizontalScrollCarousel /> */}
 
-      {/* <section className="container-fluid text-center card-glass items-center p-12">
+      {/* <FramerGpt /> */}
+
+      <section className="container-fluid text-center card-glass items-center p-12">
         <div className="mainpitch">
           <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
             {mainpitch.title}
@@ -141,9 +131,9 @@ export const IndexPageTemplate = ({
                 image={getImage(category.image)}
                 alt="category Img"
                 imgStyle={{
-                  objectFit: "contain",
+                  objectFit: 'contain',
                   // maxWidth: "13rem",
-                  backgroundColor: "none",
+                  backgroundColor: 'none',
                 }}
               />
               <h3 className="font-bold">{category.title}</h3>
@@ -155,17 +145,16 @@ export const IndexPageTemplate = ({
             </div>
           ))}
         </motion.div>
-      </section> */}
+      </section>
 
-      {/* <ZoomParallax /> */}
+      <Adresse />
 
-      {/* 
-        <Features gridItems={intro.blurbs} />
+      {/* <Features gridItems={intro.blurbs} />
         <Link className="btn" to="/products">
           See all products
         </Link>
-        <BlogRoll />
-      */}
+        <BlogRoll /> */}
+
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>
   );

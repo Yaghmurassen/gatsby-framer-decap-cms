@@ -8,7 +8,7 @@ import { motion, useInView, useAnimation, useIsPresent } from "framer-motion";
 
 export const Reveal = ({ children, width = "100%" }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();
   const slideControls = useAnimation();
   const [isMobile, setIsMobile] = useState(false);
@@ -39,7 +39,7 @@ export const Reveal = ({ children, width = "100%" }) => {
     >
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 75 },
+          hidden: { opacity: 0, y: 100 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
