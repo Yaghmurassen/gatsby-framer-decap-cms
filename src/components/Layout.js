@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
-import { motion } from "framer-motion";
-import Lenis from "@studio-freight/lenis";
-import { withPrefix } from "gatsby";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
+import Lenis from '@studio-freight/lenis';
+import { withPrefix } from 'gatsby';
 
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar2';
 
-import useSiteMetadata from "./SiteMetadata";
+import useSiteMetadata from './SiteMetadata';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -33,24 +33,24 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${withPrefix("/")}img/apple-touch-icon.png`}
+          href={`${withPrefix('/')}img/apple-touch-icon.png`}
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix("/")}img/favicon-32x32.png`}
+          href={`${withPrefix('/')}img/favicon-32x32.png`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix("/")}img/favicon-16x16.png`}
+          href={`${withPrefix('/')}img/favicon-16x16.png`}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
+          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
@@ -60,7 +60,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
-          content={`${withPrefix("/")}img/og-image.jpg`}
+          content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
       <Navbar />
@@ -69,7 +69,7 @@ const TemplateWrapper = ({ children }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{
-          type: "spring",
+          type: 'spring',
           mass: 0.35,
           stiffness: 75,
           duration: 0.3,

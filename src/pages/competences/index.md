@@ -15,7 +15,7 @@ mainpitch:
     Maître BASSOLÉ vous accompagne avec compétence et dévouement à chacun des
     stades de la procédure pénale, devant toutes les juridictions et sur
     l’ensemble du territoire national (métropole et Outre-Mer).
-  heroImg2: /img/lmb-profil.png
+  heroImg2: /img/lmb-pp.webp
 intro:
   blurbs:
     - image: /img/justice.jpg

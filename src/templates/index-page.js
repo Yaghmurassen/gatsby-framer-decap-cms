@@ -1,23 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useInsertionEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Script, graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import {
   motion,
   useViewportScroll,
-  useElementScroll,
   useTransform,
-  useMotionValue,
   useInView,
-  useAnimation,
 } from 'framer-motion';
 import { Reveal } from '../components/utils/Reveal';
 import Layout from '../components/Layout';
 import Adresse from '../components/Adresse';
-// import Framers from "../components/Framers";
-// import FramerGpt from "../components/FramerGpt";
-// import ZoomParallax from "../components/ZoomParallax";
-// import HorizontalScrollCarousel from "../components/HorizontalScrollCarousel";
 import '../style/tw-custom.scss';
 
 export const IndexPageTemplate = ({
@@ -32,25 +25,47 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => {
-  const heroImage = getImage(heroImg) || heroImg;
-  const heroImage2 = getImage(heroImg2) || heroImg2;
+  const heroImage = getImage(heroImg);
+  const heroImage2 = getImage(heroImg2);
   const bckgRef = useRef();
+  const heroRef = useRef(null);
   const categoryRef = useRef();
 
-  // let scrollYProgress = 0;
   // const { scrollYProgress } = useScroll();
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1.5], [1, 6]);
   const opacity = useTransform(scrollYProgress, [0, 0.55], [1, 1.5]);
   const translateY = useTransform(scrollYProgress, [10, 0.6], ['100%', 100]);
 
-  useEffect(() => {
-    console.log('categoryRef useEffect ', categoryRef.current);
-  }, []);
+  // const [isInView, setIsInView] = useState(false);
+
+  // const isInView = useInView(heroRef, { once: false, amount: 0.5 }); // Déclenche si au moins 50% est visible
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setIsInView(true);
+  //       } else {
+  //         setIsInView(false); // Remet à false pour rejouer l'animation
+  //       }
+  //     },
+  //     {
+  //       root: null, // Observe par rapport à la fenêtre
+  //       rootMargin: '0px',
+  //       threshold: 0.3, // Déclenche quand 30% est visible
+  //     }
+  //   );
+  //   if (heroRef.current) observer.observe(heroRef.current);
+
+  //   return () => {
+  //     if (heroRef.current) observer.unobserve(heroRef.current);
+  //   };
+  // }, [isInView]);
 
   return (
     <div className="min-h-[85vh]">
-      <section className="hero">
+      {/* <section className="hero">
         <motion.div
           className="hero__bg"
           ref={bckgRef}
@@ -74,7 +89,41 @@ export const IndexPageTemplate = ({
             {title}
           </h1>
         </div>
+      </section> */}
+      <section className="hero ml-36">
+        <motion.div
+          // initial={{ clipPath: 'inset(100% 0% 0% 0%)' }} // Complètement masqué (de haut en bas)
+          // animate={{ clipPath: 'inset(0% 0% 0% 0%)' }} // Révélé
+          initial={{
+            clipPath: 'polygon(0px 0px, 0px 100%, 0% 100%, 0% 0px)',
+          }}
+          animate={{
+            clipPath: 'polygon(0 0, 0 100%, 100% 100%, 100% 0)',
+          }}
+          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          key={heroImage2}
+          className="overflow-hidden"
+          ref={heroRef}
+        >
+          <motion.div
+            initial={{ scale: 2 }} // Image légèrement agrandie au départ
+            animate={{ scale: 1 }} // Revient à sa taille normale
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            className="w-full h-full"
+          >
+            <GatsbyImage
+              image={heroImage2}
+              alt="hero Img"
+              imgStyle={{
+                maxWidth: '100%',
+                backgroundColor: 'transparent',
+                overflow: 'hidden',
+              }}
+            />
+          </motion.div>
+        </motion.div>
       </section>
+
       <section className="container-fluid presentation">
         <Reveal>
           <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
@@ -99,12 +148,6 @@ export const IndexPageTemplate = ({
           </div>
         </Reveal>
       </section>
-
-      {/* <Framers />
-
-      <HorizontalScrollCarousel /> */}
-
-      {/* <FramerGpt /> */}
 
       <section className="container-fluid text-center card-glass items-center p-12">
         <div className="mainpitch">
@@ -132,7 +175,6 @@ export const IndexPageTemplate = ({
                 alt="category Img"
                 imgStyle={{
                   objectFit: 'contain',
-                  // maxWidth: "13rem",
                   backgroundColor: 'none',
                 }}
               />
@@ -227,7 +269,7 @@ export const pageQuery = graphql`
         mainpitch {
           heroImg2 {
             childImageSharp {
-              gatsbyImageData(width: 240, quality: 100, layout: CONSTRAINED)
+              gatsbyImageData(width: 800, layout: CONSTRAINED)
             }
           }
           title
@@ -242,7 +284,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(width: 600, layout: CONSTRAINED)
               }
             }
             title

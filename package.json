@@ -5,6 +5,7 @@
   "author": "Yaghmurassen Sainson",
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
+    "clsx": "^2.1.1",
     "decap-cms-app": "^3.0.12",
     "decap-cms-media-library-cloudinary": "^3.0.1",
     "decap-cms-media-library-uploadcare": "^3.0.0",

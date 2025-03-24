@@ -1,26 +1,25 @@
-import React, { useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 import {
   motion,
   useViewportScroll,
   useElementScroll,
   useTransform,
   useMotionValue,
-} from "framer-motion";
-import Layout from "../components/Layout";
-import { getImage, GatsbyImage } from "gatsby-plugin-image";
-import { Reveal } from "../components/utils/Reveal";
+} from 'framer-motion';
+import Layout from '../components/Layout';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { Reveal } from '../components/utils/Reveal';
 // import Content, { HTMLContent } from "../components/Content";
 
-import "../style/tw-about.scss";
+import '../style/tw-about.scss';
 
 // eslint-disable-next-line
 export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
   const categoryRef = useRef(null);
   const bckgRef = useRef(null);
   const { scrollYProgress } = useViewportScroll();
-  const translateY = useTransform(scrollYProgress, [10, 0.6], ["100%", 100]);
   // const PageContent = contentComponent || Content;
 
   return (
@@ -31,18 +30,18 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
           className="mask"
           // initial={{ width: "0%" }}
           // initial={{ clipPath: "rect(0% 100% 0% 0%)" }}
-          initial={{ clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)" }}
+          initial={{ clipPath: 'polygon(0 50%, 100% 50%, 100% 50%, 0 50%)' }}
           animate={{
-            clipPath: "polygon(0px 100%, 100% 100%, 100% 0%, 0px 0%)",
+            clipPath: 'polygon(0px 100%, 100% 100%, 100% 0%, 0px 0%)',
             // clipPath: "rect(35% 100% 0% 0%)",
           }}
-          transition={{ ease: "easeOut", duration: 1 }}
+          transition={{ ease: 'easeOut', duration: 1 }}
         >
           <motion.div
             ref={bckgRef}
             initial={{ scale: 3 }}
             animate={{ scale: 1 }}
-            transition={{ ease: "easeOut", duration: 1 }}
+            transition={{ ease: 'easeOut', duration: 1 }}
             className="bg-competences bg-cover z-0 h-[75vh] bg-no-repeat w-full"
           />
         </motion.div>
@@ -81,8 +80,8 @@ export const CompetencesPageTemplate = ({ mainpitch, intro }) => {
                     image={getImage(category.image)}
                     alt="category Img"
                     imgStyle={{
-                      objectFit: "contain",
-                      backgroundColor: "none",
+                      objectFit: 'contain',
+                      backgroundColor: 'none',
                     }}
                   />
                   <h3 className="font-bold">{category.title}</h3>
@@ -198,7 +197,7 @@ export const CompetencesPageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(width: 600, layout: CONSTRAINED)
               }
             }
             title

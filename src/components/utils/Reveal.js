@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView, useAnimation, useIsPresent } from "framer-motion";
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useInView, useAnimation, useIsPresent } from 'framer-motion';
 
 // interface Props {
 //     children: JSX.Element;
 //     width?: "fit-content" | "100%";
 // }
 
-export const Reveal = ({ children, width = "100%" }) => {
+export const Reveal = ({ children, width = '100%' }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();
@@ -14,11 +14,11 @@ export const Reveal = ({ children, width = "100%" }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    console.log("useInView ::: ", isInView);
+    // console.log("useInView ::: ", isInView);
     // Fire the animation
     if (isInView) {
-      mainControls.start("visible");
-      slideControls.start("visible");
+      mainControls.start('visible');
+      slideControls.start('visible');
     }
 
     if (window.screen.width < 800) {
@@ -30,11 +30,11 @@ export const Reveal = ({ children, width = "100%" }) => {
     <div
       ref={ref}
       style={{
-        position: "relative",
-        width: isMobile ? "100%" : width,
+        position: 'relative',
+        width: isMobile ? '100%' : width,
         // modulable overflow/path
         // overflow: "hidden",
-        margin: "auto",
+        margin: 'auto',
       }}
     >
       <motion.div

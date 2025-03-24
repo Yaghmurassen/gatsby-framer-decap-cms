@@ -17,14 +17,22 @@
   vertical-align: top;
   overflow-y: auto;
   overflow-x: hidden;
-  width: 18rem;
+  width: 20rem;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0px 12px 15px -3px rgba(0, 0, 0, 0.1);
-  padding-top: 3rem;
+  // @media screen and (min-width: 1440px) and (max-width: 1640px) {
+  //   padding-left: 14%;
+  //   padding-right: 14%;
+  // }
+  // @media screen and (min-width: 1641px) {
+  //   padding-left: 18%;
+  //   padding-right: 18%;
+  // }
 }
 
 .isScrollingDown {
-  width: 5rem;
-  transition: width 0.4s ease-in-out;
+  transform: translateY(-100%);
 }
 
 // Burger Menu Mobile Animation

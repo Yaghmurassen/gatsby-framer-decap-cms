@@ -19,7 +19,7 @@ mainpitch:
     Maître BASSOLÉ vous accompagne avec compétence et dévouement à chacun des
     stades de la procédure pénale, devant toutes les juridictions et sur
     l’ensemble du territoire national (métropole et Outre-Mer).
-  heroImg2: /img/lmb-profil.png
+  heroImg2: /img/lmb-pp.webp
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that
