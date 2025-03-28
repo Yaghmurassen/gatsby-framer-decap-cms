@@ -65,7 +65,7 @@ export const IndexPageTemplate = ({
 
   // max-w-[calc(100%-80px)] max-w-[calc(100%-290px)]
   return (
-    <div className="max-w-[calc(100%-290px)] ml-auto px-20">
+    <div className="lg:max-w-[calc(100%-290px)] ml-auto max-lg:px-4 lg:px-20">
       {/* <section className="hero">
         <motion.div
           className="hero__bg"
@@ -122,7 +122,6 @@ export const IndexPageTemplate = ({
           </motion.div>
         </motion.div>
       </section>
-
       <section className="container-fluid presentation">
         <Reveal>
           <div className="grid items-center profil-img">
@@ -147,36 +146,35 @@ export const IndexPageTemplate = ({
           </div>
         </Reveal>
       </section>
-
-      <section className="container-fluid text-center card-glass items-center p-12">
-        <div className="mainpitch">
-          <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
+      <p className="border-none h-[2px] bg-black w-4/5 m-auto"></p>
+      <section className="container-fluid text-center card-glass items-center">
+        <div className="mainpitch text-base text-justify">
+          {/* <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6">
             {mainpitch.title}
-          </h1>
+          </h1> */}
           <p>{mainpitch.c1}</p>
           <p>{mainpitch.c2}</p>
           <p>{mainpitch.c3}</p>
           <p>{mainpitch.c4}</p>
-          <h3 className="subtitle max-md:text-xs">{mainpitch.description}</h3>
+          <p>{mainpitch.description}</p>
         </div>
       </section>
-
-      <section className="container-fluid text-center">
+      <section className="container-fluid text-center mt-24">
         <motion.div
           ref={categoryRef}
           style={{ translateY }}
-          className="category grid grid-cols-2 max-md:grid-cols-1"
+          className="category grid grid-cols-2 gap-14 mb-24 max-md:grid-cols-1"
         >
           {intro.blurbs.map((category) => (
             <div key={category.title}>
-              <GatsbyImage
+              {/* <GatsbyImage
                 image={getImage(category.image)}
                 alt="category Img"
                 imgStyle={{
                   objectFit: 'contain',
                   backgroundColor: 'none',
                 }}
-              />
+              /> */}
               <h3 className="font-bold">{category.title}</h3>
               <ul>
                 {category?.competences.map((competence) => (
@@ -187,15 +185,12 @@ export const IndexPageTemplate = ({
           ))}
         </motion.div>
       </section>
-
       <Adresse />
-
       {/* <Features gridItems={intro.blurbs} />
         <Link className="btn" to="/products">
           See all products
         </Link>
         <BlogRoll /> */}
-
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
     </div>
   );

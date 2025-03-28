@@ -25,6 +25,8 @@ const TemplateWrapper = ({ children }) => {
   });
   return (
     <div className="relative">
+      <p className="border-none h-[calc(100vh-230px)] bg-black w-[1px] m-auto fixed right-12 bottom-0"></p>
+
       <Helmet>
         <html lang="fr" />
         <title>{title}</title>

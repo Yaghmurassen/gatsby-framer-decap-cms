@@ -1,27 +1,27 @@
-import * as React from "react";
-import { Link } from "gatsby";
-import logoBarreau from "../img/logo-barreau-de-paris.jpg";
+import * as React from 'react';
+import { Link } from 'gatsby';
+import logoBarreau from '../img/logo-barreau-de-paris.jpg';
 
 const Footer = () => {
   const footerData = {
     adresse: {
-      title: "Cabinet de Paris",
-      value: "212 rue La Fayette 75010 Paris",
-      transport: "Louis Blanc (ligne 7 et 7B) Jean Jaurès (ligne 2, 5 et 7B)",
+      title: 'Cabinet de Paris',
+      value: '212 rue La Fayette 75010 Paris',
+      transport: 'Louis Blanc (ligne 7 et 7B) Jean Jaurès (ligne 2, 5 et 7B)',
     },
     contact: {
-      phone: "01 44 32 13 94",
-      phoneTo: "tel:0144321394",
-      fax: "01 44 32 13 94",
-      mail: "cabinet@dgtavocats.fr",
-      mailto: "mailto:cabinet@dgtavocats.fr",
+      phone: '01 44 32 13 94',
+      phoneTo: 'tel:0144321394',
+      fax: '01 44 32 13 94',
+      mail: 'cabinet@dgtavocats.fr',
+      mailto: 'mailto:cabinet@dgtavocats.fr',
     },
-    description: "Luc-Moussa Bassole pour vous servir",
-    mentions: "© Mentions légales zebi airlines, All Right Reserved",
+    description: 'Luc-Moussa Bassole pour vous servir',
+    mentions: '© Mentions légales zebi airlines, All Right Reserved',
   };
 
   return (
-    <footer className="container-footer">
+    <footer className="container-footer lg:max-w-[calc(100%-290px)] absolute right-16 lg:px-20">
       <section className="footer-section-1 ">
         <div>
           <img
@@ -38,7 +38,7 @@ const Footer = () => {
           </li>
           <li>
             <Link className="navbar-item" to="/articles">
-            Articles
+              Articles
             </Link>
           </li>
           <li>
