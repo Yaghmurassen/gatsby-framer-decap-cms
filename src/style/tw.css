@@ -1,11 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'johncream';
+  src: local('johncream'), url('../../public/fonts/jhoncream.otf'),
+    url('../../public/fonts/jhoncream.ttf');
+}
+
+/* @font-face {
+  font-family: 'jersey';
+  src: local('Jersey10-Regular'), url('../../public/fonts/Jersey10-Regular.ttf');
+} */
+/* 
+@font-face {
+  font-family: 'lobster';
+  src: local('Lobster-Regular'), url('../../public/fonts/Lobster-Regular.ttf');
+} */
+
+/* @font-face {
+  font-family: 'righteous';
+  src: local('Righteous-Regular'),
+    url('../../public/fonts/Righteous-Regular.ttf');
+} */
+
+/* @font-face {
+  font-family: 'bowlbyOne';
+  src: local('BowlbyOne-Regular'),
+    url('../../public/fonts/BowlbyOne-Regular.ttf');
+} */
+
+/* @font-face {
+  font-family: 'spicyRice';
+  src: local('SpicyRice-Regular'),
+    url('../../public/fonts/SpicyRice-Regular.ttf');
+} */
+
+/* @font-face {
+  font-family: 'auvic';
+  src: local('auvic'), url('../../public/fonts/auvic.ttf');
+} */
 
 body {
   @apply font-montserrat;
+  /* font-family: righteous, sans-serif; */
 }
 
 /* @layer base {

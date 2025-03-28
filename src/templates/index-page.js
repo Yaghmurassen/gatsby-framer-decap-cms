@@ -63,8 +63,9 @@ export const IndexPageTemplate = ({
   //   };
   // }, [isInView]);
 
+  // max-w-[calc(100%-80px)] max-w-[calc(100%-290px)]
   return (
-    <div className="min-h-[85vh]">
+    <div className="max-w-[calc(100%-290px)] ml-auto px-20">
       {/* <section className="hero">
         <motion.div
           className="hero__bg"
@@ -90,10 +91,8 @@ export const IndexPageTemplate = ({
           </h1>
         </div>
       </section> */}
-      <section className="hero ml-36">
+      <section className="hero mt-20">
         <motion.div
-          // initial={{ clipPath: 'inset(100% 0% 0% 0%)' }} // Complètement masqué (de haut en bas)
-          // animate={{ clipPath: 'inset(0% 0% 0% 0%)' }} // Révélé
           initial={{
             clipPath: 'polygon(0px 0px, 0px 100%, 0% 100%, 0% 0px)',
           }}
@@ -106,8 +105,8 @@ export const IndexPageTemplate = ({
           ref={heroRef}
         >
           <motion.div
-            initial={{ scale: 2 }} // Image légèrement agrandie au départ
-            animate={{ scale: 1 }} // Revient à sa taille normale
+            initial={{ scale: 2 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
             className="w-full h-full"
           >
@@ -126,20 +125,20 @@ export const IndexPageTemplate = ({
 
       <section className="container-fluid presentation">
         <Reveal>
-          <div className="grid grid-cols-4/1 max-md:grid-cols-1 gap-16 max-xs:gap-y-8 items-center profil-img">
-            <GatsbyImage
+          <div className="grid items-center profil-img">
+            {/* <GatsbyImage
               image={heroImage2}
               alt="profil Img"
               imgStyle={{
                 objectFit: 'contain',
                 backgroundColor: 'none',
               }}
-            />
+            /> */}
 
             <div className="presentation">
-              <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6 max-xs:mt-8">
+              {/* <h1 className="title text-4xl xs-md:text-2xl max-xs:text-xl max-xs:leading-none font-bold mb-12 max-xs:mb-6 max-xs:mt-8">
                 {intro.heading}
-              </h1>
+              </h1> */}
               <p>{intro.d1}</p>
               <p>{intro.d2}</p>
               <p>{intro.d3}</p>

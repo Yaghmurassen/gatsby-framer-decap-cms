@@ -76,6 +76,7 @@ const Navbar = () => {
             scrollDirection === 'down' ? '' : 'ml-3'
           }`}
         >
+          {/* TODO: changer le tableau avec que 2 liens : décisions & articles + gérer les ancres sur la home */}
           {['/', '/competences', '/decisions', '/articles', '/contact'].map(
             (path, index) => (
               <Link key={index} className="navbar-itemus" to={path}>

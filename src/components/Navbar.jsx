@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 
-import logoJustice from "../img/logo-justice.png";
-import "../style/navbar.scss";
+import logoJustice from '../img/logo-justice.png';
+import '../style/navbar.scss';
 
 const Navbar = () => {
   const [atTop, setAtTop] = useState(true);
-  const [scrollDirection, setScrollDirection] = useState("");
+  const [scrollDirection, setScrollDirection] = useState('');
   const [navOpen, setNavOpen] = useState(false);
 
   const threshold = 0;
   // impossible d'acceder a la window en SSR durant le build ..
   let lastScrollY;
-  if (typeof window !== "undefined") {
+  if (typeof window !== 'undefined') {
     lastScrollY = window.scrollY;
   } else {
     lastScrollY = 0;
@@ -22,9 +22,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (navOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto';
     }
 
     const throttle = (callback, time) => {
@@ -52,7 +52,7 @@ const Navbar = () => {
         ticking = false;
         return;
       }
-      setScrollDirection(scrollY > lastScrollY ? "down" : "up");
+      setScrollDirection(scrollY > lastScrollY ? 'down' : 'up');
       lastScrollY = scrollY > 0 ? scrollY : 0;
       ticking = false;
     };
@@ -64,12 +64,12 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", onScroll);
-    window.addEventListener("scroll", () => throttle(navbarControl, 500));
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', () => throttle(navbarControl, 500));
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("scroll", throttle);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('scroll', throttle);
     };
   }, [scrollDirection, navOpen]);
 
@@ -78,14 +78,14 @@ const Navbar = () => {
       role="navigation"
       aria-label="main-navigation"
       style={{
-        overflow: navOpen ? "hidden" : "auto",
+        overflow: navOpen ? 'hidden' : 'auto',
       }}
     >
       <div
         className={`nav ${
-          scrollDirection === "down" && navOpen === false
-            ? "mainDiv  isScrollingDown"
-            : "mainDiv"
+          scrollDirection === 'down' && navOpen === false
+            ? 'mainDiv  isScrollingDown'
+            : 'mainDiv'
         }`}
       >
         <div>
@@ -111,7 +111,7 @@ const Navbar = () => {
             Compétences
           </Link>
           <Link className="navbar-itemus" to="/decisions">
-            Décisions
+            Décisions ma bite
           </Link>
           <Link className="navbar-itemus" to="/articles">
             Articles
@@ -125,9 +125,9 @@ const Navbar = () => {
           className="menu-toggle flex md2:hidden"
           onClick={() => setNavOpen(!navOpen)}
         >
-          <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
-            <span className={navOpen ? "lineTop spin" : "lineTop"}></span>
-            <span className={navOpen ? "lineBottom spin" : "lineBottom"}></span>
+          <div className={navOpen ? 'hamBox hamBoxOpen' : 'hamBox'}>
+            <span className={navOpen ? 'lineTop spin' : 'lineTop'}></span>
+            <span className={navOpen ? 'lineBottom spin' : 'lineBottom'}></span>
           </div>
         </div>
         {/* <div className="flex md2:hidden">|||</div> */}
@@ -135,8 +135,8 @@ const Navbar = () => {
       <div
         className="nav-overlay"
         style={{
-          top: navOpen ? "0%" : "-108%",
-          transitionDelay: navOpen ? "0s" : "0s",
+          top: navOpen ? '0%' : '-108%',
+          transitionDelay: navOpen ? '0s' : '0s',
         }}
       >
         <ul className="nav-links flex gap-4">
@@ -146,8 +146,8 @@ const Navbar = () => {
               to="/"
               onClick={() => setNavOpen(!navOpen)}
               style={{
-                top: navOpen ? "0" : "120px",
-                transitionDelay: navOpen ? "0.8s" : "0s",
+                top: navOpen ? '0' : '120px',
+                transitionDelay: navOpen ? '0.8s' : '0s',
               }}
             >
               Présentation
@@ -160,8 +160,8 @@ const Navbar = () => {
               to="/competences"
               onClick={() => setNavOpen(!navOpen)}
               style={{
-                top: navOpen ? "0" : "120px",
-                transitionDelay: navOpen ? "0.9s" : "0s",
+                top: navOpen ? '0' : '120px',
+                transitionDelay: navOpen ? '0.9s' : '0s',
               }}
             >
               Compétences
@@ -174,8 +174,8 @@ const Navbar = () => {
               to="/decisions"
               onClick={() => setNavOpen(!navOpen)}
               style={{
-                top: navOpen ? "0" : "120px",
-                transitionDelay: navOpen ? "1s" : "0s",
+                top: navOpen ? '0' : '120px',
+                transitionDelay: navOpen ? '1s' : '0s',
               }}
             >
               Décisions
@@ -188,8 +188,8 @@ const Navbar = () => {
               to="/articles"
               onClick={() => setNavOpen(!navOpen)}
               style={{
-                top: navOpen ? "0" : "120px",
-                transitionDelay: navOpen ? "1.1s" : "0s",
+                top: navOpen ? '0' : '120px',
+                transitionDelay: navOpen ? '1.1s' : '0s',
               }}
             >
               Articles
@@ -202,8 +202,8 @@ const Navbar = () => {
               to="/contact"
               onClick={() => setNavOpen(!navOpen)}
               style={{
-                top: navOpen ? "0" : "120px",
-                transitionDelay: navOpen ? "1.1s" : "0s",
+                top: navOpen ? '0' : '120px',
+                transitionDelay: navOpen ? '1.1s' : '0s',
               }}
             >
               Contact
@@ -216,9 +216,9 @@ const Navbar = () => {
           <div
             className="location"
             style={{
-              bottom: navOpen ? "0" : "-20px",
-              opacity: navOpen ? "1" : "0",
-              transitionDelay: navOpen ? "1.2s" : "0s",
+              bottom: navOpen ? '0' : '-20px',
+              opacity: navOpen ? '1' : '0',
+              transitionDelay: navOpen ? '1.2s' : '0s',
             }}
           >
             Paris
@@ -229,9 +229,9 @@ const Navbar = () => {
                 <a
                   href="#"
                   style={{
-                    bottom: navOpen ? "0" : "-20px",
-                    opacity: navOpen ? "1" : "0",
-                    transitionDelay: navOpen ? "1.3s" : "0s",
+                    bottom: navOpen ? '0' : '-20px',
+                    opacity: navOpen ? '1' : '0',
+                    transitionDelay: navOpen ? '1.3s' : '0s',
                   }}
                 >
                   Youtube
@@ -241,9 +241,9 @@ const Navbar = () => {
                 <a
                   href="#"
                   style={{
-                    bottom: navOpen ? "0" : "-20px",
-                    opacity: navOpen ? "1" : "0",
-                    transitionDelay: navOpen ? "1.4s" : "0s",
+                    bottom: navOpen ? '0' : '-20px',
+                    opacity: navOpen ? '1' : '0',
+                    transitionDelay: navOpen ? '1.4s' : '0s',
                   }}
                 >
                   Instagram
@@ -253,9 +253,9 @@ const Navbar = () => {
                 <a
                   href="#"
                   style={{
-                    bottom: navOpen ? "0" : "-20px",
-                    opacity: navOpen ? "1" : "0",
-                    transitionDelay: navOpen ? "1.5s" : "0s",
+                    bottom: navOpen ? '0' : '-20px',
+                    opacity: navOpen ? '1' : '0',
+                    transitionDelay: navOpen ? '1.5s' : '0s',
                   }}
                 >
                   Facebook

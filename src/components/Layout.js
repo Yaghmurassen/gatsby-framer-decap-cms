@@ -24,7 +24,7 @@ const TemplateWrapper = ({ children }) => {
     window.scrollTo(0, 0);
   });
   return (
-    <div>
+    <div className="relative">
       <Helmet>
         <html lang="fr" />
         <title>{title}</title>
